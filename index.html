@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruta Japón 2026</title>
+<meta name="description" content="28 oct → 16 nov · Tokio, Hakone, Kyoto, Nara, Hiroshima, Miyajima, Osaka, Himeji, Kobe, Nikko y Fuji. Itinerario día a día, transporte, comida y reservas.">
+<meta name="theme-color" content="#2437A0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ruta Japón 2026 🇯🇵">
+<meta property="og:description" content="20 días, 12 paradas: Tokio, Hakone, Kyoto, Nara, Hiroshima, Miyajima, Osaka, Himeji, Kobe, Nikko y Fuji.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232437A0'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23fff'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23D6423A'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: una "línea de tren" como columna vertebral. Cabecera = diagrama de línea con estaciones (ciudades);
+   cada día = cartel de estación (ekimeihyō) con su color de línea; el resto, tablero de horarios. */
+:root{
+  --bg:#EEF0EC;          /* andén: gris verdoso muy claro */
+  --card:#FFFFFF;
+  --ink:#17191F;          /* sumi */
+  --muted:#5D6470;
+  --line:#D5D9D3;
+  --accent:#2437A0;       /* ai-zome, índigo de uniforme JR */
+  --accent-soft:#E3E7FA;
+  --warn:#A8520A; --warn-soft:#FCEBD7;
+  --bad:#B3261E;  --bad-soft:#FBE3E1;
+  --ok:#2F7A3B;   --ok-soft:#E1F2E3;
+  --c-tokyo:#6BB33A; --c-hakone:#1F8FA8; --c-kyoto:#7A4FB0; --c-hiroshima:#E07A12; --c-osaka:#D6423A; --c-fly:#6E7580;
+  --f-display:"Dela Gothic One","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101216; --card:#191C22; --ink:#ECEEF2; --muted:#9AA2AE; --line:#2B3038;
+  --accent:#8C9BFF; --accent-soft:#1E2445;
+  --warn:#F2A65A; --warn-soft:#3A2812; --bad:#FF8A80; --bad-soft:#3B1715; --ok:#7BD88A; --ok-soft:#15301A;
+  --c-tokyo:#86CF55; --c-hakone:#3DB7D1; --c-kyoto:#A782E0; --c-hiroshima:#F59A3C; --c-osaka:#F0665E; --c-fly:#8E96A2;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101216; --card:#191C22; --ink:#ECEEF2; --muted:#9AA2AE; --line:#2B3038;
+  --accent:#8C9BFF; --accent-soft:#1E2445;
+  --warn:#F2A65A; --warn-soft:#3A2812; --bad:#FF8A80; --bad-soft:#3B1715; --ok:#7BD88A; --ok-soft:#15301A;
+  --c-tokyo:#86CF55; --c-hakone:#3DB7D1; --c-kyoto:#A782E0; --c-hiroshima:#F59A3C; --c-osaka:#F0665E; --c-fly:#8E96A2;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:20px 80px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- HERO ---------- */
+.hero{display:grid;gap:14px;padding-block:8px 18px}
+.hero-top{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.hero h1{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(34px,7vw,58px);line-height:1;letter-spacing:.01em}
+.hero h1 small{display:block;font-family:var(--f-body);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.count{font-family:var(--f-mono);font-size:13px;color:var(--muted);text-align:right}
+.count b{display:block;font-family:var(--f-display);font-weight:400;font-size:28px;color:var(--ink);line-height:1.1}
+.hero p.lede{margin:0;max-width:62ch;color:var(--muted)}
+
+/* línea de tren */
+.route{overflow-x:auto;padding-block:6px 4px;scrollbar-width:thin}
+.route-inner{display:flex;align-items:flex-start;min-width:640px;position:relative;padding-top:4px}
+.stn{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;background:none;border:0;cursor:pointer;color:var(--ink);font:inherit;padding:0}
+.stn::before{content:"";position:absolute;top:13px;left:0;right:0;height:8px;background:var(--seg)}
+.stn:first-child::before{left:50%}
+.stn:last-child::before{right:50%}
+.stn .dot{width:30px;height:30px;border-radius:50%;background:var(--card);border:5px solid var(--seg);position:relative;z-index:1;transition:transform .2s}
+.stn:hover .dot,.stn[aria-pressed="true"] .dot{transform:scale(1.18)}
+.stn[aria-pressed="true"] .dot{background:var(--seg)}
+.stn .kj{font-family:var(--f-display);font-size:20px;line-height:1}
+.stn .ro{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.stn .nt{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.route-inner{min-width:1000px}
+.stn.trip .dot{width:20px;height:20px;border-width:4px;margin-block:5px}
+.stn.trip .kj{font-size:16px}
+.stn.trip .ro{font-size:10px;color:var(--muted)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--muted);align-items:center;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;border-radius:50%;border:4px solid var(--muted);background:var(--card)}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.booklink{font-size:12px;font-weight:700;text-decoration:none;padding:3px 9px;border-radius:999px;background:var(--accent);color:var(--card)}
+.booklink:hover{filter:brightness(1.12)}
+
+/* ---------- TABS ---------- */
+.tabs{position:sticky;flex-wrap:wrap;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;gap:4px;overflow-x:auto;padding-block:10px;border-bottom:1px solid var(--line);margin-bottom:18px;scrollbar-width:none}
+.tabs button{flex:0 0 auto;border:0;background:transparent;color:var(--muted);font:700 14px var(--f-body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.panel[hidden]{display:none}
+
+/* ---------- FILTROS & TIRA DE FECHAS ---------- */
+.toolbar{display:grid;gap:10px;margin-bottom:16px}
+.datestrip{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.datechip{flex:0 0 auto;display:grid;justify-items:center;gap:2px;min-width:48px;padding:6px 4px 7px;border-radius:10px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--ink);font:inherit;position:relative;overflow:hidden}
+.datechip::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--cc)}
+.datechip .dw{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.datechip .dn{font-family:var(--f-display);font-size:18px;line-height:1}
+.datechip .ld{display:flex;gap:2px}
+.datechip .ld i{width:5px;height:5px;border-radius:1px;background:var(--line)}
+.datechip .ld i.on{background:var(--ink)}
+.datechip.today{outline:2px solid var(--accent)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.filters .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.fchip{border:1px solid var(--line);background:var(--card);color:var(--ink);font:500 13px var(--f-body);padding:5px 11px;border-radius:999px;cursor:pointer}
+.fchip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--card)}
+
+/* ---------- DÍA ---------- */
+.days{display:grid;gap:18px}
+.day{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);scroll-margin-top:70px}
+.day[hidden]{display:none}
+.sign{display:grid;grid-template-columns:auto 1fr auto;gap:4px 16px;align-items:center;padding:16px 18px 24px;border-bottom:6px solid var(--cc);cursor:pointer;position:relative}
+.sign .num{grid-row:span 2;display:grid;justify-items:center;align-content:center;width:58px;height:58px;border-radius:10px;background:var(--cc);color:var(--card)}
+.sign .num b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1}
+.sign .num span{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.sign h3{margin:0;font-size:clamp(17px,3.4vw,21px);font-weight:900;text-wrap:balance;line-height:1.25}
+.sign .meta{font-size:13px;color:var(--muted);display:flex;gap:6px 14px;flex-wrap:wrap}
+.sign .kanji{grid-row:span 2;font-family:var(--f-display);font-size:30px;color:var(--cc);opacity:.9;line-height:1}
+.sign .chev{position:absolute;right:14px;bottom:8px;font-size:11px;color:var(--muted)}
+.pace{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12px}
+.pace i{display:inline-flex;gap:2px}
+.pace i s{width:12px;height:6px;border-radius:2px;background:var(--line);text-decoration:none}
+.pace.p1 i s:nth-child(1){background:var(--ok)}
+.pace.p2 i s:nth-child(-n+2){background:var(--warn)}
+.pace.p3 i s{background:var(--bad)}
+.today-badge{background:var(--accent);color:var(--card);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+.body{padding:6px 18px 18px;display:grid;gap:14px}
+.day.collapsed .body{display:none}
+.day.collapsed .chev::after{content:"mostrar ▾"}
+.day:not(.collapsed) .chev::after{content:"ocultar ▴"}
+.summary{margin:8px 0 0;color:var(--muted);max-width:70ch}
+.tl{list-style:none;margin:0;padding:0;display:grid}
+.tl li{display:grid;grid-template-columns:62px 14px 1fr;gap:0 10px;position:relative;transition:opacity .2s}
+.tl li .t{font-family:var(--f-mono);font-size:13px;font-weight:600;padding-top:9px;color:var(--ink);text-align:right}
+.tl li .rail{position:relative}
+.tl li .rail::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl li:first-child .rail::before{top:14px}
+.tl li:last-child .rail::before{bottom:calc(100% - 14px)}
+.tl li .rail::after{content:"";position:absolute;left:1px;top:10px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--cc)}
+.tl li .c{padding-block:7px 9px;min-width:0}
+.tl li .c h4{margin:0;font-size:15px;font-weight:700;line-height:1.35}
+.tl li .c p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.tl li .c .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:5px}
+.tag{font-size:11px;font-weight:700;padding:1px 7px;border-radius:5px;background:var(--accent-soft);color:var(--accent);letter-spacing:.02em}
+.maplink{font-size:12px;font-weight:700;text-decoration:none;border-bottom:1px dashed currentColor}
+.tl li.dim{opacity:.28}
+.tl li.hit .c h4{color:var(--accent)}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.box{border-radius:10px;padding:11px 13px;font-size:14px;min-width:0}
+.box h5{margin:0 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.box ul{margin:0;padding-left:18px}
+.box li+li{margin-top:3px}
+.box.food{background:var(--ok-soft)} .box.food h5{color:var(--ok)}
+.box.warn{background:var(--warn-soft)} .box.warn h5{color:var(--warn)}
+.box.alt{background:var(--accent-soft)} .box.alt h5{color:var(--accent)}
+
+/* ---------- PANELES GENERALES ---------- */
+.sec{display:grid;gap:14px;margin-bottom:26px}
+.sec h2{margin:0;font-family:var(--f-display);font-weight:400;font-size:clamp(22px,4.4vw,30px);line-height:1.15;text-wrap:balance}
+.sec h2 small{display:block;font-family:var(--f-body);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.sec > p{margin:0;max-width:68ch;color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.card h3{margin:0 0 6px;font-size:17px;font-weight:900}
+.card p{margin:0 0 8px}
+.card ul{margin:0;padding-left:18px}
+.card li+li{margin-top:5px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.verdict{display:grid;gap:8px}
+.vrow{display:grid;grid-template-columns:78px 1fr;gap:12px;align-items:start;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--vc);border-radius:10px;padding:11px 14px}
+.vrow .d{font-family:var(--f-mono);font-size:13px;font-weight:600}
+.vrow .d span{display:block;font-family:var(--f-body);font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.vrow b{display:block}
+.vrow p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:6px}
+.pill.ok{background:var(--ok-soft);color:var(--ok)} .pill.mid{background:var(--warn-soft);color:var(--warn)} .pill.hi{background:var(--bad-soft);color:var(--bad)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:900;border-bottom:0}
+.callout{border-radius:12px;padding:14px 16px;background:var(--bad-soft);color:var(--ink)}
+.callout b.h{color:var(--bad);display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.callout.blue{background:var(--accent-soft)} .callout.blue b.h{color:var(--accent)}
+
+/* reservas */
+.chk{display:grid;gap:8px}
+.chk .item{display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 14px}
+.chk .item > label b{cursor:pointer}
+.chk input{width:18px;height:18px;margin-top:3px;accent-color:var(--accent)}
+.chk .w b{display:block;font-size:15px}
+.chk .w span{font-size:13px;color:var(--muted)}
+.chk .when{text-align:right;font-family:var(--f-mono);font-size:12px;white-space:nowrap}
+.chk .when em{display:inline-block;font-style:normal;font-family:var(--f-body);font-weight:700;font-size:11px;padding:2px 8px;border-radius:999px;margin-top:4px}
+.st-now{background:var(--bad-soft);color:var(--bad)} .st-soon{background:var(--warn-soft);color:var(--warn)} .st-later{background:var(--accent-soft);color:var(--accent)} .st-past{background:var(--line);color:var(--muted)}
+.chk .item.done{opacity:.55}
+.chk .item.done .w b{text-decoration:line-through}
+.chk .w{min-width:0}
+.lk{display:inline-flex;align-items:center;gap:4px}
+.rawurl{flex-basis:100%;font-family:var(--f-mono);font-size:11px;color:var(--muted);overflow-wrap:anywhere}
+.lk{flex-wrap:wrap}
+.copy{border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 11px var(--f-body);padding:3px 8px;border-radius:6px;cursor:pointer}
+.progress{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+.foot{margin-top:30px;color:var(--muted);font-size:13px;display:grid;gap:4px}
+
+@media (max-width:560px){
+  .tabs button{padding:7px 11px;font-size:13px}
+  .sign{grid-template-columns:auto 1fr;padding:14px 14px 24px}
+  .sign .kanji{display:none}
+  .tl li{grid-template-columns:48px 14px 1fr;gap:0 8px}
+  .tl li .t{font-size:12px}
+  .body{padding:4px 14px 16px}
+  .vrow{grid-template-columns:1fr}
+  .chk .item{grid-template-columns:22px 1fr}
+  .chk .when{grid-column:2;text-align:left;display:flex;gap:8px;align-items:center}
+  .chk .when em{margin-top:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-top">
+      <h1><small>28 oct → 16 nov · 4 viajeros · 19 noches</small>日本 Ruta Japón 2026</h1>
+      <div class="count" id="count"></div>
+    </div>
+    <p class="lede">Itinerario agrupado por barrios con los hoteles como campamento base. Toca una estación para ver solo sus días. Cada día trae su ritmo, dónde comer al acabar la tarde y los avisos que importan.</p>
+    <nav class="route" aria-label="Ruta por ciudades"><div class="route-inner" id="route"></div></nav>
+    <div class="legend"><span><i style="width:16px;height:16px"></i>Dormimos allí</span><span><i style="width:11px;height:11px;border-width:3px"></i>Excursión de un día</span><span>Desliza para ver toda la ruta →</span></div>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" id="tab-dias" aria-controls="p-dias" aria-selected="true">Itinerario</button>
+    <button role="tab" id="tab-viab" aria-controls="p-viab" aria-selected="false">Viabilidad</button>
+    <button role="tab" id="tab-trans" aria-controls="p-trans" aria-selected="false">Transporte</button>
+    <button role="tab" id="tab-comida" aria-controls="p-comida" aria-selected="false">Comida</button>
+    <button role="tab" id="tab-pop" aria-controls="p-pop" aria-selected="false">Pokémon · JDM · Anime</button>
+    <button role="tab" id="tab-res" aria-controls="p-res" aria-selected="false">Reservas</button>
+  </div>
+
+  <!-- ============ ITINERARIO ============ -->
+  <section class="panel" id="p-dias" role="tabpanel" aria-labelledby="tab-dias">
+    <div class="toolbar">
+      <div class="datestrip" id="datestrip" aria-label="Ir a un día"></div>
+      <div class="filters" id="filters"><span class="lbl">Resaltar</span></div>
+    </div>
+    <div class="days" id="days"></div>
+  </section>
+
+  <!-- ============ VIABILIDAD ============ -->
+  <section class="panel" id="p-viab" role="tabpanel" aria-labelledby="tab-viab" hidden>
+    <div class="sec">
+      <h2><small>Evaluación directa</small>Ningún día es imposible. Cinco son exigentes.</h2>
+      <p>He puesto los días duros separados por días suaves para que aguantéis la noche. Donde hay riesgo de que algo falle (viento, marea, policía, nubes), está el plan B en el propio día.</p>
+    </div>
+    <div class="verdict" id="verdict"></div>
+    <div class="sec" style="margin-top:26px">
+      <h2><small>Lo que cambia respecto a vuestro plan anterior</small>Errores de base que he corregido</h2>
+      <div class="grid2">
+        <div class="card"><h3>Llegáis a Narita a las 17:55, no a Haneda a la 1:00</h3><p>Sobra el hotel de aeropuerto. Esa misma noche dormís en Shinjuku y el día 29 ya es un día completo.</p></div>
+        <div class="card"><h3>Miyajima, Koyasan y el ryokan en la isla ya no existen</h3><p>Vuestros hoteles reales son Hiroshima 1 noche y Osaka 3 noches. Miyajima pasa a ser mañana de excursión y Koyasan sale: con 3 noches en Osaka compensan más Himeji + Kobe.</p></div>
+        <div class="card"><h3>Hakone al revés</h3><p>Vuestro hotel está en Gora, arriba. Hacer el circuito en sentido inverso (Yumoto → lago → teleférico → Gora) os deja en la puerta del hotel sin retroceder.</p></div>
+        <div class="card"><h3>El otoño en Kyoto llega a tope a finales de noviembre</h3><p>Entre el 3 y el 7 veréis los primeros rojos, no el pico. Donde sí lo pilláis: Hakone (2 nov), Nikko (12 nov) y Kawaguchiko (13 nov). Por eso esos dos van en la segunda estancia de Tokio.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRANSPORTE ============ -->
+  <section class="panel" id="p-trans" role="tabpanel" aria-labelledby="tab-trans" hidden>
+    <div class="sec">
+      <h2><small>Veredicto</small>Suica + Hakone Free Pass + un único pase regional de 5 días</h2>
+      <p>El JR Pass nacional (7 días, ¥50.000) no compensa con vuestra ruta. Lo que sí compensa es el <b>JR Kansai‑Hiroshima Area Pass</b> (¥17.000, 5 días seguidos) del 7 al 11 de noviembre: cubre Kyoto→Shin‑Osaka, el Shinkansen Shin‑Osaka↔Hiroshima, el tren y ferry JR a Miyajima y la ida a Himeji y Kobe.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Trayecto (por persona)</th><th>Día</th><th class="n">Suelto aprox.</th><th>Cómo</th></tr></thead>
+        <tbody>
+          <tr><td>Narita → Shinjuku (N'EX)</td><td>28 oct</td><td class="n">¥3.250</td><td>Taquilla/máquina JR en el aeropuerto</td></tr>
+          <tr><td>Hakone Free Pass 2 días desde Shinjuku + Romancecar</td><td>2–3 nov</td><td class="n">¥6.100 + ¥1.200</td><td><a href="https://www.odakyu.jp/english/passes/hakone/" target="_blank" rel="noopener noreferrer">Free Pass ↗</a> · <a href="https://odakyu-global.com/passes/romancecar/" target="_blank" rel="noopener noreferrer">Romancecar ↗</a></td></tr>
+          <tr><td>Odawara → Kyoto (Hikari reservado)</td><td>3 nov</td><td class="n">~¥12.000</td><td><a href="https://smart-ex.jp/en/" target="_blank" rel="noopener noreferrer">SmartEX ↗</a></td></tr>
+          <tr><td>Kyoto → Nara (Kintetsu) ida y vuelta</td><td>5 nov</td><td class="n">~¥1.500</td><td>Suica</td></tr>
+          <tr><td><b>Kansai‑Hiroshima Pass</b> (sustituye a los 4 de abajo)</td><td>7–11 nov</td><td class="n"><b>¥17.000</b></td><td><a href="https://www.westjr.co.jp/global/en/ticket/pass/kansai_hiroshima/index2.html" target="_blank" rel="noopener noreferrer">JR‑WEST Online ↗</a>, recoger en Kyoto St.</td></tr>
+          <tr><td style="padding-left:26px;color:var(--muted)">Kyoto → Shin‑Osaka → Hiroshima</td><td>7 nov</td><td class="n">~¥11.600</td><td>cubierto (JR Special Rapid hasta Shin‑Osaka)</td></tr>
+          <tr><td style="padding-left:26px;color:var(--muted)">Hiroshima ↔ Miyajima (JR + ferry JR)</td><td>8 nov</td><td class="n">~¥1.300</td><td>cubierto</td></tr>
+          <tr><td style="padding-left:26px;color:var(--muted)">Hiroshima → Shin‑Osaka</td><td>8 nov</td><td class="n">~¥10.600</td><td>cubierto</td></tr>
+          <tr><td style="padding-left:26px;color:var(--muted)">Shin‑Osaka → Himeji → Kobe → Osaka</td><td>9 nov</td><td class="n">~¥4.700</td><td>cubierto</td></tr>
+          <tr><td>Shin‑Osaka → Tokyo (Nozomi)</td><td>11 nov</td><td class="n">~¥14.700</td><td><a href="https://smart-ex.jp/en/" target="_blank" rel="noopener noreferrer">SmartEX ↗</a> (Tokaido: no entra en el pase)</td></tr>
+          <tr><td>Nikko ida y vuelta</td><td>12 nov</td><td class="n">¥4.000–8.000</td><td><a href="https://www.eki-net.com/en/jreast-train-reservation/Top/Index" target="_blank" rel="noopener noreferrer">JR East ↗</a> · <a href="https://www.tobu.co.jp/spaciax/en/" target="_blank" rel="noopener noreferrer">Tobu Spacia X ↗</a></td></tr>
+          <tr><td>Bus Shinjuku ↔ Kawaguchiko</td><td>13 nov</td><td class="n">~¥4.400</td><td><a href="https://www.highway-buses.jp/" target="_blank" rel="noopener noreferrer">highway-buses.jp ↗</a></td></tr>
+          <tr><td>Shinjuku → Narita (N'EX)</td><td>16 nov</td><td class="n">¥3.250</td><td>Máquina JR</td></tr>
+          <tr class="total"><td>Ahorro del pase regional</td><td></td><td class="n">≈ ¥11.000 pp</td><td>≈ ¥44.000 entre los cuatro</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid2" style="margin-top:14px">
+      <div class="card"><h3>Suica en el móvil</h3><ul>
+        <li>iPhone: añadidla en Cartera desde España y recargad con Apple Pay. Android solo si el móvil es japonés; si no, Suica física o Welcome Suica en Narita.</li>
+        <li>Vale para metro, JR local, buses, Kintetsu, tranvía de Hiroshima, kombinis y taquillas.</li>
+        <li>Calculad ~¥1.000/día en ciudad. Entre 4, un taxi de 15 min (~¥2.000–3.000) a veces sale igual que el bus y ahorra piernas: usad la app GO.</li>
+      </ul></div>
+      <div class="card"><h3>Plan de maletas</h3><ul>
+        <li><b>1 nov:</b> maletas grandes Hotel Washington → RESI STAY Nishiki (takkyubin en recepción, ~¥2.000–2.500 c/u). Escribid antes a Kyoto para confirmar que las recogen.</li>
+        <li><b>2–3 nov:</b> Hakone solo con mochila.</li>
+        <li><b>6 nov:</b> maletas Kyoto → APA Namba Shinsaibashi. Hiroshima solo con mochila.</li>
+        <li><b>11 nov:</b> Osaka → Tokio con maletas en el Shinkansen. Si una maleta suma más de 160 cm (alto+ancho+fondo), hay que reservar asiento con espacio para equipaje o pagáis un recargo.</li>
+      </ul></div>
+    </div>
+    <div class="sec" style="margin-top:22px">
+      <h2><small>¿Cuándo miro los trenes?</small>Salen a la venta 1 mes antes a las 10:00 de Japón (03:00 en España)</h2>
+      <p>En noviembre, entre semana, no suelen agotarse, pero el 3 de noviembre es festivo en Japón y el Romancecar se llena. Las fechas exactas están en la pestaña Reservas con cuenta atrás.</p>
+    </div>
+  </section>
+
+  <!-- ============ COMIDA ============ -->
+  <section class="panel" id="p-comida" role="tabpanel" aria-labelledby="tab-comida" hidden>
+    <div class="sec">
+      <h2><small>Presupuesto 40–60 € / día ≈ ¥7.000–10.000</small>Comer de lujo con presupuesto de estudiante</h2>
+      <p>Regla: desayuno de kombini o panadería (¥500), comida fuerte a mediodía porque los menús de mediodía cuestan la mitad, y cena de izakaya o ramen. Los caprichos grandes van a mediodía.</p>
+    </div>
+    <div class="grid2" id="foodgrid"></div>
+  </section>
+
+  <!-- ============ POP ============ -->
+  <section class="panel" id="p-pop" role="tabpanel" aria-labelledby="tab-pop" hidden>
+    <div class="grid2">
+      <div class="card"><h3>Cómo conseguir cartas de verdad</h3><ul>
+        <li>Lo que está en estantería se compra sin sorteo ni ID. Id a los Pokémon Center <b>a la hora de apertura</b> y entre semana: ahí aparecen reposiciones con límite por persona.</li>
+        <li>Para sobres y cajas de 30th Celebration: tiendas de cartas de Akihabara (Card Rush, Yellow Submarine, Hareruya 2), Nakano Broadway y Den Den Town en Osaka. Pagaréis precio de reventa.</li>
+        <li>Cajas selladas solo con el plástico con logo Pokémon. Desconfiad de cajas con film liso.</li>
+        <li>Si lo que queréis es la UPC inglesa, sale más barata reservarla en España.</li>
+      </ul></div>
+      <div class="card"><h3>Pokémon Centers en vuestra ruta</h3><ul>
+        <li><b>Tokio:</b> Skytree Town (29 oct), Shibuya (30 oct), Mega Tokyo en Ikebukuro, el mayor (31 oct), Tokyo DX + Pokémon Café en Nihonbashi (14 nov).</li>
+        <li><b>Kyoto:</b> Takashimaya Kyoto, a 5 min del hotel (5 nov).</li>
+        <li><b>Osaka:</b> Daimaru Shinsaibashi 9F + Pokémon Café Osaka, al lado del hotel (10 nov). Osaka DX en Umeda, opcional.</li>
+      </ul></div>
+      <div class="card"><h3>JDM y Daikoku: cómo ir siendo 4</h3><ul>
+        <li><b>El problema:</b> los coches JDM de estos tours llevan como máximo 3 pasajeros. Los que cobran por coche (Samurai Car Japan / daikokutour.com) os obligan a coger dos coches: ¥95.000 entre semana o ¥104.500 de viernes a domingo, unos ¥24.000–26.000 por persona.</li>
+        <li><b>Recomendado:</b> <a href="https://www.getyourguide.com/tokyo-l193/tokyo-daikoku-jdm-and-tokyo-car-culture-experience-t792970/" target="_blank" rel="noopener noreferrer">«Daikoku: Experience Tokyo's Car Culture in Iconic JDM Cars» en GetYourGuide ↗</a>. Cobra por persona (~$117, unos ¥17.500; 4,9/5 con más de 800 reseñas). Reserváis 4 plazas y vais en <b>dos coches en convoy, 2 y 2</b>, y en cada parada podéis cambiaros de coche. Sale de Akihabara, dura 3,5–4 h y se cancela gratis hasta 24 h antes. Al reservar, escribidles por Instagram (@projectwangan_jp) para confirmar que los 4 vais en el mismo convoy.</li>
+        <li><b>Opción barata:</b> tour en van (Alphard) con los 4 juntos, ~$50–90 por persona. Veis Daikoku igual, pero no vais montados en un JDM.</li>
+        <li><b>Viernes 30 oct:</b> viernes y sábado la policía cierra Daikoku sobre las 19:30–20:00 si se llena. Coged la salida de tarde (no la de medianoche) y preguntad qué hacen si está cerrado: lo normal es ir a Tatsumi o Umihotaru. Plan B: el <b>viernes 13 nov</b>.</li>
+        <li>Gratis: Nissan Crossing en Ginza (14 nov). El Mazda Museum de Hiroshima solo abre entre semana, así que vuestro sábado allí no cuadra.</li>
+      </ul></div>
+      <div class="card"><h3>Anime, figuras y vóley</h3><ul>
+        <li><b>Figuras:</b> Akihabara (Radio Kaikan, Mandarake Complex) el 29, Nakano Broadway el 31, Den Den Town el 10.</li>
+        <li><b>JJK:</b> Takeshita‑dori (presentación de Nobara) y la ruta del Incidente de Shibuya el 30.</li>
+        <li><b>Haikyuu!!:</b> el Tokyo Metropolitan Gymnasium de Sendagaya, sede del torneo de primavera, el 11. Merch en Jump Shop y Animate Ikebukuro.</li>
+        <li><b>Vóley:</b> calle de tiendas de deporte de Ogawamachi/Kanda (29 oct) y ASICS Store Kobe, la marca es de allí (9 nov). Mirad svleague.jp: si hay partido de SV.League en Tokio u Osaka un día que encaje, ver uno en directo merece la pena.</li>
+        <li><b>One Piece:</b> ONE PIECE FITNESS BragMen, Shibuya Modi 9F, pase de visitante de 1 h con pasaporte (30 oct). Cierra el último día de cada mes.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVAS ============ -->
+  <section class="panel" id="p-res" role="tabpanel" aria-labelledby="tab-res" hidden>
+    <div class="sec">
+      <h2><small>Checklist con cuenta atrás</small>Qué reservar y cuándo</h2>
+      <p>Horas en horario de España. Se guarda lo que marquéis en este navegador.</p>
+      <div class="progress" aria-hidden="true"><i id="prog" style="width:0"></i></div>
+    </div>
+    <div class="chk" id="chk"></div>
+  </section>
+
+  <footer class="foot">
+    <span>Precios y horarios orientativos a septiembre de 2026. Comprobad horarios de teleféricos, barcos y mareas la semana anterior.</span>
+  </footer>
+</div>
+
+<script>
+const CITIES={
+  fly:{k:"✈",n:"Vuelo",c:"--c-fly"},
+  tokyo:{k:"東京",n:"Tokio",c:"--c-tokyo"},
+  hakone:{k:"箱根",n:"Hakone",c:"--c-hakone"},
+  kyoto:{k:"京都",n:"Kyoto",c:"--c-kyoto"},
+  hiroshima:{k:"広島",n:"Hiroshima",c:"--c-hiroshima"},
+  osaka:{k:"大阪",n:"Osaka",c:"--c-osaka"}
+};
+const ROUTE=[
+  {id:"tokyo1",city:"tokyo",n:"Tokio",nt:"5 noches",days:["d1","d2","d3","d4","d5"]},
+  {id:"hakone",city:"hakone",n:"Hakone",nt:"1 noche",days:["d6"]},
+  {id:"kyoto",city:"kyoto",n:"Kyoto",nt:"4 noches",days:["d7","d8","d9","d10"]},
+  {id:"nara",city:"kyoto",k:"奈良",n:"Nara",nt:"5 nov",trip:true,days:["d9"]},
+  {id:"hiroshima",city:"hiroshima",n:"Hiroshima",nt:"1 noche",days:["d11"]},
+  {id:"miyajima",city:"hiroshima",k:"宮島",n:"Miyajima",nt:"8 nov",trip:true,days:["d12"]},
+  {id:"osaka",city:"osaka",n:"Osaka",nt:"3 noches",days:["d12","d13","d14"]},
+  {id:"himeji",city:"osaka",k:"姫路",n:"Himeji",nt:"9 nov",trip:true,days:["d13"]},
+  {id:"kobe",city:"osaka",k:"神戸",n:"Kobe",nt:"9 nov",trip:true,days:["d13"]},
+  {id:"tokyo2",city:"tokyo",n:"Tokio",nt:"5 noches",days:["d15","d16","d17","d18","d19","d20"]},
+  {id:"nikko",city:"tokyo",k:"日光",n:"Nikko",nt:"12 nov",trip:true,days:["d16"]},
+  {id:"fuji",city:"tokyo",k:"富士",n:"Fuji",nt:"13 nov",trip:true,days:["d17"]}
+];
+const TAGS={trad:"Templos y tradición",pop:"Anime y juegos",poke:"Pokémon",jdm:"JDM",food:"Comida",sport:"Deporte y vóley",night:"Noche",hidden:"Fuera de ruta"};
+const M=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+
+/* [hora, título, detalle, tags, búsqueda de mapa] */
+const DAYS=[
+{id:"d0",date:"2026-10-27",city:"fly",pace:1,title:"Salida desde España",sleep:"En el avión",
+ summary:"Vuelo nocturno. Dormid todo lo que podáis en el segundo tramo: aterrizáis a las 17:55 hora japonesa y esa noche ya estáis en Shinjuku.",
+ items:[["—","Vuelo hacia Narita","Rellenad Visit Japan Web antes de salir y llevad el QR de inmigración y aduanas en el móvil.",[],null]],
+ food:["Cenad en el aeropuerto: el primer tramo pasa la noche en vuelo."],warn:[]},
+
+{id:"d1",date:"2026-10-28",city:"tokyo",pace:1,title:"Aterrizaje y primera noche en Shinjuku",sleep:"Shinjuku Washington Hotel",
+ summary:"Tarde de llegada. Lo único importante es salir rápido del aeropuerto y cenar algo bueno cerca del hotel.",
+ items:[
+  ["17:55","Aterrizaje en Narita","Inmigración y maletas: calculad 60–75 min. Sacad yenes en el cajero 7‑Eleven o JP Bank de la terminal.",[],"Narita International Airport"],
+  ["19:00","Suica y billete de N'EX","Suica en el iPhone o Welcome Suica. N'EX directo a Shinjuku, ~80 min, ¥3.250 con asiento.",[],null],
+  ["20:45","Check‑in en el Washington","8–10 min andando desde la salida sur de Shinjuku. Con maletas y 4 personas, un taxi desde la estación cuesta ~¥1.000.",[],"Shinjuku Washington Hotel"],
+  ["21:30","Omoide Yokocho","Callejón de yakitori bajo las vías, a 10 min. Primera cerveza, brochetas y humo. Algunos puestos cobran ¥300–500 de otoshi (aperitivo obligatorio).",["food","night"],"Omoide Yokocho Shinjuku"]],
+ food:["Yakitori en Omoide Yokocho (¥2.000–3.000 pp con bebida)","Si queréis ramen: Ichiran Shinjuku abre 24 h"],warn:[]},
+
+{id:"d2",date:"2026-10-29",city:"tokyo",pace:2,title:"Asakusa, Skytree y Akihabara",sleep:"Shinjuku Washington Hotel",
+ summary:"El jet lag os despertará pronto: aprovechadlo para ver Senso‑ji vacío. Todo el día en el este de Tokio, sin volver hacia el oeste hasta la noche.",
+ items:[
+  ["07:30","Senso‑ji sin gente","Kaminarimon y la pagoda con luz de mañana. Las tiendas de Nakamise abren sobre las 9:30.",["trad"],"Senso-ji"],
+  ["09:00","Desayuno en Asakusa","Melonpan gigante recién hecho en Asakusa Kagetsudo.",["food"],"Asakusa Kagetsudo"],
+  ["10:00","Tokyo Skytree Town (Solamachi)","Pokémon Center Skytree Town, Jump Shop, tienda Ghibli y Kirby Café (con reserva). 20 min andando cruzando el Sumida. El mirador no hace falta: el Tocho es gratis.",["poke","pop"],"Tokyo Solamachi"],
+  ["12:30","Comida en Solamachi","Rokurinsha (tsukemen, 6F) o la planta de restaurantes. Menús de ¥1.000–1.500.",["food"],"Rokurinsha Solamachi"],
+  ["14:00","Akihabara","Radio Kaikan (figuras nuevas), Mandarake Complex (8 plantas de segunda mano), Super Potato (retro), arcades GiGO. Card Rush y Yellow Submarine para cartas Pokémon.",["pop","poke"],"Akihabara Radio Kaikan"],
+  ["17:30","Calle del deporte de Ogawamachi","A 10 min de Akiba. Decenas de tiendas de deporte (Victoria y otras): zapatillas de vóley Asics y Mizuno a precio japonés.",["sport","hidden"],"Ogawamachi sports shops Kanda"],
+  ["19:00","Curry en Jimbocho","Jimbocho, pegado a Ogawamachi, es el barrio del curry de Tokio. Después Chuo Line directa a Shinjuku en 12 min.",["food"],"Jimbocho curry Bondy"]],
+ food:["Curry japonés en Jimbocho: Bondy o Ethiopia (¥1.200–1.800)","Alternativa: gyukatsu en Akihabara"],warn:["Día largo de pie. Si os pesa el jet lag, recortad Skytree y dedicad más tiempo a Akihabara."]},
+
+{id:"d3",date:"2026-10-30",city:"tokyo",pace:2,title:"Harajuku, Shibuya y noche JDM en Daikoku",sleep:"Shinjuku Washington Hotel",
+ summary:"Oeste de Tokio con Meiji Jingu, JJK y todo lo Pokémon/Nintendo de Shibuya. Tarde tranquila para llegar con energía al tour de coches.",
+ items:[
+  ["09:00","Meiji Jingu","1 parada de Yamanote desde Shinjuku. Bosque, torii gigante y barriles de sake.",["trad"],"Meiji Jingu"],
+  ["10:30","Takeshita‑dori y Cat Street","La calle donde aparece Nobara en JJK. Crepes, ropa y la bajada por Cat Street hacia Shibuya.",["pop"],"Takeshita Street"],
+  ["12:30","Gyoza en Harajuku Gyoza‑ro","Local mítico y barato (¥300–600 el plato). Cola rápida.",["food"],"Harajuku Gyoza Ro"],
+  ["14:00","Shibuya Parco 6F","Pokémon Center Shibuya, Nintendo Tokyo, Jump Shop y Capcom Store en la misma planta.",["poke","pop"],"Shibuya PARCO"],
+  ["15:00","Ruta del Incidente de Shibuya","Scramble, Hachiko, el pasaje de Mark City, Shibuya Hikarie y la estación de Meiji‑Jingumae.",["pop"],"Shibuya Scramble Crossing"],
+  ["15:45","ONE PIECE FITNESS BragMen (opcional)","Shibuya Modi 9F. Pase visitante de 1 h con pasaporte, incluye toalla, calzado y proteína temática.",["sport","pop"],"Shibuya MODI"],
+  ["17:15","Cena rápida en Uobei","Sushi pedido por tablet que llega en carril, desde ¥110 el plato.",["food"],"Uobei Shibuya Dogenzaka"],
+  ["19:00","Tour JDM a Daikoku PA","Siendo 4: dos coches en convoy (máx. 3 por coche), 2 y 2, cambiando de coche en cada parada. Punto de encuentro en Akihabara (~25 min en la Ginza Line desde Shibuya; salid a las 18:15). La hora exacta os la dan al reservar. Duración 3,5–4 h. Viernes: más coches, pero la policía cierra antes.",["jdm","night"],"Daikoku Parking Area"]],
+ food:["Uobei (¥1.500 pp saciados)","Ramen de yuzu en Afuri Harajuku si os pilla allí"],warn:["Reservad el tour ya y preguntad qué hacen si cierran Daikoku.","Si hacéis el gym, dejad margen: el tour sale desde Akihabara, no desde Shibuya."]},
+
+{id:"d4",date:"2026-10-31",city:"tokyo",pace:2,title:"Halloween: Ikebukuro, Nakano y Kabukicho",sleep:"Shinjuku Washington Hotel",
+ summary:"Mañana tranquila tras la noche de coches. Ikebukuro coincide con el Halloween Cosplay Festival (30 oct–1 nov). Por la noche, Halloween en Shinjuku.",
+ items:[
+  ["10:30","Sunshine City, Ikebukuro","Pokémon Center Mega Tokyo, el más grande de Tokio, y Pikachu Sweets.",["poke"],"Pokemon Center Mega Tokyo"],
+  ["11:30","Animate Ikebukuro y Otome Road","La tienda insignia de Animate: merch de Haikyuu y JJK. Cosplayers del festival por las calles (verlos es gratis).",["pop","sport"],"Animate Ikebukuro"],
+  ["13:30","Ramen en Mutekiya","Tonkotsu legendario de Ikebukuro. Hay cola, pero avanza.",["food"],"Mutekiya Ikebukuro"],
+  ["15:30","Nakano Broadway","20 min vía Shinjuku. Mandarake en decenas de locales: figuras antiguas, cartas y juguetes. Abre de 12:00 a 20:00.",["pop","poke","hidden"],"Nakano Broadway"],
+  ["18:00","Hotel y descanso","Ducha, siesta corta y disfraces si os animáis.",[],null],
+  ["20:00","Yakiniku barato","Yakiniku Like o Gyukatsu Motomura en Shinjuku.",["food"],"Gyukatsu Motomura Shinjuku"],
+  ["21:30","Halloween en Kabukicho y Golden Gai","Shibuya prohíbe beber en la calle en Halloween y se llena de policía. Shinjuku es mejor apuesta y está a pie del hotel.",["night"],"Golden Gai"]],
+ food:["Gyukatsu Motomura (¥1.500–2.500)","Golden Gai: cobran entrada por bar (¥500–1.000)"],warn:["Si vais disfrazados al festival de Ikebukuro, hay que registrarse y cambiarse en sus vestuarios. Para mirar no hace falta."]},
+
+{id:"d5",date:"2026-11-01",city:"tokyo",pace:1,title:"El Tokio antiguo que no sale en Instagram",sleep:"Shinjuku Washington Hotel",
+ summary:"Domingo de recuperación. Barrios que sobrevivieron a la guerra, poco turismo y tarde libre para enviar maletas.",
+ items:[
+  ["09:30","Nezu‑jinja","Túnel de torii rojos tipo Fushimi Inari, casi vacío.",["trad","hidden"],"Nezu Shrine"],
+  ["10:30","Yanaka Ginza y templos de Yanaka","Calle comercial de antes de la guerra, gatos y cementerio. Menchi‑katsu de puesto callejero.",["trad","hidden","food"],"Yanaka Ginza"],
+  ["12:30","Ameyoko, Ueno","Mercado bajo las vías: kaisen‑don barato y fruta en palo.",["food"],"Ameyoko"],
+  ["15:30","Enviar maletas a Kyoto","En la recepción del Washington (takkyubin). Llegan en 1–2 días.",[],null],
+  ["17:30","Mirador del Tocho","Gratis, 45 pisos, a 5 min del hotel. Abierto hasta las 22:00.",[],"Tokyo Metropolitan Government Building Observatory"],
+  ["19:30","Tempura en Tsunahachi","Tempura desde 1923 en Shinjuku, menús de ¥2.000–3.000.",["food"],"Tsunahachi Shinjuku"]],
+ food:["Tsunahachi (tempura)","Kaisen‑don en Ameyoko (¥1.200–1.800)"],warn:[],
+ alt:"Si preferís excursión: Kamakura + Enoshima (1 h desde Shinjuku). Gran Buda, Hase‑dera y el paso a nivel de Slam Dunk. Un domingo va lleno."},
+
+{id:"d6",date:"2026-11-02",city:"hakone",pace:2,title:"Circuito de Hakone al revés hasta Gora",sleep:"Hakone Yutowa (Gora)",
+ summary:"El orden inverso termina en vuestro hotel. Mochilas enviadas desde Yumoto con el Hakone Carry Service para ir ligeros todo el día.",
+ items:[
+  ["09:00","Romancecar Shinjuku → Hakone‑Yumoto","~85 min. Hakone Free Pass 2 días + suplemento Romancecar. Asientos del lado derecho.",[],"Shinjuku Station Odakyu"],
+  ["10:30","Dejar mochilas en Yumoto","Servicio de entrega de equipaje de la estación al hotel (recogida antes de las 12:30).",[],"Hakone-Yumoto Station"],
+  ["10:45","Bus a Moto‑Hakone","~40 min, cubierto por el Free Pass.",[],null],
+  ["11:30","Hakone‑jinja y la avenida de cedros","El torii en el agua (hay cola para la foto; tras el santuario no) y los cedros de 400 años del antiguo Tokaido.",["trad","hidden"],"Hakone Shrine"],
+  ["12:30","Soba en Moto‑Hakone","Soba fría o tempura soba, ¥1.200–1.500.",["food"],null],
+  ["13:30","Barco pirata a Togendai","~40 min por el lago Ashi, Fuji al fondo si está despejado.",[],"Hakone Sightseeing Cruise Motohakone"],
+  ["14:30","Teleférico a Owakudani","Fumarolas volcánicas y kuro‑tamago (huevo negro, ¥500 los 5).",[],"Owakudani"],
+  ["15:30","Teleférico + funicular a Gora","Sounzan → Gora. El teleférico cierra antes en noviembre: no bajéis de Owakudani más tarde de las 16:15.",[],"Gora Station"],
+  ["16:15","Check‑in, onsen y cena","Check‑in hasta las 18:00. Onsen antes de cenar.",["trad"],"Hakone Yutowa"]],
+ food:["Cena en el hotel (confirmad que vuestra tarifa la incluye)","Kuro‑tamago en Owakudani"],
+ warn:["Con viento fuerte o gas volcánico cierran el teleférico: el bus de Togendai a Gora sustituye el tramo.","Tatuajes visibles: acceso restringido al baño común. Preguntad por baño privado."]},
+
+{id:"d7",date:"2026-11-03",city:"kyoto",pace:2,title:"Hakone → Kyoto y Fushimi Inari al atardecer",sleep:"RESI STAY Nishiki",
+ summary:"Festivo nacional en Japón (Día de la Cultura): más gente en todas partes. Fushimi Inari se vacía a partir del cruce de Yotsutsuji.",
+ items:[
+  ["07:00","Onsen de mañana y desayuno","",["trad"],null],
+  ["08:45","Check‑out y Hakone Open‑Air Museum","A 1 parada de Gora. Abre a las 9:00; hay taquillas para las mochilas.",["hidden"],"Hakone Open-Air Museum"],
+  ["10:30","Tozan Railway a Odawara","~1 h con transbordo en Yumoto, cubierto por el Free Pass.",[],null],
+  ["11:45","Shinkansen Odawara → Kyoto","Hikari, ~2 h, asiento E para ver el Fuji. Comprad ekiben en Odawara.",["food"],"Odawara Station"],
+  ["14:00","JR Nara Line a Inari","5 min desde Kyoto Station.",[],null],
+  ["14:30","Fushimi Inari Taisha","Subid hasta Yotsutsuji (~45 min) para ver la ciudad al atardecer (~16:50) y bajad con los torii iluminados.",["trad"],"Fushimi Inari Taisha"],
+  ["17:45","Keihan hasta Gion‑Shijo y check‑in","Las maletas enviadas desde Tokio os esperan en el hotel.",[],"RESI STAY Nishiki"],
+  ["19:30","Gyoza en Gion Chao Chao","Gyoza crujientes, local pequeño con cola. Luego paseo por Pontocho.",["food","night"],"Gion Chao Chao"]],
+ food:["Ekiben en Odawara","Gion Chao Chao o izakaya de Kiyamachi"],warn:["Festivo: reservad el Shinkansen en cuanto salga a la venta (3 oct)."]},
+
+{id:"d8",date:"2026-11-04",city:"kyoto",pace:2,title:"Arashiyama profundo y Pabellón Dorado",sleep:"RESI STAY Nishiki",
+ summary:"El bambú a primera hora y luego al norte, donde casi nadie llega: templo de musgo y 1.200 estatuas de piedra.",
+ items:[
+  ["07:15","Hankyu Karasuma → Arashiyama","~20 min desde el hotel.",[],null],
+  ["07:45","Bosque de bambú","Antes de las 8:30 está casi vacío.",["trad"],"Arashiyama Bamboo Grove"],
+  ["08:30","Tenryu‑ji","Jardín zen patrimonio UNESCO. Abre a las 8:30.",["trad"],"Tenryu-ji"],
+  ["09:45","Gio‑ji y calle Saga‑Toriimoto","Templo de musgo diminuto y una calle de casas de paja conservada.",["trad","hidden"],"Gio-ji"],
+  ["10:45","Otagi Nenbutsu‑ji","1.200 rakan de piedra con caras distintas, cubiertos de musgo. Casi sin turistas.",["trad","hidden"],"Otagi Nenbutsu-ji"],
+  ["12:30","Soba en Arashiyama Yoshimura","Vistas al río y al puente Togetsukyo, ~¥1.500.",["food"],"Arashiyama Yoshimura"],
+  ["14:00","Taxi a Kinkaku‑ji","Entre 4, ~¥750 pp y 20 min frente a 45 min de bus.",[],null],
+  ["14:30","Kinkaku‑ji","El Pabellón Dorado, ¥500. Ryoan‑ji está a 20 min andando si os quedan ganas.",["trad"],"Kinkaku-ji"],
+  ["16:15","Mercado de Nishiki","Al lado del hotel. Muchos puestos cierran a las 17:00–18:00: id directos.",["food"],"Nishiki Market"],
+  ["19:30","Cena obanzai","Cocina casera de Kyoto en izakaya del barrio.",["food"],null]],
+ food:["Nishiki: tamagoyaki, tako tamago, brochetas de mochi","Obanzai o ramen de Kyoto (caldo de soja espeso)"],warn:[]},
+
+{id:"d9",date:"2026-11-05",city:"kyoto",pace:2,title:"Nintendo Museum (si hay entradas) y Nara",sleep:"RESI STAY Nishiki",
+ summary:"Ogura, donde está el museo de Nintendo, está en la misma línea Kintetsu hacia Nara. Encaja sin rodeos.",
+ items:[
+  ["09:15","Kintetsu Kyoto → Ogura","~20 min.",[],null],
+  ["10:00","Nintendo Museum","¥3.300. Solo con entrada comprada con fecha y hora. Noviembre aparece a la venta en su web: miradlo hoy.",["pop"],"Nintendo Museum Uji"],
+  ["12:30","Kintetsu a Nara","~40 min con transbordo en Yamato‑Saidaiji.",[],null],
+  ["13:15","Comida en Nara","Mochi de Nakatanidou (el espectáculo de machacarlo) y kakinoha‑zushi.",["food"],"Nakatanidou Nara"],
+  ["14:00","Parque de Nara y Todai‑ji","Ciervos y el Gran Buda (¥800).",["trad"],"Todai-ji"],
+  ["15:15","Nigatsu‑do","Terraza de madera sobre Nara, gratis y tranquila. Muy pocos turistas suben.",["trad","hidden"],"Nigatsu-do Nara"],
+  ["16:00","Kasuga Taisha","Pasillo de 3.000 linternas. El recinto interior cierra sobre las 16:30.",["trad"],"Kasuga Taisha"],
+  ["17:15","Kintetsu Nara → Kyoto","~40 min.",[],null],
+  ["18:30","Pokémon Center Kyoto","En Takashimaya Kyoto, a 5 min del hotel. Cierra a las 20:00.",["poke"],"Pokemon Center Kyoto"],
+  ["19:30","Tonkatsu en Katsukura","Cadena de Kyoto, arroz y col sin límite, ~¥2.000.",["food"],"Katsukura Sanjo"]],
+ food:["Kakinoha‑zushi en Nara","Katsukura (tonkatsu)"],warn:[],
+ alt:"Sin entradas del museo: Nara por la mañana (8:30) y por la tarde Uji en la línea JR de vuelta: Byodo‑in (la moneda de 10 yenes) y matcha en Nakamura Tokichi."},
+
+{id:"d10",date:"2026-11-06",city:"kyoto",pace:3,title:"Higashiyama de sur a norte",sleep:"RESI STAY Nishiki",
+ summary:"El día más andado del viaje (~13 km), pero siempre hacia delante. Siesta obligatoria antes de la noche en Gion.",
+ items:[
+  ["06:45","Kiyomizu‑dera","Abre a las 6:00. A las 7:00 la plataforma es vuestra. ¥500.",["trad"],"Kiyomizu-dera"],
+  ["08:00","Sannenzaka, Ninenzaka y pagoda Yasaka","Calles empedradas vacías antes de que abran las tiendas.",["trad"],"Hokan-ji Yasaka Pagoda"],
+  ["09:00","Café en % Arabica Higashiyama","",["food"],"% Arabica Kyoto Higashiyama"],
+  ["09:30","Yasaka‑jinja, Maruyama y Chion‑in","La puerta de Chion‑in es de las mayores de Japón.",["trad"],"Chion-in"],
+  ["10:45","Nanzen‑ji y el acueducto","Acueducto de ladrillo del XIX dentro del templo. Gratis el recinto.",["trad"],"Nanzen-ji Suirokaku"],
+  ["11:45","Eikan‑do","Los arces arrancan a principios de noviembre. ¥1.000.",["trad"],"Eikando Zenrinji"],
+  ["12:45","Curry udon en Hinode Udon","Local de barrio famoso, ~¥1.000. Hay cola corta.",["food"],"Hinode Udon"],
+  ["13:45","Camino del Filósofo y Honen‑in","2 km de canal. Honen‑in es gratis, con musgo y sin gente.",["trad","hidden"],"Honen-in"],
+  ["15:00","Ginkaku‑ji","El Pabellón de Plata y su jardín de arena. ¥500.",["trad"],"Ginkaku-ji"],
+  ["16:00","Bus al hotel, siesta y envío de maletas a Osaka","",[],null],
+  ["18:00","Gion: Hanamikoji y Shirakawa","Franja de las maiko. Prohibido fotografiar en las calles privadas de Gion (multa de ¥10.000).",["trad","night"],"Gion Shirakawa"],
+  ["19:30","Cena en Gion o Pontocho y bares de Kiyamachi","Viernes: Kiyamachi es la zona de copas de Kyoto.",["food","night"],"Kiyamachi Kyoto"]],
+ food:["Hinode Udon","Gion Duck Noodles (ramen de pato) o izakaya de Pontocho"],warn:["Si os fallan las piernas: bus 5 o taxi de Chion‑in a Nanzen‑ji y saltad Eikan‑do."]},
+
+{id:"d11",date:"2026-11-07",city:"hiroshima",pace:2,title:"Kyoto → Hiroshima: Paz y okonomiyaki",sleep:"Trust Hotel (junto a la estación)",
+ summary:"Primer día del Kansai‑Hiroshima Pass. Solo mochila. El museo es duro: dejad la tarde tranquila después.",
+ items:[
+  ["08:15","JR Kyoto → Shin‑Osaka → Hiroshima","Special Rapid hasta Shin‑Osaka (el tramo Kyoto‑Shin‑Osaka del Shinkansen no entra en el pase) y Sakura/Nozomi hasta Hiroshima, ~1 h 25.",[],null],
+  ["10:30","Dejar mochila en el Trust Hotel","A 10 min de la salida norte de la estación.",[],"Trust Hotel Hiroshima"],
+  ["11:00","Museo Memorial de la Paz","¥200, 1 h 30–2 h. Sábado: id antes de comer para evitar la cola.",["trad"],"Hiroshima Peace Memorial Museum"],
+  ["13:00","Parque de la Paz y Cúpula de la Bomba","Cenotafio, Llama de la Paz y Monumento de los Niños.",["trad"],"Atomic Bomb Dome"],
+  ["13:45","Okonomiyaki en Nagata‑ya","Estilo Hiroshima con fideos, junto a la Cúpula. Alternativa: Okonomimura.",["food"],"Nagataya Hiroshima"],
+  ["15:15","Shukkei‑en","Jardín del XVII con los arces empezando. ¥260.",["trad"],"Shukkeien"],
+  ["16:30","Exterior del castillo y descanso","",[],"Hiroshima Castle"],
+  ["19:30","Nagarekawa","La zona de noche de Hiroshima: ostras (empieza la temporada) y tsukemen picante local.",["food","night"],"Nagarekawa Hiroshima"]],
+ food:["Okonomiyaki estilo Hiroshima","Ostras a la plancha y tsukemen picante"],warn:["El Mazda Museum solo abre entre semana. No encaja en sábado."]},
+
+{id:"d12",date:"2026-11-08",city:"osaka",pace:3,title:"Miyajima por la mañana y a Osaka",sleep:"APA Hotel Namba Shinsaibashi",
+ summary:"Madrugón para ver el torii antes que las excursiones. Salid de la isla a las 14:15 como tarde.",
+ items:[
+  ["07:30","Check‑out y JR a Miyajimaguchi","Mochilas en taquilla de la estación. ~27 min + ferry JR, todo con el pase.",[],"Miyajimaguchi"],
+  ["08:30","Itsukushima‑jinja y torii flotante","¥300. Mirad la tabla de mareas: con marea alta flota, con marea baja se llega andando.",["trad"],"Itsukushima Shrine"],
+  ["09:30","Daisho‑in","Templo en la ladera con cientos de Jizo y un túnel de ruedas de oración. Gratis.",["trad","hidden"],"Daisho-in Miyajima"],
+  ["10:30","Teleférico al monte Misen","¥2.000 ida y vuelta + 30 min a pie hasta la cima. Vistas del mar interior de Seto.",[],"Miyajima Ropeway"],
+  ["13:00","Comida en la isla","Ostras a la plancha, anago‑meshi y momiji manju frito.",["food"],"Omotesando Shopping Street Miyajima"],
+  ["14:15","Ferry, JR a Hiroshima y Shinkansen","Hiroshima → Shin‑Osaka ~1 h 25 y Midosuji a Namba.",[],null],
+  ["17:45","Check‑in en Namba","Las maletas os esperan en el hotel.",[],"APA Hotel Namba Shinsaibashi"],
+  ["19:00","Dotonbori de noche","Glico, takoyaki y Hozenji Yokocho, el callejón con musgo.",["food","night"],"Hozenji Yokocho"]],
+ food:["Anago‑meshi (anguila de mar sobre arroz)","Takoyaki en Wanaka o Kukuru y okonomiyaki en Mizuno (cola)"],
+ warn:["Si hay viento o niebla y el teleférico no compensa, quedaos abajo en Momijidani, el valle de los arces."]},
+
+{id:"d13",date:"2026-11-09",city:"osaka",pace:3,title:"Himeji y Kobe beef",sleep:"APA Hotel Namba Shinsaibashi",
+ summary:"Dos ciudades en un día, pero con trenes de 30–40 min y el pase cubriéndolo todo. El capricho de Kobe va a mediodía, cuando cuesta la mitad.",
+ items:[
+  ["08:15","Metro a Shin‑Osaka y Shinkansen a Himeji","~30 min, con el pase.",[],null],
+  ["09:15","Castillo de Himeji","El castillo original más bonito de Japón. Entrada ~¥2.500 para no residentes desde 2026.",["trad"],"Himeji Castle"],
+  ["11:00","Koko‑en","Jardines junto al castillo, ¥310.",["trad"],"Kokoen Garden"],
+  ["11:45","JR Special Rapid a Sannomiya","~40 min, con el pase.",[],null],
+  ["12:45","Comida de Kobe beef","Menú de mediodía en Steakland Kobe (¥4.000–7.000 con Kobe certificado) o una opción de más nivel si os lo podéis permitir.",["food"],"Steakland Kobe"],
+  ["14:30","ASICS Store Kobe","Asics es de Kobe: zapatillas de vóley y ediciones locales.",["sport"],"ASICS Store Kobe"],
+  ["15:30","Nankinmachi y Meriken Park","Barrio chino y la torre del puerto.",["food"],"Nankinmachi Kobe"],
+  ["17:00","Vistas nocturnas del monte Maya (opcional)","Una de las tres vistas nocturnas más famosas de Japón. Suma 1 h 30.",["hidden","night"],"Kikuseidai Maya"],
+  ["18:45","JR a Osaka y cena en Ura‑Namba","Callejuelas de izakaya baratas detrás de Namba.",["food","night"],"Ura Namba"]],
+ food:["Kobe beef a mediodía","Tachinomi (bares de pie) en Ura‑Namba"],warn:["Reservad Kobe beef con antelación: los locales buenos se llenan a mediodía."]},
+
+{id:"d14",date:"2026-11-10",city:"osaka",pace:2,title:"Osaka: castillo, Den Den Town y Shinsekai",sleep:"APA Hotel Namba Shinsaibashi",
+ summary:"Todo lo pop de Osaka está a pie del hotel. Por la tarde, el Osaka más retro.",
+ items:[
+  ["09:00","Castillo de Osaka","Jardines con otoño. Museo interior ~¥1.200.",["trad"],"Osaka Castle"],
+  ["11:30","Mercado Kuromon","Comida picoteando: brochetas de wagyu, erizo, atún. Hay precios de turista: mirad antes de pedir.",["food"],"Kuromon Market"],
+  ["13:00","Den Den Town","El Akihabara de Osaka: figuras, Super Potato, Surugaya y tiendas de cartas.",["pop","poke"],"Den Den Town"],
+  ["15:00","Namba Yasaka‑jinja","La cabeza de león gigante que se come la mala suerte.",["trad","hidden"],"Namba Yasaka Shrine"],
+  ["16:00","Pokémon Café + Pokémon Center Osaka","Daimaru Shinsaibashi 9F. Café solo con reserva (sale el 1 oct).",["poke","food"],"Pokemon Center Osaka Daimaru Shinsaibashi"],
+  ["17:30","Amerikamura y Mandarake Grand Chaos","Tienda de segunda mano de anime en el barrio joven.",["pop"],"Mandarake Grand Chaos"],
+  ["18:45","Shinsekai y Tsutenkaku","Barrio retro, recreativos antiguos y luces de neón.",["hidden"],"Shinsekai"],
+  ["19:30","Kushikatsu","Daruma o Yaekatsu. No mojéis dos veces en la salsa común.",["food"],"Yaekatsu Shinsekai"]],
+ food:["Kushikatsu en Shinsekai","551 Horai (butaman) para desayunar mañana"],warn:[]},
+
+{id:"d15",date:"2026-11-11",city:"tokyo",pace:1,title:"Vuelta a Tokio y sede de Haikyuu",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Día de transición suave. El omakase de la noche es el gran capricho del viaje.",
+ items:[
+  ["09:00","Desayuno de 551 Horai","Bollos de cerdo al vapor, ~¥250 unidad.",["food"],"551 Horai Namba"],
+  ["10:30","Nozomi Shin‑Osaka → Tokio","~2 h 30. Asiento E para el Fuji. Ojo con las maletas grandes: ver Transporte.",[],null],
+  ["13:30","Check‑in en Kabukicho","Chuo Line de Tokyo a Shinjuku, 15 min.",[],"APA Hotel Shinjuku Kabukicho Tower"],
+  ["14:30","Shinjuku Gyoen","Crisantemos y arces. Última entrada 15:30 en invierno. ¥500.",["trad"],"Shinjuku Gyoen"],
+  ["16:00","Tokyo Metropolitan Gymnasium","A 10 min andando, en Sendagaya: la sede del campeonato de primavera de Haikyuu.",["sport","pop","hidden"],"Tokyo Metropolitan Gymnasium"],
+  ["20:00","Omakase de sushi","Sushi Tokyo Ten (NEWoMan Shinjuku) o similar: ~20 piezas por ¥7.000–10.000. Reservad online.",["food"],"Sushi Tokyo Ten Shinjuku"],
+  ["22:00","Kabukicho","La cabeza de Godzilla y un paseo por Golden Gai.",["night"],"Godzilla Head Shinjuku"]],
+ food:["Omakase (el capricho del viaje)"],warn:[]},
+
+{id:"d16",date:"2026-11-12",city:"tokyo",pace:3,title:"Nikko",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Excursión larga (2 h por trayecto) pero entre semana y con el otoño en su punto en la zona de los santuarios.",
+ items:[
+  ["07:30","Tren a Nikko","Opción A: JR Limited Express Nikko directo desde Shinjuku (pocas salidas al día, reservad). Opción B: Tobu Spacia X desde Asakusa con NIKKO PASS.",[],"Tobu Nikko Station"],
+  ["10:00","Puente Shinkyo","El puente lacado de la entrada, ¥300 por cruzarlo.",["trad"],"Shinkyo Bridge"],
+  ["10:30","Toshogu","Santuario recargado en oro con los tres monos y el gato dormido. ¥1.300, 1 h 30.",["trad"],"Nikko Toshogu"],
+  ["12:15","Taiyuin","Mausoleo del nieto de Ieyasu, igual de bonito y con la mitad de gente.",["trad","hidden"],"Taiyuin Nikko"],
+  ["13:15","Yuba","La piel de tofu de Nikko: yuba soba o yuba‑don, ~¥1.500.",["food"],null],
+  ["14:30","Kanmangafuchi","Paseo de río con 70 Jizo de piedra con gorros rojos.",["trad","hidden"],"Kanmangafuchi Abyss"],
+  ["16:00","Vuelta a Tokio","Llegada sobre las 18:30.",[],null],
+  ["19:30","Tsukemen en Fuunji","El tsukemen más famoso de Shinjuku. Cierra a las 21:00.",["food"],"Fuunji Shinjuku"]],
+ food:["Yuba en Nikko","Fuunji (tsukemen)"],warn:["Intercambiable con el día 13: mirad la previsión el 10 y dejad el día más despejado para el Fuji."]},
+
+{id:"d17",date:"2026-11-13",city:"tokyo",pace:3,title:"Fuji desde Kawaguchiko y noche de viernes",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"El bus sale de Busta Shinjuku, a 5 min del hotel. Por la noche, salida de viernes.",
+ items:[
+  ["07:30","Bus Busta Shinjuku → Kawaguchiko","~1 h 50. Reservad asiento.",[],"Busta Shinjuku"],
+  ["09:45","Pagoda Chureito","Fujikyu a Shimoyoshida y 400 escalones. La foto del Fuji con pagoda y arces.",["trad"],"Chureito Pagoda"],
+  ["11:45","Hoto en Hoto Fudo","Fideos gruesos en miso con calabaza, plato de la zona.",["food"],"Hoto Fudo Kawaguchiko"],
+  ["13:15","Momiji Kairo (corredor de arces)","Orilla norte del lago. En estas fechas suele coincidir con el festival de otoño.",["trad"],"Momiji Corridor Kawaguchiko"],
+  ["14:30","Oishi Park","El Fuji con el lago delante. Bus turístico de línea roja o verde.",[],"Oishi Park"],
+  ["16:30","Bus de vuelta","Llegada 18:30–19:00; los viernes hay atasco.",[],null],
+  ["20:00","Cena en Omoide Yokocho o izakaya","",["food"],null],
+  ["22:00","Noche de viernes","Golden Gai y Kabukicho a pie del hotel, o clubes de Shibuya. Plan B JDM: si Daikoku falló el 30, esta es la noche.",["night","jdm"],"Golden Gai"]],
+ food:["Hoto","Izakaya en Shinjuku"],warn:["Si el Fuji está cubierto, no vayáis: cambiadlo por Nikko."]},
+
+{id:"d18",date:"2026-11-14",city:"tokyo",pace:2,title:"Tsukiji, Ginza, Pokémon Café y la gran noche",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"El mercado exterior de Tsukiji cierra casi entero domingos y algunos miércoles; por eso va aquí.",
+ items:[
+  ["09:00","Tsukiji Outer Market","Desayuno de mercado: tamagoyaki, maguro‑don y erizo.",["food"],"Tsukiji Outer Market"],
+  ["10:45","Ginza","Nissan Crossing (GT‑R y conceptos, gratis), Itoya y la azotea de Ginza Six.",["jdm"],"Nissan Crossing Ginza"],
+  ["12:00","Pokémon Café Tokyo + Pokémon Center Tokyo DX","Nihonbashi Takashimaya, a 15 min andando. Café solo con reserva (1 oct, 11:00).",["poke","food"],"Pokemon Center Tokyo DX"],
+  ["13:30","Tokyo Character Street","Bajo Tokyo Station: Jump Shop, Tomica, Ghibli, Pokémon Store.",["pop"],"Tokyo Character Street"],
+  ["15:00","teamLab Planets u Odaiba (opcional)","teamLab (con reserva) y el Gundam Unicorn de DiverCity.",["pop"],"teamLab Planets Tokyo"],
+  ["18:00","Hotel y siesta","",[],null],
+  ["20:30","Cena en Torikizoku","Izakaya de yakitori a precio fijo (~¥370 plato).",["food"],"Torikizoku Shinjuku"],
+  ["22:00","La gran noche del sábado","Shibuya o Roppongi para clubes; Kabukicho si queréis volver andando. Últimos trenes ~00:30, primeros ~05:00.",["night"],"Shibuya"]],
+ food:["Desayuno en Tsukiji","Torikizoku"],warn:[]},
+
+{id:"d19",date:"2026-11-15",city:"tokyo",pace:1,title:"Domingo libre: vintage, compras y karaoke",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Sin despertador. Compras de última hora con el nuevo sistema tax‑free.",
+ items:[
+  ["11:00","Shimokitazawa","Ropa vintage y ambiente de domingo. Soup curry para comer.",["hidden","food"],"Shimokitazawa"],
+  ["15:00","Últimas compras en Shinjuku","Don Quijote Kabukicho (24 h), Yodobashi y BIC Camera. Guardad pasaporte y tickets.",[],"Don Quijote Kabukicho"],
+  ["19:00","Última cena: sukiyaki libre","Mo‑Mo‑Paradise en Shinjuku: shabu‑shabu o sukiyaki libre, ~¥3.500–4.500.",["food"],"Mo-Mo-Paradise Shinjuku"],
+  ["21:00","Karaoke","Big Echo o Karaoke‑kan, ~¥500–1.000/h pp con bebida libre según plan.",["night"],"Big Echo Shinjuku"]],
+ food:["Soup curry en Shimokita","Sukiyaki libre"],warn:[],alt:"Si os quedó pendiente: Kamakura + Enoshima o Daikoku a primera hora del domingo (6:00–8:30), la franja más tranquila de la semana."},
+
+{id:"d20",date:"2026-11-16",city:"fly",pace:1,title:"Último día y vuelo a las 21:55",sleep:"En el avión",
+ summary:"Mañana libre con las maletas en consigna del hotel. Salid hacia Narita sobre las 17:00.",
+ items:[
+  ["11:00","Check‑out y consigna","El hotel guarda las maletas.",[],null],
+  ["11:30","Lo que quede pendiente","Harajuku o un último Pokémon Center.",["poke"],null],
+  ["17:00","N'EX Shinjuku → Narita","~90 min. Comprobad la terminal de vuestra aerolínea.",[],null],
+  ["18:45","Aeropuerto: tax‑free primero","Desde el 1 de noviembre el tax‑free funciona por devolución: pagáis el IVA en tienda y lo recuperáis validando en el kiosco de aduanas del aeropuerto antes de facturar. No abráis ni uséis lo comprado.",[],"Narita Airport"],
+  ["21:55","Vuelo de vuelta","",[],null]],
+ food:["Último onigiri de kombini"],warn:["Id con tiempo: el nuevo trámite de devolución añade una cola más."]}
+];
+
+const VERDICT=[
+ ["d6","hi-mid","2 nov · Hakone","Viable si el teleférico funciona. Depende del viento y del gas volcánico; el bus lo cubre."],
+ ["d7","mid","3 nov · Hakone → Kyoto","Viable. Festivo: más gente y trenes llenos. Reservad el Shinkansen."],
+ ["d10","hi","6 nov · Higashiyama","El día más andado (~13 km). Viable porque va siempre hacia delante, pero requiere siesta."],
+ ["d12","hi","8 nov · Miyajima → Osaka","Justo. La clave es salir de la isla a las 14:15. Si vais tarde, sacrificad el Misen."],
+ ["d13","hi","9 nov · Himeji + Kobe","Viable: los trenes son de 30–40 min. Lo pesado es caminar Himeji; no metáis más."],
+ ["d16","hi","12 nov · Nikko","4 h de tren en total. Correcto entre semana; evitad Lake Chuzenji, ya fuera de temporada."],
+ ["d17","hi","13 nov · Kawaguchiko","Viable pero dependiente del tiempo. Si hay nubes, cambiad con Nikko."],
+ ["d1","ok","28 oct · Llegada","Sin problema: a las 21:00 estáis en el hotel."],
+ ["d5","ok","1 nov · Día suave","Recuperación después del viernes y sábado."],
+ ["d15","ok","11 nov · Transición","Descanso antes de 3 días seguidos exigentes."],
+ ["d19","ok","15 nov · Domingo libre","Recuperación tras el sábado."]
+];
+
+const FOOD=[
+ {c:"tokyo",h:"Tokio",l:["Yakitori en Omoide Yokocho","Tsukemen en Fuunji","Gyukatsu Motomura","Uobei: sushi por tablet desde ¥110","Monjayaki en Tsukishima (opcional)","Omakase en Sushi Tokyo Ten: el capricho","Desayuno en Tsukiji Outer Market"]},
+ {c:"hakone",h:"Hakone",l:["Cena en el hotel si está incluida","Kuro‑tamago en Owakudani","Soba de montaña"]},
+ {c:"kyoto",h:"Kyoto y Nara",l:["Mercado de Nishiki (junto al hotel)","Curry udon en Hinode Udon","Gyoza en Gion Chao Chao","Yudofu en Nanzen‑ji si queréis el tradicional (Okutan, más caro)","Kakinoha‑zushi y mochi en Nara","Matcha en Uji"]},
+ {c:"hiroshima",h:"Hiroshima y Miyajima",l:["Okonomiyaki estilo Hiroshima (Nagata‑ya, Okonomimura)","Ostras a la plancha","Anago‑meshi","Momiji manju frito"]},
+ {c:"osaka",h:"Osaka y Kobe",l:["Kobe beef a mediodía (Steakland Kobe)","Takoyaki y okonomiyaki en Dotonbori","Kushikatsu en Shinsekai","Kuromon Market","551 Horai para desayunar"]},
+ {c:"fly",h:"Trucos de presupuesto",l:["Kombini para desayunar: onigiri + café, ¥400","Menús de mediodía (teishoku) a mitad de precio","Máquina de tickets en la puerta = barato y rápido","Grandes almacenes a partir de las 19:00: descuentos en la planta de comida (depachika)","El agua y el té en los restaurantes son gratis"]}
+];
+
+/* enlaces de reserva */
+const L={
+ daikoku:["Tour JDM para 4 (GetYourGuide)","https://www.getyourguide.com/tokyo-l193/tokyo-daikoku-jdm-and-tokyo-car-culture-experience-t792970/"],
+ daikokuGyg:["Alternativa en van","https://www.getyourguide.com/daikoku-parking-area-l206855/"],
+ nintendo:["Nintendo Museum","https://museum-tickets.nintendo.com/en/calendar"],
+ resi:["RESI STAY Nishiki","https://resistay.jp/en/facilities/nishiki/"],
+ pokecafe:["Pokémon Café","https://reserve.pokemon-cafe.jp/"],
+ romance:["Romancecar","https://odakyu-global.com/passes/romancecar/"],
+ freepass:["Hakone Free Pass","https://www.odakyu.jp/english/passes/hakone/"],
+ smartex:["SmartEX","https://smart-ex.jp/en/"],
+ kobe:["Steakland Kobe","https://steakland-kobe.jp/en/"],
+ omakase:["Sushi Tokyo Ten (TableCheck)","https://www.tablecheck.com/en/shops/sushitokyo-ten-shinjuku/reserve"],
+ pass:["Kansai‑Hiroshima Pass","https://www.westjr.co.jp/global/en/ticket/pass/kansai_hiroshima/index2.html"],
+ jreast:["JR East (Ltd. Exp. Nikko)","https://www.eki-net.com/en/jreast-train-reservation/Top/Index"],
+ tobu:["Tobu Spacia X","https://www.tobu.co.jp/spaciax/en/"],
+ bus:["Highway Buses","https://www.highway-buses.jp/"],
+ teamlab:["teamLab Planets","https://www.teamlab.art/e/planets/"],
+ kirby:["Kirby Café","https://kirbycafe.jp/"],
+ bragmen:["BragMen (KKday)","https://www.kkday.com/en/product/156548"],
+ vjw:["Visit Japan Web","https://www.vjw.digital.go.jp/"],
+ suica:["Suica","https://www.jreast.co.jp/multi/en/suica/"],
+ fujicam:["Cámaras del Fuji en directo","https://www.fujigoko.tv/"],
+ tenki:["tenki.jp","https://tenki.jp/"]
+};
+/* checklist: [id, título, detalle, fecha ISO en hora de España, [claves de enlace]] */
+const CHECK=[
+ ["daikoku","Tour JDM a Daikoku (30 oct)","Reservad 4 plazas: dos coches en convoy, 2 y 2. Confirmad por Instagram que vais juntos.","2026-09-30T12:00",["daikoku","daikokuGyg"]],
+ ["nintendo","Nintendo Museum (5 nov)","Hay venta de noviembre en su web: mirad huecos para 4.","2026-09-30T12:00",["nintendo"]],
+ ["kirby","Kirby Café Tokyo (29 oct, opcional)","En Solamachi, junto al Pokémon Center Skytree.","2026-09-30T12:00",["kirby"]],
+ ["kyotoluggage","Email a RESI STAY Nishiki","Confirmad que aceptan maletas enviadas por takkyubin antes del check‑in.","2026-10-05T12:00",["resi"]],
+ ["pokecafe","Pokémon Café Osaka (10 nov) y/o Tokyo (14 nov)","Todas las fechas de noviembre salen a la vez.","2026-10-01T11:00",["pokecafe"]],
+ ["romance","Romancecar Shinjuku → Hakone (2 nov)","Con el Hakone Free Pass.","2026-10-02T03:00",["romance","freepass"]],
+ ["odawara","Shinkansen Odawara → Kyoto (3 nov, festivo)","Hikari, asiento E.","2026-10-03T03:00",["smartex"]],
+ ["kobe","Comida de Kobe beef (9 nov)","Reserva para 4 a mediodía.","2026-10-05T12:00",["kobe"]],
+ ["omakase","Omakase en Tokio (11 nov)","Sushi Tokyo Ten o similar.","2026-10-05T12:00",["omakase"]],
+ ["pass","Kansai‑Hiroshima Area Pass (7–11 nov)","Reservad a la vez los asientos de Shinkansen.","2026-10-07T03:00",["pass"]],
+ ["osakatokyo","Shinkansen Shin‑Osaka → Tokyo (11 nov)","Con asiento para equipaje si hace falta.","2026-10-11T03:00",["smartex"]],
+ ["nikko","Tren a Nikko (12 nov)","JR Limited Express Nikko o Tobu Spacia X.","2026-10-12T03:00",["jreast","tobu"]],
+ ["fuji","Bus Shinjuku ↔ Kawaguchiko (13 nov)","Ida por la mañana, vuelta sobre las 16:30.","2026-10-13T03:00",["bus"]],
+ ["teamlab","teamLab Planets (14 nov, opcional)","","2026-10-14T12:00",["teamlab"]],
+ ["bragmen","ONE PIECE FITNESS BragMen (30 oct, opcional)","Pase visitante de 1 h.","2026-10-20T12:00",["bragmen"]],
+ ["vjw","Visit Japan Web","Registro de los 4 con pasaporte para tener el QR.","2026-10-20T12:00",["vjw"]],
+ ["suica","Suica en el móvil y datos","eSIM japonesa o roaming.","2026-10-25T12:00",["suica"]],
+ ["forecast","Previsión del Fuji","Decidid el orden Nikko / Kawaguchiko.","2026-11-10T09:00",["fujicam","tenki"]]
+];
+/* enlaces de reserva dentro de los días: [día, inicio del título, claves] */
+const BOOK=[
+ ["d2","Tokyo Skytree Town",["kirby"]],
+ ["d3","ONE PIECE FITNESS",["bragmen"]],
+ ["d3","Tour JDM",["daikoku","daikokuGyg"]],
+ ["d6","Romancecar",["romance","freepass"]],
+ ["d7","Shinkansen Odawara",["smartex"]],
+ ["d9","Nintendo Museum",["nintendo"]],
+ ["d11","JR Kyoto",["pass"]],
+ ["d13","Comida de Kobe",["kobe"]],
+ ["d14","Pokémon Café",["pokecafe"]],
+ ["d15","Nozomi",["smartex"]],
+ ["d15","Omakase",["omakase"]],
+ ["d16","Tren a Nikko",["jreast","tobu"]],
+ ["d17","Bus Busta",["bus"]],
+ ["d18","Pokémon Café",["pokecafe"]],
+ ["d18","teamLab",["teamlab"]]
+];
+const bookFor=(dayId,title)=>{const b=BOOK.filter(x=>x[0]===dayId&&title.startsWith(x[1])).flatMap(x=>x[2]);return b;};
+const linkHtml=k=>`<a class="booklink" href="${L[k][1]}" target="_blank" rel="noopener noreferrer">${L[k][0]} ↗</a>`;
+function copyUrl(btn){
+  const u=btn.dataset.u, ok=()=>{btn.textContent="Copiado";setTimeout(()=>btn.textContent="Copiar",1600);};
+  const fallback=()=>{let c=btn.parentNode.querySelector("code");if(!c){c=document.createElement("code");c.className="rawurl";c.textContent=u;btn.parentNode.appendChild(c);}const r=document.createRange();r.selectNodeContents(c);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);};
+  try{navigator.clipboard.writeText(u).then(ok,fallback);}catch(e){fallback();}
+}
+
+/* ---------- utilidades ---------- */
+const $=s=>document.querySelector(s);
+const el=(t,a={},h="")=>{const e=document.createElement(t);for(const k in a){if(k==="style")e.style.cssText=a[k];else e.setAttribute(k,a[k]);}if(h)e.innerHTML=h;return e;};
+const DOW=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const MON=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+const parse=d=>{const [y,m,dd]=d.split("-").map(Number);return new Date(y,m-1,dd);};
+const store={get(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const today=new Date();today.setHours(0,0,0,0);
+const tripStart=parse("2026-10-27"), tripEnd=parse("2026-11-16");
+
+/* ---------- cuenta atrás ---------- */
+(function(){
+  const d=Math.round((tripStart-today)/864e5);
+  let t;
+  if(d>0)t=`<b>${d}</b>días para salir`;
+  else if(today<=tripEnd){const n=Math.round((today-tripStart)/864e5);t=`<b>Día ${n}</b>en ruta`;}
+  else t=`<b>おかえり</b>viaje terminado`;
+  $("#count").innerHTML=t;
+})();
+
+/* ---------- ruta ---------- */
+let activeStop=null;
+ROUTE.forEach((r,i)=>{
+  const b=el("button",{class:"stn"+(r.trip?" trip":""),type:"button","aria-pressed":"false",style:`--seg:var(${CITIES[r.city].c})`,"aria-label":`${r.n}, ${r.trip?"excursión de un día, ":""}${r.nt}`});
+  b.innerHTML=`<span class="dot"></span><span class="kj">${r.k||CITIES[r.city].k}</span><span class="ro">${r.n}</span><span class="nt">${r.nt}</span>`;
+  b.addEventListener("click",()=>{
+    activeStop=activeStop===r.id?null:r.id;
+    document.querySelectorAll(".stn").forEach(s=>s.setAttribute("aria-pressed","false"));
+    if(activeStop)b.setAttribute("aria-pressed","true");
+    selectTab("tab-dias");
+    applyStop();
+  });
+  $("#route").appendChild(b);
+});
+function applyStop(){
+  const set=activeStop?new Set(ROUTE.find(r=>r.id===activeStop).days):null;
+  document.querySelectorAll(".day").forEach(d=>{d.hidden=!!set&&!set.has(d.id)});
+  document.querySelectorAll(".datechip").forEach(c=>{c.style.opacity=set&&!set.has(c.dataset.id)?".35":"1"});
+}
+
+/* ---------- días ---------- */
+const collapsed=store.get("jp26-collapsed",{});
+DAYS.forEach((d,i)=>{
+  const dt=parse(d.date), c=CITIES[d.city], isToday=+dt===+today;
+  // chip
+  const chip=el("button",{class:"datechip"+(isToday?" today":""),type:"button","data-id":d.id,style:`--cc:var(${c.c})`,"aria-label":`${DOW[dt.getDay()]} ${dt.getDate()} ${MON[dt.getMonth()]}: ${d.title}`});
+  chip.innerHTML=`<span class="dw">${DOW[dt.getDay()]}</span><span class="dn">${dt.getDate()}</span><span class="ld">${[1,2,3].map(n=>`<i class="${n<=d.pace?"on":""}"></i>`).join("")}</span>`;
+  chip.addEventListener("click",()=>{const t=document.getElementById(d.id);t.classList.remove("collapsed");t.scrollIntoView({behavior:"smooth",block:"start"});});
+  $("#datestrip").appendChild(chip);
+  // card
+  const art=el("article",{class:"day"+(collapsed[d.id]?" collapsed":""),id:d.id,style:`--cc:var(${c.c})`});
+  const paceTxt=["","Tranquilo","Medio","Intenso"][d.pace];
+  art.innerHTML=`
+   <div class="sign" role="button" tabindex="0" aria-expanded="${!collapsed[d.id]}">
+     <div class="num"><b>${dt.getDate()}</b><span>${MON[dt.getMonth()]}</span></div>
+     <h3>${esc(d.title)}</h3>
+     <div class="kanji" aria-hidden="true">${c.k}</div>
+     <div class="meta"><span><b>${DOW[dt.getDay()]}</b> · Día ${i}</span><span class="pace p${d.pace}"><i><s></s><s></s><s></s></i>${paceTxt}</span><span>Noche: ${esc(d.sleep)}</span>${isToday?'<span class="today-badge">HOY</span>':""}</div>
+     <span class="chev"></span>
+   </div>
+   <div class="body">
+     <p class="summary">${esc(d.summary)}</p>
+     <ol class="tl">${d.items.map(it=>{const bk=bookFor(d.id,it[1]);return `
+       <li data-tags="${it[3].join(" ")}"><span class="t">${it[0]}</span><span class="rail"></span>
+       <div class="c"><h4>${esc(it[1])}</h4>${it[2]?`<p>${esc(it[2])}</p>`:""}
+       ${(it[3].length||it[4]||bk.length)?`<div class="row">${it[3].map(t=>`<span class="tag">${TAGS[t]}</span>`).join("")}${bk.map(linkHtml).join("")}${it[4]?`<a class="maplink" href="${M(it[4])}" target="_blank" rel="noopener noreferrer">Mapa ↗</a>`:""}</div>`:""}
+       </div></li>`}).join("")}</ol>
+     <div class="boxes">
+       ${d.food&&d.food.length?`<div class="box food"><h5>Dónde comer</h5><ul>${d.food.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:""}
+       ${d.warn&&d.warn.length?`<div class="box warn"><h5>Aviso</h5><ul>${d.warn.map(f=>`<li>${esc(f)}</li>`).join("")}</ul></div>`:""}
+       ${d.alt?`<div class="box alt"><h5>Plan B</h5><p style="margin:0">${esc(d.alt)}</p></div>`:""}
+     </div>
+   </div>`;
+  const sign=art.querySelector(".sign");
+  const toggle=()=>{art.classList.toggle("collapsed");const cl=art.classList.contains("collapsed");sign.setAttribute("aria-expanded",!cl);collapsed[d.id]=cl;store.set("jp26-collapsed",collapsed);};
+  sign.addEventListener("click",toggle);
+  sign.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  $("#days").appendChild(art);
+});
+
+/* ---------- filtros ---------- */
+let activeTag=null;
+Object.entries(TAGS).forEach(([k,v])=>{
+  const b=el("button",{class:"fchip",type:"button","aria-pressed":"false"},v);
+  b.addEventListener("click",()=>{
+    activeTag=activeTag===k?null:k;
+    document.querySelectorAll(".fchip").forEach(f=>f.setAttribute("aria-pressed","false"));
+    if(activeTag)b.setAttribute("aria-pressed","true");
+    document.querySelectorAll(".tl li").forEach(li=>{
+      const has=li.dataset.tags.split(" ").includes(activeTag);
+      li.classList.toggle("dim",!!activeTag&&!has);
+      li.classList.toggle("hit",!!activeTag&&has);
+    });
+  });
+  $("#filters").appendChild(b);
+});
+
+/* ---------- viabilidad ---------- */
+VERDICT.forEach(([id,lvl,h,p])=>{
+  const col=lvl==="ok"?"--ok":lvl==="mid"?"--warn":"--bad";
+  const lab=lvl==="ok"?'<span class="pill ok">Cómodo</span>':lvl==="mid"?'<span class="pill mid">Exigente</span>':lvl==="hi-mid"?'<span class="pill mid">Depende del clima</span>':'<span class="pill hi">Intenso</span>';
+  const r=el("div",{class:"vrow",style:`--vc:var(${lvl==="hi-mid"?"--warn":col})`});
+  const [dd,rest]=h.split(" · ");
+  r.innerHTML=`<div class="d">${dd}<span>${DAYS.find(x=>x.id===id)?DOW[parse(DAYS.find(x=>x.id===id).date).getDay()]:""}</span></div><div>${lab}<b style="display:inline">${esc(rest)}</b><p>${esc(p)}</p></div>`;
+  $("#verdict").appendChild(r);
+});
+
+/* ---------- comida ---------- */
+FOOD.forEach(f=>{
+  const c=el("div",{class:"card",style:`border-top:5px solid var(${CITIES[f.c].c})`});
+  c.innerHTML=`<h3>${f.h}</h3><ul>${f.l.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+  $("#foodgrid").appendChild(c);
+});
+
+/* ---------- reservas ---------- */
+const done=store.get("jp26-done",{});
+function renderChecks(){
+  const now=new Date();
+  const list=[...CHECK].sort((a,b)=>new Date(a[3])-new Date(b[3]));
+  $("#chk").innerHTML="";
+  list.forEach(([id,t,d,when,links])=>{
+    const w=new Date(when), diff=Math.ceil((w-now)/864e5);
+    let st,cls;
+    if(done[id]){st="Hecho";cls="st-past";}
+    else if(diff<=0){st="Ya: hacedlo";cls="st-now";}
+    else if(diff<=3){st=`en ${diff} día${diff>1?"s":""}`;cls="st-soon";}
+    else {st=`en ${diff} días`;cls="st-later";}
+    const lab=el("div",{class:"item"+(done[id]?" done":"")});
+    lab.innerHTML=`<input type="checkbox" id="c-${id}" ${done[id]?"checked":""}><div class="w"><label for="c-${id}"><b>${esc(t)}</b></label>${d?`<span>${esc(d)}</span>`:""}${links&&links.length?`<div class="links">${links.map(k=>`<span class="lk">${linkHtml(k)}<button type="button" class="copy" data-u="${L[k][1]}" aria-label="Copiar enlace de ${esc(L[k][0])}">Copiar</button></span>`).join("")}</div>`:""}</div><span class="when">${w.getDate()} ${MON[w.getMonth()]} · ${String(w.getHours()).padStart(2,"0")}:${String(w.getMinutes()).padStart(2,"0")}<em class="${cls}">${st}</em></span>`;
+    lab.querySelectorAll(".copy").forEach(btn=>btn.addEventListener("click",()=>copyUrl(btn)));
+    lab.querySelector("input").addEventListener("change",e=>{done[id]=e.target.checked;store.set("jp26-done",done);renderChecks();});
+    $("#chk").appendChild(lab);
+  });
+  const n=CHECK.filter(c=>done[c[0]]).length;
+  $("#prog").style.width=(n/CHECK.length*100)+"%";
+}
+renderChecks();
+
+/* ---------- tabs ---------- */
+function selectTab(id){
+  document.querySelectorAll("#tabs button").forEach(b=>{
+    const on=b.id===id;b.setAttribute("aria-selected",on);
+    document.getElementById(b.getAttribute("aria-controls")).hidden=!on;
+  });
+  store.set("jp26-tab",id);
+}
+document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>selectTab(b.id)));
+const hashMap={itinerario:"tab-dias",viabilidad:"tab-viab",transporte:"tab-trans",comida:"tab-comida",pop:"tab-pop",reservas:"tab-res"};
+selectTab(hashMap[location.hash.slice(1)]||store.get("jp26-tab","tab-dias"));
+
+/* durante el viaje, saltar al día de hoy */
+const td=DAYS.find(d=>+parse(d.date)===+today);
+if(td&&document.getElementById("tab-dias").getAttribute("aria-selected")==="true"){
+  setTimeout(()=>document.getElementById(td.id).scrollIntoView({block:"start"}),50);
+}
+</script>
+
+</body>
+</html>
