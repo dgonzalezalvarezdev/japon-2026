@@ -129,6 +129,9 @@ a{color:var(--accent)}
 .pace.p1 i s:nth-child(1){background:var(--ok)}
 .pace.p2 i s:nth-child(-n+2){background:var(--warn)}
 .pace.p3 i s{background:var(--bad)}
+.chip{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+.chip.wake{background:var(--accent-soft);color:var(--accent);font-family:var(--f-mono)}
+.chip.bag{background:var(--warn-soft);color:var(--warn)}
 .today-badge{background:var(--accent);color:var(--card);font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
 .body{padding:6px 18px 18px;display:grid;gap:14px}
 .day.collapsed .body{display:none}
@@ -370,11 +373,15 @@ tr.total td{font-weight:900;border-bottom:0}
         <li>Vale para metro, JR local, buses, Kintetsu, tranvía de Hiroshima, kombinis y taquillas.</li>
         <li>Calculad ~¥1.000/día en ciudad. Entre 4, un taxi de 15 min (~¥2.000–3.000) a veces sale igual que el bus y ahorra piernas: usad la app GO.</li>
       </ul></div>
-      <div class="card"><h3>Plan de maletas</h3><ul>
-        <li><b>1 nov:</b> maletas grandes Hotel Washington → RESI STAY Nishiki (takkyubin en recepción, ~¥2.000–2.500 c/u). Escribid antes a Kyoto para confirmar que las recogen.</li>
-        <li><b>2–3 nov:</b> Hakone solo con mochila.</li>
-        <li><b>6 nov:</b> maletas Kyoto → APA Namba Shinsaibashi. Hiroshima solo con mochila.</li>
-        <li><b>11 nov:</b> Osaka → Tokio con maletas en el Shinkansen. Si una maleta suma más de 160 cm (alto+ancho+fondo), hay que reservar asiento con espacio para equipaje o pagáis un recargo.</li>
+      <div class="card"><h3>Envío de maletas (takkyubin): cómo funciona</h3><ul>
+        <li><b>Qué es:</b> mensajería de equipaje entre hoteles (Yamato, el gato negro, o Sagawa). La dejáis en un hotel y aparece en el siguiente. Es lo normal en Japón y muy fiable.</li>
+        <li><b>Cómo se hace:</b> en recepción decid «takkyubin, please». Os dan un formulario (los de recepción ayudan) con: nombre y dirección del hotel de destino, vuestro nombre <b>tal como está en la reserva</b> y la <b>fecha de check‑in</b>. Se paga allí, normalmente en efectivo: <b>¥2.000–3.000 por maleta</b> según tamaño.</li>
+        <li><b>Si el hotel no tiene recepción:</b> cualquier konbini (7‑Eleven, Lawson, FamilyMart) lo hace igual en la caja.</li>
+        <li><b>Antes de enviar:</b> escribid a cada hotel de destino para avisar de que llegan maletas antes que vosotros.</li>
+        <li><b>Envío 1, dom 1 nov (Washington → RESI STAY Nishiki, Kyoto):</b> sale el domingo y llega el lunes. Vosotros llegáis el martes 3. <b>Lunes 2 y martes 3: solo mochila</b> (1 noche en Hakone).</li>
+        <li><b>Envío 2, vie 6 nov (RESI STAY → APA Namba Shinsaibashi, Osaka):</b> llega el sábado y vosotros el domingo 8. <b>Sábado 7 y domingo 8: solo mochila</b> (1 noche en Hiroshima).</li>
+        <li><b>11 nov, Osaka → Tokio:</b> con las maletas en el Shinkansen (si alguna suma más de 160 cm, asiento con espacio para equipaje).</li>
+        <li><b>Mochila para 1 noche:</b> 2 mudas de ropa interior y calcetines, 1 camiseta y 1 sudadera de recambio, chubasquero, neceser, cargadores y batería externa, medicinas, pasaporte, Suica y billetes. En Hakone el hotel da yukata para dormir.</li>
       </ul></div>
     </div>
     <div class="sec" style="margin-top:22px">
@@ -401,10 +408,14 @@ tr.total td{font-weight:900;border-bottom:0}
         <li>Cajas selladas solo con el plástico con logo Pokémon. Desconfiad de cajas con film liso.</li>
         <li>Si lo que queréis es la UPC inglesa, sale más barata reservarla en España.</li>
       </ul></div>
-      <div class="card"><h3>Pokémon Centers en vuestra ruta</h3><ul>
-        <li><b>Tokio:</b> Skytree Town (29 oct), Shibuya (30 oct), Mega Tokyo en Ikebukuro, el mayor (31 oct), Tokyo DX en Nihonbashi (14 nov).</li>
-        <li><b>Kyoto:</b> Takashimaya Kyoto, a 5 min del hotel (5 nov).</li>
-        <li><b>Osaka:</b> Daimaru Shinsaibashi 9F, al lado del hotel (10 nov). Osaka DX en Umeda, opcional.</li>
+      <div class="card"><h3>Pokémon Centers: a primera hora</h3><ul>
+        <li>Para cartas, id <b>a la apertura</b>, mejor entre semana: es cuando ponen las reposiciones (con límite por persona).</li>
+        <li><b>29 oct, 10:00 · Skytree Town:</b> el del Rayquaza gigante colgando del techo.</li>
+        <li><b>30 oct · Shibuya:</b> el Mewtwo de la cápsula desapareció en julio de 2026 sin explicación; preguntad si ha vuelto.</li>
+        <li><b>31 oct, 10:00 · Mega Tokyo (Ikebukuro):</b> el más grande.</li>
+        <li><b>5 nov · Kyoto</b> (por la tarde).</li>
+        <li><b>10 nov, 10:00 · Osaka (Daimaru Shinsaibashi).</b></li>
+        <li><b>14 nov, 10:30 · Tokyo DX (Nihonbashi).</b></li>
       </ul></div>
       <div class="card"><h3>JDM y Daikoku: cómo ir siendo 4</h3><ul>
         <li><b>El problema:</b> los coches JDM de estos tours llevan como máximo 3 pasajeros. Los que cobran por coche (Samurai Car Japan / daikokutour.com) os obligan a coger dos coches: ¥95.000 entre semana o ¥104.500 de viernes a domingo, unos ¥24.000–26.000 por persona.</li>
@@ -419,6 +430,16 @@ tr.total td{font-weight:900;border-bottom:0}
         <li><b>Haikyuu!!:</b> el Tokyo Metropolitan Gymnasium de Sendagaya, sede del torneo de primavera, el 11. Merch en Jump Shop y Animate Ikebukuro.</li>
         <li><b>Vóley:</b> calle de tiendas de deporte de Ogawamachi/Kanda (29 oct) y ASICS Store Kobe, la marca es de allí (9 nov). Mirad svleague.jp: si hay partido de SV.League en Tokio u Osaka un día que encaje, ver uno en directo merece la pena.</li>
         <li><b>One Piece:</b> ONE PIECE FITNESS BragMen, Shibuya Modi 9F, pase de visitante de 1 h con pasaporte (30 oct). Cierra el último día de cada mes.</li>
+      </ul></div>
+      <div class="card"><h3>Ruta de anime y videojuegos</h3><ul>
+        <li><b>29 oct · Jimbocho:</b> la cabina de Denji y Reze (Chainsaw Man), Jimbocho 1‑44. Radio Kaikan de Akihabara (Steins;Gate).</li>
+        <li><b>30 oct · Shibuya:</b> Incidente de Shibuya (JJK), Takeshita‑dori (Nobara), y el Shibuya de Persona 5.</li>
+        <li><b>31 oct y 11 nov · Kabukicho = Kamurocho (Yakuza):</b> la puerta roja de Ichibangai, la plaza de Godzilla y Golden Gai. Vuestro segundo hotel está dentro.</li>
+        <li><b>1 nov · Yotsuya:</b> las escaleras de Suga‑jinja de Your Name.</li>
+        <li><b>8 nov · Dotonbori = Sotenbori (Yakuza 0, Like a Dragon):</b> el puente Ebisu del Glico y los pulpos gigantes de los takoyaki.</li>
+        <li><b>11 nov · Sendagaya:</b> el Tokyo Metropolitan Gymnasium de Haikyuu.</li>
+        <li><b>14 nov · MAPPA EXPO</b> en Yurakucho: JJK, Chainsaw Man y Attack on Titan (hasta el 7 dic).</li>
+        <li><b>Opcional · Kamakura:</b> el paso a nivel de Slam Dunk.</li>
       </ul></div>
     </div>
   </section>
@@ -475,261 +496,298 @@ const DAYS=[
  summary:"Tarde de llegada. Lo único importante es salir rápido del aeropuerto y cenar algo bueno cerca del hotel.",
  items:[
   ["17:55","Aterrizaje en Narita","Inmigración y maletas: calculad 60–75 min. Sacad yenes en el cajero 7‑Eleven o JP Bank de la terminal.",[],"Narita International Airport"],
-  ["19:00","Suica y billete de N'EX","Suica en el iPhone o Welcome Suica. N'EX directo a Shinjuku, ~80 min, ¥3.250 con asiento.",[],null],
-  ["20:45","Check‑in en el Washington","8–10 min andando desde la salida sur de Shinjuku. Con maletas y 4 personas, un taxi desde la estación cuesta ~¥1.000.",[],"Shinjuku Washington Hotel"],
-  ["21:30","Omoide Yokocho","Callejón de yakitori bajo las vías, a 10 min. Primera cerveza, brochetas y humo. Algunos puestos cobran ¥300–500 de otoshi (aperitivo obligatorio).",["food","night"],"Omoide Yokocho Shinjuku"]],
+  ["19:00","Suica y billete de N'EX","Suica en el iPhone (Cartera) o Welcome Suica en la máquina. El N'EX se compra en las máquinas JR de la planta B1 de la terminal: destino Shinjuku, ¥3.250 con asiento.",[],"Narita Airport JR station"],
+  ["19:20","N'EX: Narita Aeropuerto → Shinjuku","Andén JR de la terminal (B1). Tren directo, ~80 min, sin cambios. Bajáis en JR Shinjuku.",[],null],
+  ["20:45","Andando: estación de Shinjuku → Washington Hotel","Salid por la salida Sur (South Exit) y caminad 10 min hacia el oeste. Con maletas, taxi desde la parada de la salida Sur: ~¥1.000 entre todos.",[],"Shinjuku Washington Hotel"],
+  ["21:30","Andando: hotel → Omoide Yokocho","10 min hasta la salida Oeste de Shinjuku. Callejón de yakitori bajo las vías. Algunos puestos cobran ¥300–500 de otoshi (aperitivo obligatorio).",["food","night"],"Omoide Yokocho Shinjuku"]],
  food:["Yakitori en Omoide Yokocho (¥2.000–3.000 pp con bebida)","Si queréis ramen: Ichiran Shinjuku abre 24 h"],warn:[]},
 
-{id:"d2",date:"2026-10-29",city:"tokyo",pace:2,title:"Asakusa, Skytree y Akihabara",sleep:"Shinjuku Washington Hotel",
- summary:"El jet lag os despertará pronto: aprovechadlo para ver Senso‑ji vacío. Todo el día en el este de Tokio, sin volver hacia el oeste hasta la noche.",
+{id:"d2",date:"2026-10-29",city:"tokyo",pace:2,wake:"06:15",title:"Asakusa, Skytree, Akihabara y Jimbocho",sleep:"Shinjuku Washington Hotel",
+ summary:"El jet lag os despertará pronto: aprovechadlo para ver Senso‑ji vacío. Todo el día en el este de Tokio y se vuelve directo a Shinjuku por la noche.",
  items:[
+  ["06:50","Hotel → Asakusa","Andando a JR Shinjuku (10 min). JR Chuo Line rápida (naranja) hasta Kanda (13 min) y cambio a la Ginza Line (naranja, metro) hasta Asakusa (10 min). ~40 min puerta a puerta, ~¥400 con Suica.",[],"Asakusa Station"],
   ["07:30","Senso‑ji sin gente","Kaminarimon y la pagoda con luz de mañana. Las tiendas de Nakamise abren sobre las 9:30.",["trad"],"Senso-ji"],
   ["09:00","Desayuno en Asakusa","Melonpan gigante recién hecho en Asakusa Kagetsudo.",["food"],"Asakusa Kagetsudo"],
-  ["10:00","Tokyo Skytree Town (Solamachi)","Pokémon Center Skytree Town, Jump Shop y tienda Ghibli. 20 min andando cruzando el Sumida. El mirador no hace falta: el Tocho es gratis.",["poke","pop"],"Tokyo Solamachi"],
+  ["09:40","Andando: Asakusa → Tokyo Skytree","20 min cruzando el puente Azuma sobre el Sumida.",[],null],
+  ["10:00","Pokémon Center Skytree Town a la apertura","Solamachi 4F. Primera hora = mejor momento para las cartas y las reposiciones. Aquí está el Rayquaza gigante colgando del techo, la foto típica de este centro. Al lado: Jump Shop y tienda Ghibli.",["poke","pop"],"Pokemon Center Skytree Town"],
   ["12:30","Comida en Solamachi","Rokurinsha (tsukemen, 6F) o la planta de restaurantes. Menús de ¥1.000–1.500.",["food"],"Rokurinsha Solamachi"],
-  ["14:00","Akihabara","Radio Kaikan (figuras nuevas), Mandarake Complex (8 plantas de segunda mano), Super Potato (retro), arcades GiGO. Card Rush y Yellow Submarine para cartas Pokémon.",["pop","poke"],"Akihabara Radio Kaikan"],
-  ["17:30","Calle del deporte de Ogawamachi","A 10 min de Akiba. Decenas de tiendas de deporte (Victoria y otras): zapatillas de vóley Asics y Mizuno a precio japonés.",["sport","hidden"],"Ogawamachi sports shops Kanda"],
-  ["19:00","Curry en Jimbocho","Jimbocho, pegado a Ogawamachi, es el barrio del curry de Tokio. Después Chuo Line directa a Shinjuku en 12 min.",["food"],"Jimbocho curry Bondy"]],
+  ["13:30","Oshiage → Akihabara","Hanzomon Line (morada) de Oshiage a Kinshicho (1 parada) y JR Sobu Line (amarilla) hasta Akihabara (7 min). ~20 min, ¥350.",[],"Akihabara Station"],
+  ["14:00","Akihabara","Radio Kaikan (figuras nuevas; el edificio de Steins;Gate), Mandarake Complex (8 plantas de segunda mano), Super Potato (retro), arcades GiGO. Card Rush y Yellow Submarine para cartas Pokémon.",["pop","poke"],"Akihabara Radio Kaikan"],
+  ["16:15","Andando: Akihabara → Jimbocho","~20 min hacia el oeste (o 1 parada de Toei Shinjuku Line desde Iwamotocho).",[],null],
+  ["16:30","Cabina de Chainsaw Man (Reze)","La cabina donde se conocen Denji y Reze, delante de la oficina de Yamato en Jimbocho 1‑44. Salida A5 de la estación de Jimbocho. La luz de 16:00–17:00 es la de la peli. Sin ofrendas y sin bloquear la acera.",["pop","hidden"],"Jinbocho 1-44 phone booth"],
+  ["17:00","Calle del deporte de Ogawamachi","A 5 min de la cabina. Decenas de tiendas de deporte (Victoria y otras): zapatillas de vóley Asics y Mizuno a precio japonés.",["sport","hidden"],"Ogawamachi sports shops Kanda"],
+  ["19:00","Curry en Jimbocho","Jimbocho es el barrio del curry de Tokio: Bondy o Ethiopia.",["food"],"Jimbocho curry Bondy"],
+  ["20:15","Jimbocho → Shinjuku","Toei Shinjuku Line (verde claro) directa de Jimbocho a Shinjuku, ~13 min, ¥280. Salid hacia la salida Sur y 10 min andando al hotel.",[],null]],
  food:["Curry japonés en Jimbocho: Bondy o Ethiopia (¥1.200–1.800)","Alternativa: gyukatsu en Akihabara"],warn:["Día largo de pie. Si os pesa el jet lag, recortad Skytree y dedicad más tiempo a Akihabara."]},
 
-{id:"d3",date:"2026-10-30",city:"tokyo",pace:2,title:"Harajuku, Shibuya y noche JDM en Daikoku",sleep:"Shinjuku Washington Hotel",
+{id:"d3",date:"2026-10-30",city:"tokyo",pace:2,wake:"07:30",title:"Harajuku, Shibuya y noche JDM en Daikoku",sleep:"Shinjuku Washington Hotel",
  summary:"Oeste de Tokio con Meiji Jingu, JJK y todo lo Pokémon/Nintendo de Shibuya. Tarde tranquila para llegar con energía al tour de coches.",
  items:[
-  ["08:30","Comprar Hakone Free Pass + Romancecar","Odakyu Sightseeing Service Center, salida oeste de Shinjuku. 4 Free Pass de 2 días con inicio el 2 nov (¥7.100) y 4 asientos del Romancecar del 2 nov sobre las 9:00 (¥1.200). Todo en papel, sin app.",[],"Odakyu Sightseeing Service Center Shinjuku"],
-  ["09:15","Meiji Jingu","1 parada de Yamanote desde Shinjuku. Bosque, torii gigante y barriles de sake.",["trad"],"Meiji Jingu"],
-  ["10:30","Takeshita‑dori y Cat Street","La calle donde aparece Nobara en JJK. Crepes, ropa y la bajada por Cat Street hacia Shibuya.",["pop"],"Takeshita Street"],
+  ["08:30","Comprar Hakone Free Pass + Romancecar","Odakyu Sightseeing Service Center, salida Oeste de Shinjuku (junto a los tornos de Odakyu). 4 Free Pass de 2 días con inicio el 2 nov (¥7.100) y 4 asientos del Romancecar del 2 nov sobre las 9:00 (¥1.200). Todo en papel, sin app.",[],"Odakyu Sightseeing Service Center Shinjuku"],
+  ["09:00","JR Shinjuku → Harajuku","JR Yamanote Line (verde claro), andén dirección Shibuya/Shinagawa, 2 paradas, 4 min, ¥150.",[],"Harajuku Station"],
+  ["09:15","Meiji Jingu","Sale de la puerta de la estación de Harajuku. Bosque, torii gigante y barriles de sake.",["trad"],"Meiji Jingu"],
+  ["10:30","Takeshita‑dori y Cat Street","Enfrente de la estación de Harajuku. La calle donde aparece Nobara en JJK. Crepes, ropa y la bajada a pie por Cat Street hacia Shibuya (20 min).",["pop"],"Takeshita Street"],
   ["12:30","Gyoza en Harajuku Gyoza‑ro","Local mítico y barato (¥300–600 el plato). Cola rápida.",["food"],"Harajuku Gyoza Ro"],
-  ["14:00","Shibuya Parco 6F","Pokémon Center Shibuya, Nintendo Tokyo, Jump Shop y Capcom Store en la misma planta.",["poke","pop"],"Shibuya PARCO"],
-  ["15:00","Ruta del Incidente de Shibuya","Scramble, Hachiko, el pasaje de Mark City, Shibuya Hikarie y la estación de Meiji‑Jingumae.",["pop"],"Shibuya Scramble Crossing"],
-  ["15:45","ONE PIECE FITNESS BragMen (opcional)","Shibuya Modi 9F. Pase visitante de 1 h con pasaporte, incluye toalla, calzado y proteína temática.",["sport","pop"],"Shibuya MODI"],
+  ["14:00","Shibuya Parco 6F","Pokémon Center Shibuya, Nintendo Tokyo, Jump Shop y Capcom Store en la misma planta. El Mewtwo de la cápsula desapareció de esta tienda en julio de 2026; preguntad si ha vuelto.",["poke","pop"],"Shibuya PARCO"],
+  ["15:00","Ruta del Incidente de Shibuya (JJK) y Persona 5","Scramble, Hachiko, el pasaje de Mark City, Shibuya Hikarie y la estación de Meiji‑Jingumae: JJK. La salida de Hachiko y Center Gai son el Shibuya de Persona 5.",["pop"],"Shibuya Scramble Crossing"],
+  ["15:45","ONE PIECE FITNESS BragMen (opcional)","Shibuya Modi 9F, a 5 min del cruce. Pase visitante de 1 h con pasaporte, incluye toalla, calzado y proteína temática.",["sport","pop"],"Shibuya MODI"],
   ["17:15","Cena rápida en Uobei","Sushi pedido por tablet que llega en carril, desde ¥110 el plato.",["food"],"Uobei Shibuya Dogenzaka"],
-  ["19:00","Tour JDM a Daikoku PA","Siendo 4: dos coches en convoy (máx. 3 por coche), 2 y 2, cambiando de coche en cada parada. Punto de encuentro en Akihabara (~25 min en la Ginza Line desde Shibuya; salid a las 18:15). La hora exacta os la dan al reservar. Duración 3,5–4 h. Viernes: más coches, pero la policía cierra antes.",["jdm","night"],"Daikoku Parking Area"]],
+  ["18:15","Shibuya → Akihabara (encuentro del tour)","Ginza Line (naranja) desde Shibuya hasta Suehirocho, ~27 min, ¥210. El punto exacto os lo mandan al reservar.",[],null],
+  ["19:00","Tour JDM a Daikoku PA","Siendo 4: dos coches en convoy (máx. 3 por coche), 2 y 2, cambiando de coche en cada parada. 3,5–4 h. Viernes: más coches, pero la policía cierra antes. Vuelta: JR Sobu/Chuo de Akihabara a Shinjuku (~20 min); el último tren sale sobre las 00:20.",["jdm","night"],"Daikoku Parking Area"]],
  food:["Uobei (¥1.500 pp saciados)","Ramen de yuzu en Afuri Harajuku si os pilla allí"],warn:["Reservad el tour ya y preguntad qué hacen si cierran Daikoku.","Si hacéis el gym, dejad margen: el tour sale desde Akihabara, no desde Shibuya."]},
 
-{id:"d4",date:"2026-10-31",city:"tokyo",pace:2,title:"Halloween: Ikebukuro, Nakano y Kabukicho",sleep:"Shinjuku Washington Hotel",
- summary:"Mañana tranquila tras la noche de coches. Ikebukuro coincide con el Halloween Cosplay Festival (30 oct–1 nov). Por la noche, Halloween en Shinjuku.",
+{id:"d4",date:"2026-10-31",city:"tokyo",pace:2,wake:"09:00",title:"Halloween: Ikebukuro, Nakano y Kabukicho",sleep:"Shinjuku Washington Hotel",
+ summary:"Mañana tranquila tras la noche de coches. Ikebukuro coincide con el Halloween Cosplay Festival (30 oct–1 nov). Por la noche, Halloween en Shinjuku, que es el Kamurocho de Yakuza.",
  items:[
-  ["10:30","Sunshine City, Ikebukuro","Pokémon Center Mega Tokyo, el más grande de Tokio, y Pikachu Sweets.",["poke"],"Pokemon Center Mega Tokyo"],
-  ["11:30","Animate Ikebukuro y Otome Road","La tienda insignia de Animate: merch de Haikyuu y JJK. Cosplayers del festival por las calles (verlos es gratis).",["pop","sport"],"Animate Ikebukuro"],
-  ["13:30","Ramen en Mutekiya","Tonkotsu legendario de Ikebukuro. Hay cola, pero avanza.",["food"],"Mutekiya Ikebukuro"],
-  ["15:30","Nakano Broadway","20 min vía Shinjuku. Mandarake en decenas de locales: figuras antiguas, cartas y juguetes. Abre de 12:00 a 20:00.",["pop","poke","hidden"],"Nakano Broadway"],
-  ["18:00","Hotel y descanso","Ducha, siesta corta y disfraces si os animáis.",[],null],
-  ["20:00","Yakiniku barato","Yakiniku Like o Gyukatsu Motomura en Shinjuku.",["food"],"Gyukatsu Motomura Shinjuku"],
-  ["21:30","Halloween en Kabukicho y Golden Gai","Shibuya prohíbe beber en la calle en Halloween y se llena de policía. Shinjuku es mejor apuesta y está a pie del hotel.",["night"],"Golden Gai"]],
+  ["09:35","JR Shinjuku → Ikebukuro","JR Yamanote Line, andén dirección Ikebukuro, ~10 min, ¥170. Salida Este y 10 min andando por Sunshine 60‑dori hasta Sunshine City.",[],"Ikebukuro Station"],
+  ["10:00","Pokémon Center Mega Tokyo a la apertura","Sunshine City Alpa 2F, el más grande de Tokio. A primera hora, cartas y reposiciones. Pikachu Sweets al lado.",["poke"],"Pokemon Center Mega Tokyo"],
+  ["11:30","Animate Ikebukuro y Otome Road","La tienda insignia de Animate (5 min andando): merch de Haikyuu y JJK. Cosplayers del festival por las calles (verlos es gratis).",["pop","sport"],"Animate Ikebukuro"],
+  ["13:30","Ramen en Mutekiya","Tonkotsu legendario de Ikebukuro, junto a la salida Este. Hay cola, pero avanza.",["food"],"Mutekiya Ikebukuro"],
+  ["15:00","Ikebukuro → Nakano","JR Yamanote hasta Shinjuku (10 min) y JR Chuo Line rápida (naranja), 1 parada hasta Nakano (5 min). ¥220. Salida Norte y 5 min por la galería Sun Mall.",[],"Nakano Station"],
+  ["15:30","Nakano Broadway","Mandarake en decenas de locales: figuras antiguas, cartas y juguetes. Abre de 12:00 a 20:00.",["pop","poke","hidden"],"Nakano Broadway"],
+  ["17:45","Nakano → hotel","JR Chuo Line rápida a Shinjuku (5 min) y 10 min andando. Ducha, siesta corta y disfraces si os animáis.",[],null],
+  ["20:00","Yakiniku barato","Yakiniku Like o Gyukatsu Motomura, cerca de la salida Este de Shinjuku (15 min andando del hotel).",["food"],"Gyukatsu Motomura Shinjuku"],
+  ["21:30","Halloween en Kabukicho (Kamurocho de Yakuza) y Golden Gai","La puerta roja de Kabukicho Ichibangai es la de Kamurocho, la plaza de la cabeza de Godzilla es el Theater Square del juego y Golden Gai es Champion District. Shibuya prohíbe beber en la calle en Halloween; Shinjuku es mejor apuesta.",["night","pop"],"Kabukicho Ichibangai gate"]],
  food:["Gyukatsu Motomura (¥1.500–2.500)","Golden Gai: cobran entrada por bar (¥500–1.000)"],warn:["Si vais disfrazados al festival de Ikebukuro, hay que registrarse y cambiarse en sus vestuarios. Para mirar no hace falta."]},
 
-{id:"d5",date:"2026-11-01",city:"tokyo",pace:1,title:"El Tokio antiguo que no sale en Instagram",sleep:"Shinjuku Washington Hotel",
- summary:"Domingo de recuperación. Barrios que sobrevivieron a la guerra, poco turismo y tarde libre para enviar maletas.",
+{id:"d5",date:"2026-11-01",city:"tokyo",pace:1,wake:"08:30",title:"El Tokio antiguo y las escaleras de Your Name",sleep:"Shinjuku Washington Hotel",
+ summary:"Domingo de recuperación. Barrios que sobrevivieron a la guerra, poco turismo y tarde libre para preparar mochilas y enviar maletas.",
  items:[
-  ["09:30","Nezu‑jinja","Túnel de torii rojos tipo Fushimi Inari, casi vacío.",["trad","hidden"],"Nezu Shrine"],
-  ["10:30","Yanaka Ginza y templos de Yanaka","Calle comercial de antes de la guerra, gatos y cementerio. Menchi‑katsu de puesto callejero.",["trad","hidden","food"],"Yanaka Ginza"],
-  ["12:30","Ameyoko, Ueno","Mercado bajo las vías: kaisen‑don barato y fruta en palo.",["food"],"Ameyoko"],
-  ["15:30","Enviar maletas a Kyoto","En la recepción del Washington (takkyubin). Llegan en 1–2 días.",[],null],
-  ["17:30","Mirador del Tocho","Gratis, 45 pisos, a 5 min del hotel. Abierto hasta las 22:00.",[],"Tokyo Metropolitan Government Building Observatory"],
-  ["19:30","Tempura en Tsunahachi","Tempura desde 1923 en Shinjuku, menús de ¥2.000–3.000.",["food"],"Tsunahachi Shinjuku"]],
+  ["09:15","Shinjuku → Nezu","Metro: Marunouchi Line (roja) de Shinjuku a Otemachi y cambio a la Chiyoda Line (verde) hasta Nezu. ~30 min, ¥260. Salida 1 y 5 min andando.",[],"Nezu Station"],
+  ["09:45","Nezu‑jinja","Túnel de torii rojos tipo Fushimi Inari, casi vacío.",["trad","hidden"],"Nezu Shrine"],
+  ["10:45","Andando: Nezu → Yanaka Ginza","15 min hacia el norte por las calles de Yanaka. Calle comercial de antes de la guerra, gatos y cementerio. Menchi‑katsu de puesto callejero.",["trad","hidden","food"],"Yanaka Ginza"],
+  ["12:00","Nippori → Ueno","Desde Yanaka Ginza, 5 min andando a JR Nippori. JR Yamanote, 2 paradas hasta Ueno (4 min, ¥150). Salida Shinobazu.",[],null],
+  ["12:15","Ameyoko, Ueno","Mercado bajo las vías: kaisen‑don barato y fruta en palo.",["food"],"Ameyoko"],
+  ["13:45","Ueno → Yotsuya","JR Yamanote hasta Akihabara (3 min) y JR Chuo Line rápida (naranja) hasta Yotsuya (8 min). ~20 min, ¥220.",[],null],
+  ["14:15","Escaleras de Your Name (Suga‑jinja)","Las escaleras del final de la película. 10 min andando desde Yotsuya. Barrio residencial: en silencio.",["pop","hidden"],"Suga Shrine stairs Your Name"],
+  ["15:00","Yotsuya → hotel","JR Chuo Line rápida a Shinjuku (5 min) y 10 min andando.",[],null],
+  ["15:30","Preparar mochilas y enviar maletas a Kyoto","En la recepción del Washington (takkyubin, ver Transporte). Mañana y pasado solo vais con mochila.",[],null],
+  ["17:30","Mirador del Tocho","Gratis, 45 pisos, a 5 min andando del hotel. Abierto hasta las 22:00.",[],"Tokyo Metropolitan Government Building Observatory"],
+  ["19:30","Tempura en Tsunahachi","Salida Este de Shinjuku, 15 min andando del hotel. Tempura desde 1923, menús de ¥2.000–3.000.",["food"],"Tsunahachi Shinjuku"]],
  food:["Tsunahachi (tempura)","Kaisen‑don en Ameyoko (¥1.200–1.800)"],warn:[],
- alt:"Si preferís excursión: Kamakura + Enoshima (1 h desde Shinjuku). Gran Buda, Hase‑dera y el paso a nivel de Slam Dunk. Un domingo va lleno."},
+ alt:"Si preferís excursión: Kamakura + Enoshima (1 h desde Shinjuku en la JR Shonan‑Shinjuku Line). Gran Buda, Hase‑dera y el paso a nivel de Slam Dunk. Un domingo va lleno."},
 
-{id:"d6",date:"2026-11-02",city:"hakone",pace:2,title:"Circuito de Hakone al revés hasta Gora",sleep:"Hakone Yutowa (Gora)",
- summary:"El orden inverso termina en vuestro hotel. Mochilas enviadas desde Yumoto con el Hakone Carry Service para ir ligeros todo el día.",
+{id:"d6",date:"2026-11-02",city:"hakone",pace:2,wake:"07:30",bag:"Solo mochila: las maletas van a Kyoto",title:"Circuito de Hakone al revés hasta Gora",sleep:"Hakone Yutowa (Gora) · media pensión",
+ summary:"El orden inverso termina en vuestro hotel. Solo mochila con ropa para una noche.",
  items:[
-  ["09:00","Romancecar Shinjuku → Hakone‑Yumoto","~85 min. Billetes comprados en Shinjuku el 30 oct. Por el torno pasáis con el Free Pass; el billete del Romancecar solo indica el asiento.",[],"Shinjuku Station Odakyu"],
-  ["10:30","Dejar mochilas en Yumoto","Servicio de entrega de equipaje de la estación al hotel (recogida antes de las 12:30).",[],"Hakone-Yumoto Station"],
-  ["10:45","Bus a Moto‑Hakone","~40 min, cubierto por el Free Pass.",[],null],
-  ["11:30","Hakone‑jinja y la avenida de cedros","El torii en el agua (hay cola para la foto; tras el santuario no) y los cedros de 400 años del antiguo Tokaido.",["trad","hidden"],"Hakone Shrine"],
+  ["08:30","Hotel → estación Odakyu de Shinjuku","10 min andando hasta la salida Oeste. Los andenes del Romancecar están en la planta baja de Odakyu.",[],"Odakyu Shinjuku Station"],
+  ["09:00","Romancecar Shinjuku → Hakone‑Yumoto","~85 min. Por el torno pasáis con el Free Pass; el billete del Romancecar solo indica el asiento.",[],"Shinjuku Station Odakyu"],
+  ["10:30","Bus Hakone‑Yumoto → Moto‑Hakone","Parada nº 3 delante de la estación. Hakone Tozan Bus línea H (o K) hasta Moto‑Hakone‑ko, ~40 min, con el Free Pass.",[],"Hakone-Yumoto Station"],
+  ["11:15","Hakone‑jinja y la avenida de cedros","10 min andando desde la parada. El torii en el agua (hay cola para la foto; tras el santuario no) y los cedros de 400 años del antiguo Tokaido.",["trad","hidden"],"Hakone Shrine"],
   ["12:30","Soba en Moto‑Hakone","Soba fría o tempura soba, ¥1.200–1.500.",["food"],null],
-  ["13:30","Barco pirata a Togendai","~40 min por el lago Ashi, Fuji al fondo si está despejado.",[],"Hakone Sightseeing Cruise Motohakone"],
-  ["14:30","Teleférico a Owakudani","Fumarolas volcánicas y kuro‑tamago (huevo negro, ¥500 los 5).",[],"Owakudani"],
-  ["15:30","Teleférico + funicular a Gora","Sounzan → Gora. El teleférico cierra antes en noviembre: no bajéis de Owakudani más tarde de las 16:15.",[],"Gora Station"],
-  ["16:15","Check‑in, onsen y cena","Check‑in hasta las 18:00. Onsen antes de cenar.",["trad"],"Hakone Yutowa"]],
- food:["Cena en el hotel (confirmad que vuestra tarifa la incluye)","Kuro‑tamago en Owakudani"],
- warn:["Con viento fuerte o gas volcánico cierran el teleférico: el bus de Togendai a Gora sustituye el tramo.","Tatuajes visibles: acceso restringido al baño común. Preguntad por baño privado."]},
+  ["13:30","Barco Moto‑Hakone‑ko → Togendai","Muelle de Moto‑Hakone‑ko, Hakone Sightseeing Cruise (el barco pirata), ~40 min, con el Free Pass. Fuji al fondo si está despejado.",[],"Hakone Sightseeing Cruise Motohakone"],
+  ["14:15","Teleférico Togendai → Owakudani","Estación pegada al muelle. ~25 min. En Owakudani: fumarolas y kuro‑tamago (¥500 los 5).",[],"Owakudani"],
+  ["15:30","Teleférico Owakudani → Sounzan y funicular Sounzan → Gora","~10 + 10 min, con el Free Pass. El teleférico cierra antes en noviembre: no salgáis de Owakudani más tarde de las 16:15.",[],"Gora Station"],
+  ["16:00","Check‑in en Hakone Yutowa","3 min andando desde Gora. Check‑in hasta las 18:00. Onsen antes de cenar.",["trad"],"Hakone Yutowa"],
+  ["18:30","Cena en el hotel (media pensión)","Media pensión = cena y desayuno incluidos. Confirmad la hora de la cena al hacer el check‑in.",["food"],"Hakone Yutowa"]],
+ food:["Cena y desayuno en el hotel (media pensión)","Kuro‑tamago en Owakudani"],
+ warn:["Con viento fuerte o gas volcánico cierran el teleférico: el bus de Togendai a Gora sustituye el tramo (Free Pass).","Tatuajes visibles: acceso restringido al baño común. Preguntad por baño privado."]},
 
-{id:"d7",date:"2026-11-03",city:"kyoto",pace:2,title:"Hakone → Kyoto y Fushimi Inari al atardecer",sleep:"RESI STAY Nishiki",
+{id:"d7",date:"2026-11-03",city:"kyoto",pace:2,wake:"06:45",bag:"Solo mochila hasta Kyoto",title:"Hakone → Kyoto y Fushimi Inari al atardecer",sleep:"RESI STAY Nishiki",
  summary:"Festivo nacional en Japón (Día de la Cultura): más gente en todas partes. Fushimi Inari se vacía a partir del cruce de Yotsutsuji.",
  items:[
-  ["07:00","Onsen de mañana y desayuno","",["trad"],null],
-  ["08:45","Check‑out y Hakone Open‑Air Museum","A 1 parada de Gora. Abre a las 9:00; hay taquillas para las mochilas.",["hidden"],"Hakone Open-Air Museum"],
-  ["10:30","Tozan Railway a Odawara","~1 h con transbordo en Yumoto, cubierto por el Free Pass. Estad en Odawara antes de las 11:45 para comprar ekiben.",[],null],
+  ["07:00","Onsen de mañana y desayuno","Incluido en la media pensión.",["trad"],null],
+  ["08:45","Check‑out y Gora → Chokoku‑no‑mori","Hakone Tozan Railway, 1 parada (3 min), con el Free Pass. El museo abre a las 9:00 y tiene taquillas para las mochilas.",["hidden"],"Hakone Open-Air Museum"],
+  ["10:30","Chokoku‑no‑mori → Hakone‑Yumoto → Odawara","Hakone Tozan Railway hasta Hakone‑Yumoto (~35 min) y cambio en el mismo andén al tren a Odawara (~15 min). Todo con el Free Pass. Estad en Odawara antes de las 11:45 para comprar ekiben.",[],"Odawara Station"],
   ["12:07","Shinkansen Hikari 641 Odawara → Kyoto","✓ Comprado. Vagón 15, asientos 5D 5E 6D 6E (la E da al Fuji). Cada uno con su QR; coged el papel «Seat Information» en el torno. Llegada 14:12.",["food"],"Odawara Station"],
   ["14:15","Recoger el Kansai‑Hiroshima Pass","En Kyoto Station, máquina verde con símbolo de pasaporte (e5489). Reserva 46773 + PIN + tarjeta de David + 4 pasaportes. Detalle en la pestaña Billetes.",[],"Kyoto Station JR ticket office"],
-  ["14:45","JR Nara Line a Inari","5 min desde Kyoto Station.",[],null],
-  ["15:00","Fushimi Inari Taisha","Subid hasta Yotsutsuji (~45 min) para ver la ciudad al atardecer (~16:50) y bajad con los torii iluminados.",["trad"],"Fushimi Inari Taisha"],
-  ["17:45","Keihan hasta Gion‑Shijo y check‑in","Las maletas enviadas desde Tokio os esperan en el hotel.",[],"RESI STAY Nishiki"],
-  ["19:30","Gyoza en Gion Chao Chao","Gyoza crujientes, local pequeño con cola. Luego paseo por Pontocho.",["food","night"],"Gion Chao Chao"]],
+  ["14:45","JR Kyoto → Inari","JR Nara Line (andenes 8–10), tren local, 2 paradas, 5 min, ¥150 con Suica (el pase aún no vale hasta el 7).",[],"Inari Station"],
+  ["15:00","Fushimi Inari Taisha","Nada más llegar, en las oficinas del santuario junto al edificio principal, comprad el mini torii para escribir vuestro nombre: cierran hacia las 16:30. Después subid hasta Yotsutsuji (~45 min) para el atardecer (~16:50) y bajad con los faroles encendidos.",["trad"],"Fushimi Inari Taisha"],
+  ["17:45","Fushimi‑Inari → Gion‑Shijo → hotel","Estación Keihan Fushimi‑Inari (5 min andando desde la entrada), Keihan Line hasta Gion‑Shijo (~10 min, ¥220). Cruzad el puente de Shijo y 15 min andando hasta el hotel. Las maletas enviadas desde Tokio os esperan allí.",[],"RESI STAY Nishiki"],
+  ["19:30","Gyoza en Gion Chao Chao","Junto al río, 15 min andando del hotel. Gyoza crujientes, local pequeño con cola. Luego paseo por Pontocho.",["food","night"],"Gion Chao Chao"]],
  food:["Ekiben en Odawara","Gion Chao Chao o izakaya de Kiyamachi"],warn:["Festivo en Japón: Kyoto Station estará llena. Id directos a la máquina del pase al bajar del tren."]},
 
-{id:"d8",date:"2026-11-04",city:"kyoto",pace:2,title:"Arashiyama profundo y Pabellón Dorado",sleep:"RESI STAY Nishiki",
+{id:"d8",date:"2026-11-04",city:"kyoto",pace:2,wake:"06:15",title:"Arashiyama profundo y Pabellón Dorado",sleep:"RESI STAY Nishiki",
  summary:"El bambú a primera hora y luego al norte, donde casi nadie llega: templo de musgo y 1.200 estatuas de piedra.",
  items:[
-  ["07:15","Hankyu Karasuma → Arashiyama","~20 min desde el hotel.",[],null],
+  ["07:00","Hotel → Arashiyama","5 min andando a la estación Hankyu Karasuma. Hankyu Kyoto Line hasta Katsura y cambio a la línea de Arashiyama. ~20 min, ¥240. Desde Hankyu Arashiyama, 15 min andando cruzando el puente Togetsukyo.",[],"Hankyu Arashiyama Station"],
   ["07:45","Bosque de bambú","Antes de las 8:30 está casi vacío.",["trad"],"Arashiyama Bamboo Grove"],
   ["08:30","Tenryu‑ji","Jardín zen patrimonio UNESCO. Abre a las 8:30.",["trad"],"Tenryu-ji"],
-  ["09:45","Gio‑ji y calle Saga‑Toriimoto","Templo de musgo diminuto y una calle de casas de paja conservada.",["trad","hidden"],"Gio-ji"],
-  ["10:45","Otagi Nenbutsu‑ji","1.200 rakan de piedra con caras distintas, cubiertos de musgo. Casi sin turistas.",["trad","hidden"],"Otagi Nenbutsu-ji"],
+  ["09:45","Andando: Gio‑ji y calle Saga‑Toriimoto","20 min hacia el norte. Templo de musgo diminuto y una calle de casas de paja conservada.",["trad","hidden"],"Gio-ji"],
+  ["10:45","Andando: Otagi Nenbutsu‑ji","15 min más, cuesta arriba. 1.200 rakan de piedra con caras distintas, cubiertos de musgo. Casi sin turistas.",["trad","hidden"],"Otagi Nenbutsu-ji"],
+  ["12:00","Otagi → centro de Arashiyama","Taxi (~¥1.200 entre los 4, 10 min) o bus de Kyoto Bus desde la parada Otagi‑dera‑mae.",[],null],
   ["12:30","Soba en Arashiyama Yoshimura","Vistas al río y al puente Togetsukyo, ~¥1.500.",["food"],"Arashiyama Yoshimura"],
-  ["14:00","Taxi a Kinkaku‑ji","Entre 4, ~¥750 pp y 20 min frente a 45 min de bus.",[],null],
+  ["14:00","Taxi Arashiyama → Kinkaku‑ji","Parada de taxis junto al puente. ~20 min, ~¥3.000 entre los 4 (~¥750 pp) frente a 45 min de bus.",[],null],
   ["14:30","Kinkaku‑ji","El Pabellón Dorado, ¥500. Ryoan‑ji está a 20 min andando si os quedan ganas.",["trad"],"Kinkaku-ji"],
+  ["15:30","Kinkaku‑ji → centro","Bus 12 o 205 desde la parada Kinkakuji‑michi hasta Shijo‑Karasuma (~35 min, ¥230) o taxi (~¥2.500 entre todos).",[],null],
   ["16:15","Mercado de Nishiki","Al lado del hotel. Muchos puestos cierran a las 17:00–18:00: id directos.",["food"],"Nishiki Market"],
-  ["19:30","Cena obanzai","Cocina casera de Kyoto en izakaya del barrio.",["food"],null]],
+  ["19:30","Cena obanzai","Cocina casera de Kyoto en una izakaya del barrio de Nishiki.",["food"],null]],
  food:["Nishiki: tamagoyaki, tako tamago, brochetas de mochi","Obanzai o ramen de Kyoto (caldo de soja espeso)"],warn:[]},
 
-{id:"d9",date:"2026-11-05",city:"kyoto",pace:2,title:"Nara por la mañana y Uji por la tarde",sleep:"RESI STAY Nishiki",
+{id:"d9",date:"2026-11-05",city:"kyoto",pace:2,wake:"07:00",title:"Nara por la mañana y Uji por la tarde",sleep:"RESI STAY Nishiki",
  summary:"Nara a primera hora, antes que los grupos. A la vuelta, parada en Uji, que está en la misma línea JR: matcha y el templo de la moneda de 10 yenes.",
  items:[
-  ["08:15","Kintetsu Kyoto → Kintetsu Nara","~40 min en express, ~¥760 con Suica. La estación está pegada al parque.",[],"Kintetsu Nara Station"],
-  ["09:00","Parque de Nara y Todai‑ji","Ciervos y el Gran Buda (¥800). A esta hora, sin grupos.",["trad"],"Todai-ji"],
-  ["10:15","Nigatsu‑do","Terraza de madera sobre Nara, gratis y tranquila. Muy pocos turistas suben.",["trad","hidden"],"Nigatsu-do Nara"],
-  ["11:00","Kasuga Taisha","Pasillo de 3.000 linternas entre el bosque.",["trad"],"Kasuga Taisha"],
-  ["12:15","Comida en Nara","Mochi de Nakatanidou (el espectáculo de machacarlo) y kakinoha‑zushi.",["food"],"Nakatanidou Nara"],
-  ["13:30","JR Nara → Uji","~35 min por la JR Nara Line, con Suica.",[],null],
-  ["14:15","Byodo‑in","El pabellón del Fénix, el de la moneda de 10 yenes. ¥700.",["trad"],"Byodo-in"],
-  ["15:30","Ujigami‑jinja y matcha en Nakamura Tokichi","El santuario más antiguo de Japón (UNESCO), casi vacío. Después, parfait de matcha en la casa de té de 1854.",["trad","hidden","food"],"Nakamura Tokichi Honten"],
-  ["17:00","JR Uji → Kyoto","~20 min.",[],null],
-  ["18:30","Pokémon Center Kyoto","En Takashimaya Kyoto, a 5 min del hotel. Cierra a las 20:00.",["poke"],"Pokemon Center Kyoto"],
-  ["19:30","Tonkatsu en Katsukura","Cadena de Kyoto, arroz y col sin límite, ~¥2.000.",["food"],"Katsukura Sanjo"]],
+  ["07:45","Hotel → Kintetsu Kyoto","Metro Karasuma Line (verde) de Shijo a Kyoto (2 paradas, 4 min, ¥220). Los andenes Kintetsu están en el lado sur (Hachijo) de Kyoto Station.",[],"Kintetsu Kyoto Station"],
+  ["08:15","Kintetsu Kyoto → Kintetsu Nara","Tren Express (急行) dirección Kintetsu‑Nara (algunos con cambio en Yamato‑Saidaiji, mirad el panel), ~45 min, ¥760 con Suica. No cojáis el Limited Express (特急): lleva suplemento.",[],"Kintetsu Nara Station"],
+  ["09:00","Parque de Nara y Todai‑ji","15 min andando desde la estación. Ciervos y el Gran Buda (¥800). A esta hora, sin grupos.",["trad"],"Todai-ji"],
+  ["10:15","Nigatsu‑do","5 min andando desde Todai‑ji, cuesta arriba. Terraza de madera sobre Nara, gratis y tranquila.",["trad","hidden"],"Nigatsu-do Nara"],
+  ["11:00","Kasuga Taisha","15 min andando por el bosque. Pasillo de 3.000 linternas.",["trad"],"Kasuga Taisha"],
+  ["12:15","Comida en Nara","Mochi de Nakatanidou (el espectáculo de machacarlo) y kakinoha‑zushi, junto a la calle comercial Higashimuki.",["food"],"Nakatanidou Nara"],
+  ["13:30","JR Nara → Uji","15 min andando a la estación JR Nara. JR Nara Line, dirección Kyoto, hasta Uji (~30 min, ¥500 con Suica).",[],"Uji Station JR"],
+  ["14:15","Byodo‑in","10 min andando desde JR Uji. El pabellón del Fénix, el de la moneda de 10 yenes. ¥700.",["trad"],"Byodo-in"],
+  ["15:30","Ujigami‑jinja y matcha en Nakamura Tokichi","El santuario más antiguo de Japón (UNESCO), casi vacío. Después, parfait de matcha en la casa de té de 1854, junto a la estación.",["trad","hidden","food"],"Nakamura Tokichi Honten"],
+  ["17:00","JR Uji → Kyoto → hotel","JR Nara Line hasta Kyoto (~20 min, ¥240) y metro Karasuma Line a Shijo (4 min).",[],null],
+  ["18:30","Pokémon Center Kyoto","En Kyoto Takashimaya S.C., en Shijo‑Kawaramachi, 10 min andando del hotel. Cierra a las 20:00.",["poke"],"Pokemon Center Kyoto"],
+  ["19:30","Tonkatsu en Katsukura","Sanjo, 10 min andando. Arroz y col sin límite, ~¥2.000.",["food"],"Katsukura Sanjo"]],
  food:["Kakinoha‑zushi en Nara","Matcha en Uji","Katsukura (tonkatsu)"],warn:[]},
 
-{id:"d10",date:"2026-11-06",city:"kyoto",pace:3,title:"Higashiyama de sur a norte",sleep:"RESI STAY Nishiki",
- summary:"El día más andado del viaje (~13 km), pero siempre hacia delante. Siesta obligatoria antes de la noche en Gion.",
+{id:"d10",date:"2026-11-06",city:"kyoto",pace:3,wake:"05:45",title:"Higashiyama de sur a norte",sleep:"RESI STAY Nishiki",
+ summary:"El día más andado del viaje (~13 km), pero siempre hacia delante. Siesta obligatoria antes de la noche en Gion. Esta noche se envían las maletas a Osaka.",
  items:[
+  ["06:30","Taxi hotel → Kiyomizu‑dera","A esa hora casi no hay buses: taxi desde la calle Karasuma, ~10 min, ~¥1.500 entre los 4. Pedid «Kiyomizu‑dera».",[],null],
   ["06:45","Kiyomizu‑dera","Abre a las 6:00. A las 7:00 la plataforma es vuestra. ¥500.",["trad"],"Kiyomizu-dera"],
-  ["08:00","Sannenzaka, Ninenzaka y pagoda Yasaka","Calles empedradas vacías antes de que abran las tiendas.",["trad"],"Hokan-ji Yasaka Pagoda"],
-  ["09:00","Café en % Arabica Higashiyama","",["food"],"% Arabica Kyoto Higashiyama"],
-  ["09:30","Yasaka‑jinja, Maruyama y Chion‑in","La puerta de Chion‑in es de las mayores de Japón.",["trad"],"Chion-in"],
-  ["10:45","Nanzen‑ji y el acueducto","Acueducto de ladrillo del XIX dentro del templo. Gratis el recinto.",["trad"],"Nanzen-ji Suirokaku"],
-  ["11:45","Eikan‑do","Los arces arrancan a principios de noviembre. ¥1.000.",["trad"],"Eikando Zenrinji"],
-  ["12:45","Curry udon en Hinode Udon","Local de barrio famoso, ~¥1.000. Hay cola corta.",["food"],"Hinode Udon"],
-  ["13:45","Camino del Filósofo y Honen‑in","2 km de canal. Honen‑in es gratis, con musgo y sin gente.",["trad","hidden"],"Honen-in"],
-  ["15:00","Ginkaku‑ji","El Pabellón de Plata y su jardín de arena. ¥500.",["trad"],"Ginkaku-ji"],
-  ["16:00","Bus al hotel, siesta y envío de maletas a Osaka","",[],null],
-  ["18:00","Gion: Hanamikoji y Shirakawa","Franja de las maiko. Prohibido fotografiar en las calles privadas de Gion (multa de ¥10.000).",["trad","night"],"Gion Shirakawa"],
+  ["07:45","Sannenzaka, Ninenzaka y pagoda Yasaka","Calles empedradas vacías antes de que abran las tiendas.",["trad"],"Hokan-ji Yasaka Pagoda"],
+  ["08:15","Starbucks Ninenzaka Yasaka Chaya","Abre a las 8:00. Un Starbucks en una casa tradicional de 100 años, con salas de tatami arriba (sin zapatos). La colaboración Pokémon × Starbucks empezó el 30 sep: si queda merch, aquí lo veréis.",["food","trad"],"Starbucks Kyoto Ninenzaka Yasaka Chaya"],
+  ["09:15","Andando: Yasaka‑jinja, Maruyama y Chion‑in","10 min hacia el norte. La puerta de Chion‑in es de las mayores de Japón.",["trad"],"Chion-in"],
+  ["10:30","Andando: Nanzen‑ji y el acueducto","20 min desde Chion‑in. Acueducto de ladrillo del XIX dentro del templo. Gratis el recinto.",["trad"],"Nanzen-ji Suirokaku"],
+  ["11:45","Eikan‑do","5 min andando. Los arces arrancan a principios de noviembre. ¥1.000.",["trad"],"Eikando Zenrinji"],
+  ["12:45","Curry udon en Hinode Udon","5 min andando. Local de barrio famoso, ~¥1.000. Hay cola corta.",["food"],"Hinode Udon"],
+  ["13:45","Camino del Filósofo y Honen‑in","2 km de canal hacia el norte. Honen‑in es gratis, con musgo y sin gente.",["trad","hidden"],"Honen-in"],
+  ["15:00","Ginkaku‑ji","Al final norte del camino. El Pabellón de Plata y su jardín de arena. ¥500.",["trad"],"Ginkaku-ji"],
+  ["16:00","Ginkaku‑ji → hotel","Bus 5 o 17 desde la parada Ginkakuji‑michi hasta Shijo‑Karasuma (~35 min, ¥230) o taxi (~¥2.000 entre todos). Siesta y envío de maletas a Osaka en recepción (o en el konbini si no hay recepción).",[],null],
+  ["18:00","Gion: Hanamikoji y Shirakawa","15 min andando del hotel. Franja de las maiko. Prohibido fotografiar en las calles privadas de Gion (multa de ¥10.000).",["trad","night"],"Gion Shirakawa"],
   ["19:30","Cena en Gion o Pontocho y bares de Kiyamachi","Viernes: Kiyamachi es la zona de copas de Kyoto.",["food","night"],"Kiyamachi Kyoto"]],
- food:["Hinode Udon","Gion Duck Noodles (ramen de pato) o izakaya de Pontocho"],warn:["Si os fallan las piernas: bus 5 o taxi de Chion‑in a Nanzen‑ji y saltad Eikan‑do."]},
+ food:["Hinode Udon","Gion Duck Noodles (ramen de pato) o izakaya de Pontocho"],warn:["Si os fallan las piernas: bus 5 o taxi de Chion‑in a Nanzen‑ji y saltad Eikan‑do.","Preparad esta noche la mochila para Hiroshima: las maletas se van a Osaka."]},
 
-{id:"d11",date:"2026-11-07",city:"hiroshima",pace:2,title:"Kyoto → Hiroshima: Paz y okonomiyaki",sleep:"Trust Hotel (junto a la estación)",
+{id:"d11",date:"2026-11-07",city:"hiroshima",pace:2,wake:"07:15",bag:"Solo mochila: las maletas van a Osaka",title:"Kyoto → Hiroshima: Paz y okonomiyaki",sleep:"Trust Hotel (junto a la estación)",
  summary:"Primer día del Kansai‑Hiroshima Pass. Solo mochila. El museo es duro: dejad la tarde tranquila después.",
  items:[
-  ["08:00","Metro Shijo → Kyoto Station","2 paradas, ¥260 con Suica (el metro no entra en el pase).",[],null],
+  ["08:00","Metro Shijo → Kyoto Station","Karasuma Line (verde), 2 paradas, 4 min, ¥220 con Suica (el metro no entra en el pase).",[],null],
   ["08:15","JR Special Rapid Kyoto → Shin‑Osaka","Andenes de la JR Kyoto Line, dirección Osaka (新快速). ~25 min, entra en el pase y no lleva reserva.",[],"Kyoto Station"],
   ["09:02","Nozomi 5 Shin‑Osaka → Hiroshima","✓ Reservado. Vagón 5, asientos 5D 5E 6D 6E. Llegada 10:27. En el torno: pase + billete de asiento.",[],"Shin-Osaka Station"],
-  ["10:30","Dejar mochila en el Trust Hotel","A 10 min de la salida norte de la estación.",[],"Trust Hotel Hiroshima"],
-  ["11:00","Museo Memorial de la Paz","¥200, 1 h 30–2 h. Sábado: id antes de comer para evitar la cola.",["trad"],"Hiroshima Peace Memorial Museum"],
-  ["13:00","Parque de la Paz y Cúpula de la Bomba","Cenotafio, Llama de la Paz y Monumento de los Niños.",["trad"],"Atomic Bomb Dome"],
-  ["13:45","Okonomiyaki en Nagata‑ya","Estilo Hiroshima con fideos, junto a la Cúpula. Alternativa: Okonomimura.",["food"],"Nagataya Hiroshima"],
-  ["15:15","Shukkei‑en","Jardín del XVII con los arces empezando. ¥260.",["trad"],"Shukkeien"],
-  ["16:30","Exterior del castillo y descanso","",[],"Hiroshima Castle"],
-  ["19:30","Nagarekawa","La zona de noche de Hiroshima: ostras (empieza la temporada) y tsukemen picante local.",["food","night"],"Nagarekawa Hiroshima"]],
- food:["Okonomiyaki estilo Hiroshima","Ostras a la plancha y tsukemen picante"],warn:["El Mazda Museum solo abre entre semana. No encaja en sábado."]},
+  ["10:30","Andando: estación → Trust Hotel","Salida Norte (Shinkansen), 10 min. Dejad allí la mochila.",[],"Trust Hotel Hiroshima"],
+  ["11:00","Tranvía a la Cúpula de la Bomba","Desde la parada de tranvía de la estación (salida Sur), línea 2 o 6 hasta Genbaku‑Dome‑mae, ~15 min, ¥240 con Suica (el tranvía no entra en el pase).",[],"Genbaku Dome-mae tram stop"],
+  ["11:15","Museo Memorial de la Paz","¥200, 1 h 30–2 h. Sábado: id antes de comer para evitar la cola.",["trad"],"Hiroshima Peace Memorial Museum"],
+  ["13:15","Parque de la Paz y Cúpula de la Bomba","Cenotafio, Llama de la Paz y Monumento de los Niños.",["trad"],"Atomic Bomb Dome"],
+  ["14:00","Okonomiyaki en Nagata‑ya","Junto a la Cúpula. Estilo Hiroshima con fideos. Alternativa: Okonomimura (10 min andando).",["food"],"Nagataya Hiroshima"],
+  ["15:15","Shukkei‑en","Tranvía o 20 min andando. Jardín del XVII con los arces empezando. ¥260.",["trad"],"Shukkeien"],
+  ["16:30","Exterior del castillo y vuelta al hotel","15 min andando al castillo; vuelta en tranvía a la estación.",[],"Hiroshima Castle"],
+  ["19:30","Nagarekawa","Tranvía a Hatchobori (~10 min). La zona de noche de Hiroshima: ostras (cocinadas) y tsukemen picante local.",["food","night"],"Nagarekawa Hiroshima"]],
+ food:["Okonomiyaki estilo Hiroshima","Ostras a la plancha o fritas (kaki‑fry), nunca crudas","Tsukemen picante"],warn:["El Mazda Museum solo abre entre semana. No encaja en sábado."]},
 
-{id:"d12",date:"2026-11-08",city:"osaka",pace:3,title:"Miyajima por la mañana y a Osaka",sleep:"APA Hotel Namba Shinsaibashi",
+{id:"d12",date:"2026-11-08",city:"osaka",pace:3,wake:"06:30",bag:"Solo mochila hasta Osaka",title:"Miyajima por la mañana y a Osaka",sleep:"APA Hotel Namba Shinsaibashi",
  summary:"Madrugón para ver el torii antes que las excursiones. Salid de la isla a las 14:15 como tarde.",
  items:[
-  ["07:30","Check‑out y JR a Miyajimaguchi","Mochilas en las taquillas de la estación de Hiroshima, no en el hotel. JR ~27 min + ferry JR, todo con el pase.",[],"Miyajimaguchi"],
+  ["07:30","Check‑out y mochilas a las taquillas","Taquillas de la estación de Hiroshima, no en el hotel: a la vuelta no hay tiempo de ir a buscarlas.",[],"Hiroshima Station"],
+  ["07:45","JR Hiroshima → Miyajimaguchi","JR Sanyo Line, dirección Iwakuni, ~27 min, con el pase. Desde la estación, 3 min andando al muelle y ferry JR (10 min, con el pase).",[],"Miyajimaguchi"],
   ["08:30","Itsukushima‑jinja y torii flotante","¥300. Mirad la tabla de mareas: con marea alta flota, con marea baja se llega andando.",["trad"],"Itsukushima Shrine"],
-  ["09:30","Daisho‑in","Templo en la ladera con cientos de Jizo y un túnel de ruedas de oración. Gratis.",["trad","hidden"],"Daisho-in Miyajima"],
-  ["10:30","Teleférico al monte Misen","¥2.000 ida y vuelta + 30 min a pie hasta la cima. Vistas del mar interior de Seto.",[],"Miyajima Ropeway"],
+  ["09:30","Daisho‑in","15 min andando cuesta arriba. Cientos de Jizo y un túnel de ruedas de oración. Gratis.",["trad","hidden"],"Daisho-in Miyajima"],
+  ["10:30","Teleférico al monte Misen","Desde Momijidani (bus lanzadera gratis o 15 min andando). ¥2.000 ida y vuelta + 30 min a pie hasta la cima.",[],"Miyajima Ropeway"],
   ["13:00","Comida en la isla","Ostras a la plancha, anago‑meshi y momiji manju frito.",["food"],"Omotesando Shopping Street Miyajima"],
-  ["14:15","Ferry de vuelta y JR a Hiroshima","El último ferry que os sirve es el de las 14:30. Si la cola del JR es larga, el de Matsudai (~¥200) sale al lado. Recoged las mochilas.",[],null],
-  ["15:33","Sakura 756 Hiroshima → Shin‑Osaka","✓ Reservado. Vagón 4, asientos 12A 12B 13A 13B. Llegada 16:59 y Midosuji a Namba, ~15 min.",[],"Hiroshima Station"],
-  ["17:45","Check‑in en Namba","Las maletas os esperan en el hotel.",[],"APA Hotel Namba Shinsaibashi"],
-  ["19:00","Dotonbori de noche","Glico, takoyaki y Hozenji Yokocho, el callejón con musgo.",["food","night"],"Hozenji Yokocho"]],
+  ["14:15","Ferry de vuelta y JR a Hiroshima","El último ferry que os sirve es el de las 14:30. Si la cola del JR es larga, el de Matsudai (~¥200) sale al lado. JR Sanyo Line a Hiroshima (~27 min) y recoged las mochilas.",[],null],
+  ["15:33","Sakura 756 Hiroshima → Shin‑Osaka","✓ Reservado. Vagón 4, asientos 12A 12B 13A 13B. Llegada 16:59.",[],"Hiroshima Station"],
+  ["17:05","Shin‑Osaka → Namba","Metro Midosuji Line (roja), dirección Tennoji, hasta Shinsaibashi (~15 min, ¥290). Salida 6 y 5 min andando al hotel. Las maletas os esperan allí.",[],"APA Hotel Namba Shinsaibashi"],
+  ["19:00","Dotonbori de noche (Sotenbori de Yakuza)","10 min andando. El puente Ebisu con el Glico es el puente de Sotenbori; los letreros de pulpo gigante de los puestos de takoyaki (Kukuru, Wanaka) son la referencia del juego. Hozenji Yokocho, el callejón con musgo.",["food","night","pop"],"Ebisubashi Glico Sign"]],
  food:["Anago‑meshi (anguila de mar sobre arroz)","Takoyaki en Wanaka o Kukuru y okonomiyaki en Mizuno (cola)"],
- warn:["Si hay viento o niebla y el teleférico no compensa, quedaos abajo en Momijidani, el valle de los arces."]},
+ warn:["Si hay viento o niebla y el teleférico no compensa, quedaos abajo en Momijidani, el valle de los arces.","Ostras siempre cocinadas: noviembre es temporada de norovirus."]},
 
-{id:"d13",date:"2026-11-09",city:"osaka",pace:3,title:"Himeji y Kobe beef",sleep:"APA Hotel Namba Shinsaibashi",
+{id:"d13",date:"2026-11-09",city:"osaka",pace:3,wake:"07:15",title:"Himeji y Kobe beef",sleep:"APA Hotel Namba Shinsaibashi",
  summary:"Dos ciudades en un día, pero con trenes de 30–40 min y el pase cubriéndolo todo. El capricho de Kobe va a mediodía, cuando cuesta la mitad.",
  items:[
-  ["08:15","Metro a Shin‑Osaka y Shinkansen a Himeji","~30 min, con el pase. Vagones sin reserva (自由席, los primeros del tren); no hace falta reservar.",[],null],
-  ["09:15","Castillo de Himeji","El castillo original más bonito de Japón. Entrada ~¥2.500 para no residentes desde 2026.",["trad"],"Himeji Castle"],
+  ["08:00","Shinsaibashi → Shin‑Osaka","Metro Midosuji Line, dirección Senri‑Chuo, ~15 min, ¥290.",[],null],
+  ["08:30","Shinkansen Shin‑Osaka → Himeji","Vagones sin reserva (自由席, los primeros del tren), ~30 min, con el pase. No hace falta reservar.",[],"Himeji Station"],
+  ["09:15","Castillo de Himeji","15 min andando todo recto por Otemae‑dori. El castillo original más bonito de Japón. Entrada ~¥2.500 para no residentes desde 2026.",["trad"],"Himeji Castle"],
   ["11:00","Koko‑en","Jardines junto al castillo, ¥310.",["trad"],"Kokoen Garden"],
-  ["11:45","JR Special Rapid a Sannomiya","~40 min, con el pase.",[],null],
-  ["12:45","Comida de Kobe beef","Menú de mediodía en Steakland Kobe (¥4.000–7.000 con Kobe certificado) o una opción de más nivel si os lo podéis permitir.",["food"],"Steakland Kobe"],
-  ["14:30","ASICS Store Kobe","Asics es de Kobe: zapatillas de vóley y ediciones locales.",["sport"],"ASICS Store Kobe"],
-  ["15:30","Nankinmachi y Meriken Park","Barrio chino y la torre del puerto.",["food"],"Nankinmachi Kobe"],
-  ["17:00","Vistas nocturnas del monte Maya (opcional)","Una de las tres vistas nocturnas más famosas de Japón. Suma 1 h 30.",["hidden","night"],"Kikuseidai Maya"],
-  ["18:45","JR a Osaka y cena en Ura‑Namba","Callejuelas de izakaya baratas detrás de Namba.",["food","night"],"Ura Namba"]],
- food:["Kobe beef a mediodía","Tachinomi (bares de pie) en Ura‑Namba"],warn:["Reservad Kobe beef con antelación: los locales buenos se llenan a mediodía."]},
+  ["11:45","JR Himeji → Sannomiya","JR Special Rapid (新快速), dirección Osaka, ~40 min, con el pase.",[],"Sannomiya Station"],
+  ["12:45","Comida de Kobe beef en Steakland Kobe‑kan","5 min andando de Sannomiya. El cocinero lo hace en la plancha delante de vosotros: primero ajo frito y verduras (brotes de soja, setas, calabaza), luego la carne. El menú de mediodía lleva ensalada, sopa, verduras a la plancha, arroz y café. Kobe certificado (lomo 120 g): ¥6.880; los sets más baratos (desde ~¥3.500) son otros cortes o wagyu: mirad en la carta cuál es Kobe.",["food"],"Steakland Kobe-kan"],
+  ["14:30","ASICS Store Kobe","En Sannomiya. Asics es de Kobe: zapatillas de vóley y ediciones locales.",["sport"],"ASICS Store Kobe"],
+  ["15:30","Andando: Nankinmachi y Meriken Park","15 min hacia el puerto. Barrio chino y la torre del puerto.",["food"],"Nankinmachi Kobe"],
+  ["17:00","Vistas nocturnas del monte Maya (opcional)","Una de las tres vistas nocturnas más famosas de Japón. Suma 1 h 30 (bus + funicular).",["hidden","night"],"Kikuseidai Maya"],
+  ["18:45","Kobe → Namba","JR Special Rapid de Motomachi o Sannomiya a Osaka (~25 min, con el pase) y metro Midosuji de Umeda a Namba (8 min, ¥240). Cena en Ura‑Namba: callejuelas de izakaya baratas detrás de Namba.",["food","night"],"Ura Namba"]],
+ food:["Kobe beef a mediodía","Tachinomi (bares de pie) en Ura‑Namba"],warn:["Reservad Kobe beef con antelación (EPARK o por teléfono): los locales buenos se llenan a mediodía."]},
 
-{id:"d14",date:"2026-11-10",city:"osaka",pace:2,title:"Osaka: castillo, Den Den Town y Shinsekai",sleep:"APA Hotel Namba Shinsaibashi",
+{id:"d14",date:"2026-11-10",city:"osaka",pace:2,wake:"08:45",title:"Osaka: Pokémon a primera hora, castillo, Den Den Town y Shinsekai",sleep:"APA Hotel Namba Shinsaibashi",
  summary:"Todo lo pop de Osaka está a pie del hotel. Por la tarde, el Osaka más retro.",
  items:[
-  ["09:00","Castillo de Osaka","Jardines con otoño. Museo interior ~¥1.200.",["trad"],"Osaka Castle"],
-  ["11:30","Mercado Kuromon","Comida picoteando: brochetas de wagyu, erizo, atún. Hay precios de turista: mirad antes de pedir.",["food"],"Kuromon Market"],
-  ["13:00","Den Den Town","El Akihabara de Osaka: figuras, Super Potato, Surugaya y tiendas de cartas.",["pop","poke"],"Den Den Town"],
-  ["15:00","Namba Yasaka‑jinja","La cabeza de león gigante que se come la mala suerte.",["trad","hidden"],"Namba Yasaka Shrine"],
-  ["16:00","Pokémon Center Osaka","Daimaru Shinsaibashi 9F, a 5 min del hotel. Merch exclusivo de Osaka.",["poke"],"Pokemon Center Osaka Daimaru Shinsaibashi"],
-  ["17:30","Amerikamura y Mandarake Grand Chaos","Tienda de segunda mano de anime en el barrio joven.",["pop"],"Mandarake Grand Chaos"],
-  ["18:45","Shinsekai y Tsutenkaku","Barrio retro, recreativos antiguos y luces de neón.",["hidden"],"Shinsekai"],
-  ["19:30","Kushikatsu","Daruma o Yaekatsu. No mojéis dos veces en la salsa común.",["food"],"Yaekatsu Shinsekai"]],
+  ["10:00","Pokémon Center Osaka a la apertura","Daimaru Shinsaibashi 9F, 5 min andando del hotel. Martes por la mañana: el mejor momento para cartas y reposiciones.",["poke"],"Pokemon Center Osaka Daimaru Shinsaibashi"],
+  ["11:00","Shinsaibashi → Castillo de Osaka","Metro Nagahori Tsurumi‑ryokuchi Line (verde claro) de Shinsaibashi a Tanimachi‑Rokuchome y cambio a la Tanimachi Line hasta Tanimachi‑Yonchome (~15 min, ¥240). 15 min andando al castillo.",[],"Tanimachi 4-chome Station"],
+  ["11:30","Castillo de Osaka","Jardines con otoño. Museo interior ~¥1.200.",["trad"],"Osaka Castle"],
+  ["13:15","Castillo → Kuromon","Metro Chuo Line a Sakaisuji‑Hommachi y Sakaisuji Line a Nippombashi (~15 min, ¥240). Salida 10.",[],null],
+  ["13:30","Mercado Kuromon","Comida picoteando: brochetas de wagyu, erizo, atún. Hay precios de turista: mirad antes de pedir.",["food"],"Kuromon Market"],
+  ["14:45","Andando: Den Den Town","5 min. El Akihabara de Osaka: figuras, Super Potato, Surugaya y tiendas de cartas.",["pop","poke"],"Den Den Town"],
+  ["16:15","Andando: Namba Yasaka‑jinja","10 min. La cabeza de león gigante que se come la mala suerte.",["trad","hidden"],"Namba Yasaka Shrine"],
+  ["17:00","Andando: Amerikamura y Mandarake Grand Chaos","15 min. Tienda de segunda mano de anime en el barrio joven.",["pop"],"Mandarake Grand Chaos"],
+  ["18:30","Namba → Shinsekai","Metro Midosuji Line de Namba a Dobutsuen‑mae (2 paradas, 5 min, ¥240). Salida 5. Barrio retro, recreativos antiguos y la torre Tsutenkaku.",["hidden"],"Shinsekai"],
+  ["19:30","Kushikatsu","Daruma o Yaekatsu. No mojéis dos veces en la salsa común. Vuelta: Dobutsuen‑mae → Shinsaibashi, Midosuji (8 min).",["food"],"Yaekatsu Shinsekai"]],
  food:["Kushikatsu en Shinsekai","551 Horai (butaman) para desayunar mañana"],warn:[]},
 
-{id:"d15",date:"2026-11-11",city:"tokyo",pace:1,title:"Vuelta a Tokio y sede de Haikyuu",sleep:"APA Hotel Shinjuku Kabukicho Tower",
- summary:"Día de transición suave. El omakase de la noche es el gran capricho del viaje.",
+{id:"d15",date:"2026-11-11",city:"tokyo",pace:1,wake:"08:15",title:"Vuelta a Tokio, sede de Haikyuu y udon carbonara",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Día de transición suave, con maletas hasta el mediodía. Por la noche, el udon carbonara viral.",
  items:[
-  ["09:00","Desayuno de 551 Horai","Bollos de cerdo al vapor, ~¥250 unidad.",["food"],"551 Horai Namba"],
+  ["09:00","Desayuno de 551 Horai","Bollos de cerdo al vapor, ~¥250 unidad, en Namba.",["food"],"551 Horai Namba"],
+  ["09:45","Shinsaibashi → Shin‑Osaka con maletas","Metro Midosuji Line, ~15 min, ¥290. Después de las 9:30 ya no va lleno.",[],"Shin-Osaka Station"],
   ["10:30","Nozomi Shin‑Osaka → Tokio","Pendiente: sale a la venta el 11 oct (SmartEX). ~2 h 30. Asiento E para el Fuji. Si alguna maleta suma más de 160 cm, asiento «with oversized baggage area».",[],"Shin-Osaka Station"],
-  ["13:30","Check‑in en Kabukicho","Chuo Line de Tokyo a Shinjuku, 15 min.",[],"APA Hotel Shinjuku Kabukicho Tower"],
-  ["14:30","Shinjuku Gyoen","Crisantemos y arces. Última entrada 15:30 en invierno. ¥500.",["trad"],"Shinjuku Gyoen"],
-  ["16:00","Tokyo Metropolitan Gymnasium","A 10 min andando, en Sendagaya: la sede del campeonato de primavera de Haikyuu.",["sport","pop","hidden"],"Tokyo Metropolitan Gymnasium"],
-  ["20:00","Omakase de sushi","Sushi Tokyo Ten (NEWoMan Shinjuku) o similar: ~20 piezas por ¥7.000–10.000. Reservad online.",["food"],"Sushi Tokyo Ten Shinjuku"],
-  ["22:00","Kabukicho","La cabeza de Godzilla y un paseo por Golden Gai.",["night"],"Godzilla Head Shinjuku"]],
- food:["Omakase (el capricho del viaje)"],warn:[]},
+  ["13:00","Tokyo → Shinjuku","JR Chuo Line rápida (naranja), andén 1–2 de Tokyo Station, ~15 min, ¥210. Salida Este y 10 min andando hasta el hotel, en el norte de Kabukicho.",[],"APA Hotel Shinjuku Kabukicho Tower"],
+  ["14:15","Andando: hotel → Shinjuku Gyoen","20 min hasta la puerta Shinjuku (o Marunouchi Line a Shinjuku‑Gyoemmae, 2 paradas). Crisantemos y arces. Última entrada 15:30. ¥500.",["trad"],"Shinjuku Gyoen"],
+  ["15:45","Tokyo Metropolitan Gymnasium","Saliendo por la puerta Sendagaya del parque, 5 min andando. La sede del campeonato de primavera de Haikyuu.",["sport","pop","hidden"],"Tokyo Metropolitan Gymnasium"],
+  ["16:30","Sendagaya → Yoyogi: Udon Shin","JR Sobu Line (amarilla), 1 parada a Yoyogi (2 min), y 3 min andando. Udon carbonara (con tempura de beicon). Hay que coger número en la máquina de la puerta y esperar: id pronto, ver horario y cola el mismo día.",["food"],"Udon Shin Yoyogi"],
+  ["21:00","Kabukicho = Kamurocho","La ruta Yakuza de noche: puerta de Ichibangai, plaza de Godzilla, Golden Gai. A pie del hotel.",["night","pop"],"Godzilla Head Shinjuku"]],
+ food:["Udon carbonara en Udon Shin","551 Horai"],warn:["Udon Shin puede tener 1–3 h de espera. Si es muy larga, coged número y dad una vuelta por Shinjuku mientras."]},
 
-{id:"d16",date:"2026-11-12",city:"tokyo",pace:3,title:"Nikko",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+{id:"d16",date:"2026-11-12",city:"tokyo",pace:3,wake:"06:15",title:"Nikko",sleep:"APA Hotel Shinjuku Kabukicho Tower",
  summary:"Excursión larga (2 h por trayecto) pero entre semana y con el otoño en su punto en la zona de los santuarios.",
  items:[
-  ["07:30","Tobu desde Asakusa a Nikko","Metro a Asakusa (~30 min). Allí comprad el NIKKO PASS (~¥2.120 ida y vuelta + buses de Nikko) y coged tren sin suplemento con transbordo en Shimo‑Imaichi, ~2 h 20. Sin reserva.",[],"Tobu Asakusa Station"],
-  ["10:00","Puente Shinkyo","El puente lacado de la entrada, ¥300 por cruzarlo.",["trad"],"Shinkyo Bridge"],
-  ["10:30","Toshogu","Santuario recargado en oro con los tres monos y el gato dormido. ¥1.300, 1 h 30.",["trad"],"Nikko Toshogu"],
-  ["12:15","Taiyuin","Mausoleo del nieto de Ieyasu, igual de bonito y con la mitad de gente.",["trad","hidden"],"Taiyuin Nikko"],
+  ["06:50","Hotel → Asakusa","Andando a JR Shinjuku salida Este (10 min). JR Chuo Line rápida a Kanda (13 min) y Ginza Line a Asakusa (10 min). ~40 min, ~¥400.",[],"Tobu Asakusa Station"],
+  ["07:40","Tobu Asakusa → Tobu Nikko","En la estación Tobu de Asakusa (edificio Matsuya), comprad el NIKKO PASS (~¥2.120 ida y vuelta + buses de Nikko). Tren sin suplemento con transbordo en Shimo‑Imaichi, ~2 h 20. Sin reserva.",[],"Tobu Asakusa Station"],
+  ["10:00","Bus Tobu Nikko → Shinkyo","Bus Tobu desde la estación (con el pase), ~5 min, o 20 min andando cuesta arriba.",[],"Shinkyo Bridge"],
+  ["10:15","Puente Shinkyo","El puente lacado de la entrada, ¥300 por cruzarlo.",["trad"],"Shinkyo Bridge"],
+  ["10:30","Toshogu","10 min andando. Santuario recargado en oro con los tres monos y el gato dormido. ¥1.300, 1 h 30.",["trad"],"Nikko Toshogu"],
+  ["12:15","Taiyuin","10 min andando. Mausoleo del nieto de Ieyasu, igual de bonito y con la mitad de gente.",["trad","hidden"],"Taiyuin Nikko"],
   ["13:15","Yuba","La piel de tofu de Nikko: yuba soba o yuba‑don, ~¥1.500.",["food"],null],
-  ["14:30","Kanmangafuchi","Paseo de río con 70 Jizo de piedra con gorros rojos.",["trad","hidden"],"Kanmangafuchi Abyss"],
-  ["16:00","Vuelta a Tokio","Llegada sobre las 18:30.",[],null],
-  ["19:30","Tsukemen en Fuunji","El tsukemen más famoso de Shinjuku. Cierra a las 21:00.",["food"],"Fuunji Shinjuku"]],
+  ["14:30","Andando: Kanmangafuchi","20 min. Paseo de río con 70 Jizo de piedra con gorros rojos.",["trad","hidden"],"Kanmangafuchi Abyss"],
+  ["16:00","Vuelta a Tokio","Bus a Tobu Nikko, tren a Asakusa (transbordo en Shimo‑Imaichi) y Ginza Line + JR Chuo a Shinjuku. Llegada sobre las 19:00.",[],null],
+  ["19:30","Tsukemen en Fuunji","Salida Sur de Shinjuku. El tsukemen más famoso de Shinjuku. Cierra a las 21:00.",["food"],"Fuunji Shinjuku"]],
  food:["Yuba en Nikko","Fuunji (tsukemen)"],warn:["Intercambiable con el día 13: mirad la previsión el 10 y dejad el día más despejado para el Fuji."]},
 
-{id:"d17",date:"2026-11-13",city:"tokyo",pace:3,title:"Fuji desde Kawaguchiko y noche de viernes",sleep:"APA Hotel Shinjuku Kabukicho Tower",
- summary:"El bus sale de Busta Shinjuku, a 5 min del hotel. Por la noche, salida de viernes.",
+{id:"d17",date:"2026-11-13",city:"tokyo",pace:3,wake:"06:30",title:"Fuji desde Kawaguchiko y noche de viernes",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"El bus sale de Busta Shinjuku, a 15 min andando del hotel. Por la noche, salida de viernes.",
  items:[
-  ["07:30","Bus Busta Shinjuku → Kawaguchiko","~1 h 50. Reservad asiento.",[],"Busta Shinjuku"],
-  ["09:45","Pagoda Chureito","Fujikyu a Shimoyoshida y 400 escalones. La foto del Fuji con pagoda y arces.",["trad"],"Chureito Pagoda"],
-  ["11:45","Hoto en Hoto Fudo","Fideos gruesos en miso con calabaza, plato de la zona.",["food"],"Hoto Fudo Kawaguchiko"],
-  ["13:15","Momiji Kairo (corredor de arces)","Orilla norte del lago. En estas fechas suele coincidir con el festival de otoño.",["trad"],"Momiji Corridor Kawaguchiko"],
-  ["14:30","Oishi Park","El Fuji con el lago delante. Bus turístico de línea roja o verde.",[],"Oishi Park"],
-  ["16:30","Bus de vuelta","Llegada 18:30–19:00; los viernes hay atasco.",[],null],
+  ["07:10","Andando: hotel → Busta Shinjuku","15 min hasta la salida Sur / New South. Busta es la terminal de buses en la 4ª planta, encima de la estación.",[],"Busta Shinjuku"],
+  ["07:30","Bus Busta Shinjuku → Kawaguchiko Station","Pendiente de reservar (13 oct). ~1 h 50.",[],"Kawaguchiko Station"],
+  ["09:30","Tren Fujikyu Kawaguchiko → Shimoyoshida","Desde la misma estación de Kawaguchiko, ~15 min, ~¥400 (con Suica). 10 min andando hasta la escalinata.",[],"Shimoyoshida Station"],
+  ["09:50","Pagoda Chureito","400 escalones. La foto del Fuji con pagoda y arces.",["trad"],"Chureito Pagoda"],
+  ["11:15","Tren de vuelta a Kawaguchiko y hoto","Fujikyu a Kawaguchiko (~15 min). Hoto Fudo, a 5 min de la estación: fideos gruesos en miso con calabaza.",["food"],"Hoto Fudo Kawaguchiko"],
+  ["13:00","Bus turístico a Momiji Kairo","Retro bus línea roja (Kawaguchiko Line) desde la estación, ~25 min; pase de 2 días ~¥1.700. Corredor de arces en la orilla norte; en estas fechas suele coincidir con el festival de otoño.",["trad"],"Momiji Corridor Kawaguchiko"],
+  ["14:30","Oishi Park","Siguiente parada de la línea roja. El Fuji con el lago delante.",[],"Oishi Park"],
+  ["15:45","Bus a la estación y bus de vuelta","Línea roja a Kawaguchiko Station (~25 min). Bus a Busta Shinjuku sobre las 16:30; llegada 18:30–19:00 (los viernes hay atasco).",[],null],
   ["20:00","Cena en Omoide Yokocho o izakaya","",["food"],null],
   ["22:00","Noche de viernes","Golden Gai y Kabukicho a pie del hotel, o clubes de Shibuya. Plan B JDM: si Daikoku falló el 30, esta es la noche.",["night","jdm"],"Golden Gai"]],
  food:["Hoto","Izakaya en Shinjuku"],warn:["Si el Fuji está cubierto, no vayáis: cambiadlo por Nikko."]},
 
-{id:"d18",date:"2026-11-14",city:"tokyo",pace:2,title:"Tsukiji, Ginza, Pokémon Tokyo DX y la gran noche",sleep:"APA Hotel Shinjuku Kabukicho Tower",
- summary:"El mercado exterior de Tsukiji cierra casi entero domingos y algunos miércoles; por eso va aquí.",
+{id:"d18",date:"2026-11-14",city:"tokyo",pace:3,wake:"07:30",title:"Tsukiji, Pokémon DX, sushi, expo de MAPPA y Shibuya Sky",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Día cargado y noche grande. Todo está en la misma zona (Tsukiji–Nihonbashi–Marunouchi–Ginza) y se acaba en Shibuya al atardecer.",
  items:[
-  ["09:00","Tsukiji Outer Market","Desayuno de mercado: tamagoyaki, maguro‑don y erizo.",["food"],"Tsukiji Outer Market"],
-  ["10:45","Ginza","Nissan Crossing (GT‑R y conceptos, gratis), Itoya y la azotea de Ginza Six.",["jdm"],"Nissan Crossing Ginza"],
-  ["12:00","Pokémon Center Tokyo DX","Nihonbashi Takashimaya, a 15 min andando de Ginza. Comed antes en Ginza (menús de mediodía).",["poke"],"Pokemon Center Tokyo DX"],
-  ["13:30","Tokyo Character Street","Bajo Tokyo Station: Jump Shop, Tomica, Ghibli, Pokémon Store.",["pop"],"Tokyo Character Street"],
-  ["15:00","teamLab Planets u Odaiba (opcional)","teamLab (con reserva) y el Gundam Unicorn de DiverCity.",["pop"],"teamLab Planets Tokyo"],
-  ["18:00","Hotel y siesta","",[],null],
+  ["08:15","Hotel → Tsukiji","Toei Oedo Line (magenta) desde Higashi‑Shinjuku (8 min andando del hotel) hasta Tsukijishijo, ~20 min, ¥280.",[],"Tsukijishijo Station"],
+  ["08:45","Tsukiji Outer Market (desayuno ligero)","Tamagoyaki, brochetas y algo de fruta. Ligero: a mediodía toca sushi.",["food"],"Tsukiji Outer Market"],
+  ["10:00","Tsukiji → Nihonbashi","Hibiya Line a Ginza y Ginza Line a Nihonbashi, ~12 min, ¥180. Salida B1 directa a Takashimaya.",[],null],
+  ["10:30","Pokémon Center Tokyo DX a la apertura","Nihonbashi Takashimaya S.C. 5F. Primera hora: cartas y reposiciones.",["poke"],"Pokemon Center Tokyo DX"],
+  ["11:45","Omakase de mediodía en Manten Sushi Marunouchi","10 min andando hacia Tokyo Station. Menú de mediodía ~¥4.400, sin reserva: llegad antes de las 12:00 y haced cola. El cocinero os va sirviendo pieza a pieza en la barra.",["food"],"Manten Sushi Marunouchi"],
+  ["13:30","MAPPA EXPO (15.º aniversario)","Yurakucho Museum, Tokyo International Forum B1, 5 min andando. JJK, Chainsaw Man y Attack on Titan. Segunda parte del 28 oct al 7 dic. Entrada con día y hora (~¥2.000–2.200): compradla antes.",["pop"],"Tokyo International Forum"],
+  ["15:00","Andando: Ginza","5 min. Nissan Crossing (GT‑R y conceptos, gratis) y la azotea de Ginza Six.",["jdm"],"Nissan Crossing Ginza"],
+  ["15:45","Ginza → Shibuya","Ginza Line (naranja) directa, ~16 min, ¥210.",[],null],
+  ["16:15","Shibuya Sky al atardecer","Azotea del Shibuya Scramble Square, la del ascensor‑cápsula y la terraza de cristal de TikTok. Atardecer sobre las 16:35. ~¥3.400 online después de las 15:00. Mochilas en taquillas (¥100). Abajo, la Paradise Lounge (46F) es un bar con DJ.",["night"],"Shibuya Sky"],
+  ["17:30","Shibuya → hotel y siesta","JR Yamanote a Shinjuku (7 min).",[],null],
   ["20:30","Cena en Torikizoku","Izakaya de yakitori a precio fijo (~¥370 plato).",["food"],"Torikizoku Shinjuku"],
   ["22:00","La gran noche del sábado","Shibuya o Roppongi para clubes; Kabukicho si queréis volver andando. Últimos trenes ~00:30, primeros ~05:00.",["night"],"Shibuya"]],
- food:["Desayuno en Tsukiji","Torikizoku"],warn:[]},
+ food:["Desayuno ligero en Tsukiji","Omakase de mediodía (~¥4.400)","Torikizoku"],warn:["Día cargado antes de la gran noche: si vais justos, saltad Ginza."]},
 
-{id:"d19",date:"2026-11-15",city:"tokyo",pace:1,title:"Domingo libre: vintage, compras y karaoke",sleep:"APA Hotel Shinjuku Kabukicho Tower",
- summary:"Sin despertador. Compras de última hora con el nuevo sistema tax‑free.",
+{id:"d19",date:"2026-11-15",city:"tokyo",pace:1,wake:"10:00",title:"Domingo libre: vintage, compras y karaoke",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Sin prisa. Compras de última hora con el nuevo sistema tax‑free.",
  items:[
-  ["11:00","Shimokitazawa","Ropa vintage y ambiente de domingo. Soup curry para comer.",["hidden","food"],"Shimokitazawa"],
-  ["15:00","Últimas compras en Shinjuku","Don Quijote Kabukicho (24 h), Yodobashi y BIC Camera. Guardad pasaporte y tickets.",[],"Don Quijote Kabukicho"],
+  ["11:00","Shinjuku → Shimokitazawa","Odakyu Line desde Shinjuku (Express), ~10 min, ¥170.",[],"Shimokitazawa Station"],
+  ["11:15","Shimokitazawa","Ropa vintage y ambiente de domingo. Soup curry para comer.",["hidden","food"],"Shimokitazawa"],
+  ["15:00","Últimas compras en Shinjuku","Odakyu de vuelta a Shinjuku. Don Quijote Kabukicho (24 h), Yodobashi y BIC Camera. Guardad pasaporte y tickets.",[],"Don Quijote Kabukicho"],
   ["19:00","Última cena: sukiyaki libre","Mo‑Mo‑Paradise en Shinjuku: shabu‑shabu o sukiyaki libre, ~¥3.500–4.500.",["food"],"Mo-Mo-Paradise Shinjuku"],
   ["21:00","Karaoke","Big Echo o Karaoke‑kan, ~¥500–1.000/h pp con bebida libre según plan.",["night"],"Big Echo Shinjuku"]],
  food:["Soup curry en Shimokita","Sukiyaki libre"],warn:[],alt:"Si os quedó pendiente: Kamakura + Enoshima o Daikoku a primera hora del domingo (6:00–8:30), la franja más tranquila de la semana."},
 
-{id:"d20",date:"2026-11-16",city:"fly",pace:1,title:"Último día y vuelo a las 21:55",sleep:"En el avión",
+{id:"d20",date:"2026-11-16",city:"fly",pace:1,wake:"09:30",title:"Último día y vuelo a las 21:55",sleep:"En el avión",
  summary:"Mañana libre con las maletas en consigna del hotel. Salid hacia Narita sobre las 17:00.",
  items:[
   ["11:00","Check‑out y consigna","El hotel guarda las maletas.",[],null],
   ["11:30","Lo que quede pendiente","Harajuku o un último Pokémon Center.",["poke"],null],
-  ["17:00","N'EX Shinjuku → Narita","~90 min. Comprobad la terminal de vuestra aerolínea.",[],null],
+  ["16:30","Hotel → JR Shinjuku","Recoged maletas. 10 min andando hasta la salida Este (o taxi, ~¥800).",[],null],
+  ["17:00","N'EX Shinjuku → Narita","Andenes del N'EX en JR Shinjuku, ~90 min. Comprad el billete en la máquina JR (¥3.250). Comprobad la terminal de vuestra aerolínea.",[],null],
   ["18:45","Aeropuerto: tax‑free primero","Desde el 1 de noviembre el tax‑free funciona por devolución: pagáis el IVA en tienda y lo recuperáis validando en el kiosco de aduanas del aeropuerto antes de facturar. No abráis ni uséis lo comprado.",[],"Narita Airport"],
   ["21:55","Vuelo de vuelta","",[],null]],
  food:["Último onigiri de kombini"],warn:["Id con tiempo: el nuevo trámite de devolución añade una cola más."]}
@@ -743,6 +801,7 @@ const VERDICT=[
  ["d13","hi","9 nov · Himeji + Kobe","Viable: los trenes son de 30–40 min. Lo pesado es caminar Himeji; no metáis más."],
  ["d16","hi","12 nov · Nikko","4 h de tren en total. Correcto entre semana; evitad Lake Chuzenji, ya fuera de temporada."],
  ["d17","hi","13 nov · Kawaguchiko","Viable pero dependiente del tiempo. Si hay nubes, cambiad con Nikko."],
+ ["d18","hi","14 nov · Sábado completo","Mucho en poco espacio y luego noche grande. Si vais muertos, saltad Ginza."],
  ["d1","ok","28 oct · Llegada","Sin problema: a las 21:00 estáis en el hotel."],
  ["d5","ok","1 nov · Día suave","Recuperación después del viernes y sábado."],
  ["d15","ok","11 nov · Transición","Descanso antes de 3 días seguidos exigentes."],
@@ -750,11 +809,12 @@ const VERDICT=[
 ];
 
 const FOOD=[
- {c:"tokyo",h:"Tokio",l:["Yakitori en Omoide Yokocho","Tsukemen en Fuunji","Gyukatsu Motomura","Uobei: sushi por tablet desde ¥110","Monjayaki en Tsukishima (opcional)","Omakase en Sushi Tokyo Ten: el capricho","Desayuno en Tsukiji Outer Market"]},
+ {c:"tokyo",h:"Tokio",l:["Yakitori en Omoide Yokocho","Tsukemen en Fuunji","Gyukatsu Motomura","Uobei: sushi por tablet desde ¥110","Monjayaki en Tsukishima (opcional)","Omakase de mediodía: Manten Sushi Marunouchi (~¥4.400, sin reserva) o Sushidan en Hiroo (¥3.500)","Udon carbonara en Udon Shin (Yoyogi)","Desayuno en Tsukiji Outer Market"]},
  {c:"hakone",h:"Hakone",l:["Cena en el hotel si está incluida","Kuro‑tamago en Owakudani","Soba de montaña"]},
  {c:"kyoto",h:"Kyoto y Nara",l:["Mercado de Nishiki (junto al hotel)","Curry udon en Hinode Udon","Gyoza en Gion Chao Chao","Yudofu en Nanzen‑ji si queréis el tradicional (Okutan, más caro)","Kakinoha‑zushi y mochi en Nara","Matcha en Uji"]},
  {c:"hiroshima",h:"Hiroshima y Miyajima",l:["Okonomiyaki estilo Hiroshima (Nagata‑ya, Okonomimura)","Ostras a la plancha","Anago‑meshi","Momiji manju frito"]},
  {c:"osaka",h:"Osaka y Kobe",l:["Kobe beef a mediodía (Steakland Kobe)","Takoyaki y okonomiyaki en Dotonbori","Kushikatsu en Shinsekai","Kuromon Market","551 Horai para desayunar"]},
+ {c:"hiroshima",h:"Si alguien se pone malo",l:["Suero oral OS‑1 (経口補水液) o Pocari Sweat: en farmacias y konbini","Okayu (お粥, gachas de arroz) en sobre o vaso, plátanos y udon sencillo","Gelatinas bebibles (ゼリー飲料) si no entra nada sólido","Farmacia (Matsumoto Kiyoshi, Sundrug, Welcia): Seirogan (正露丸) para la diarrea, Ohta Isan (太田胃散) para el estómago revuelto, Biofermin (ビオフェルミン) probióticos. Enseñad la palabra japonesa al farmacéutico y leed el prospecto","Ostras siempre cocinadas: noviembre es temporada de norovirus","Si hay fiebre alta, sangre o más de 24 h vomitando: médico. Japan Visitor Hotline (24 h, en inglés): 050‑3816‑2787. Llevad el seguro de viaje a mano"]},
  {c:"fly",h:"Trucos de presupuesto",l:["Kombini para desayunar: onigiri + café, ¥400","Menús de mediodía (teishoku) a mitad de precio","Máquina de tickets en la puerta = barato y rápido","Grandes almacenes a partir de las 19:00: descuentos en la planta de comida (depachika)","El agua y el té en los restaurantes son gratis"]}
 ];
 
@@ -767,6 +827,9 @@ const L={
  freepass:["Hakone Free Pass","https://www.odakyu.jp/english/passes/hakone/"],
  smartex:["SmartEX","https://smart-ex.jp/en/"],
  kobe:["Steakland Kobe","https://steakland-kobe.jp/en/"],
+ kobeEpark:["Reservar (EPARK, Kobe‑kan)","https://epark.jp/shopinfo/fsp413748/"],
+ mappa:["MAPPA EXPO (info)","https://www.timeout.com/tokyo/things-to-do/mappa-expo-15th-anniversary"],
+ shibuyasky:["Shibuya Sky","https://www.shibuya-scramble-square.com/sky/"],
  omakase:["Sushi Tokyo Ten (TableCheck)","https://www.tablecheck.com/en/shops/sushitokyo-ten-shinjuku/reserve"],
  pass:["Kansai‑Hiroshima Pass","https://www.westjr.co.jp/global/en/ticket/pass/kansai_hiroshima/index2.html"],
  jreast:["JR East (Ltd. Exp. Nikko)","https://www.eki-net.com/en/jreast-train-reservation/Top/Index"],
@@ -785,11 +848,11 @@ const CHECK=[
  ["pass","Kansai‑Hiroshima Area Pass (7–11 nov)","Reserva 46773 con Nozomi 5 (7 nov) y Sakura 756 (8 nov) ya reservados.","2026-10-08T11:00",["pass"],true],
  ["daikoku","Tour JDM a Daikoku (30 oct)","Reservad 4 plazas: dos coches en convoy, 2 y 2. Confirmad por Instagram que vais juntos.","2026-09-30T12:00",["daikoku","daikokuGyg"]],
  ["kyotoluggage","Email a RESI STAY Nishiki","Confirmad que aceptan maletas enviadas por takkyubin antes del check‑in.","2026-10-05T12:00",["resi"]],
- ["kobe","Comida de Kobe beef (9 nov)","Reserva para 4 a mediodía.","2026-10-05T12:00",["kobe"]],
- ["omakase","Omakase en Tokio (11 nov)","Sushi Tokyo Ten o similar.","2026-10-05T12:00",["omakase"]],
+ ["kobe","Comida de Kobe beef (9 nov)","Steakland Kobe‑kan, 4 personas, ~12:45.","2026-10-05T12:00",["kobeEpark","kobe"]],
+ ["mappa","Entradas MAPPA EXPO (14 nov, ~13:30)","Con día y hora. Segunda parte del 28 oct al 7 dic.","2026-10-08T12:00",["mappa"]],
+ ["shibuyasky","Shibuya Sky al atardecer (14 nov, ~16:15)","Mirad ya en la web oficial; si aún no están, salen semanas antes a las 00:00 de Japón (17:00 en España) y las de atardecer vuelan.","2026-10-17T17:00",["shibuyasky"]],
  ["osakatokyo","Shinkansen Shin‑Osaka → Tokyo (11 nov)","Nozomi sobre las 10:30, D‑E en dos filas. Asiento con espacio para maletas si alguna pasa de 160 cm.","2026-10-11T03:00",["smartex"]],
  ["fuji","Bus Shinjuku ↔ Kawaguchiko (13 nov)","Ida 7:30 desde Busta Shinjuku, vuelta sobre las 16:30.","2026-10-13T03:00",["bus"]],
- ["teamlab","teamLab Planets (14 nov, opcional)","","2026-10-14T12:00",["teamlab"]],
  ["bragmen","ONE PIECE FITNESS BragMen (30 oct, opcional)","Pase visitante de 1 h.","2026-10-20T12:00",["bragmen"]],
  ["vjw","Visit Japan Web","Registro de los 4 con pasaporte para tener el QR.","2026-10-20T12:00",["vjw"]],
  ["suica","Suica en el móvil y datos","eSIM japonesa o roaming.","2026-10-25T12:00",["suica"]],
@@ -801,11 +864,11 @@ const CHECK=[
 const BOOK=[
  ["d3","ONE PIECE FITNESS",["bragmen"]],
  ["d3","Tour JDM",["daikoku","daikokuGyg"]],
- ["d13","Comida de Kobe",["kobe"]],
+ ["d13","Comida de Kobe",["kobeEpark","kobe"]],
+ ["d18","MAPPA",["mappa"]],
+ ["d18","Shibuya Sky",["shibuyasky"]],
  ["d15","Nozomi",["smartex"]],
- ["d15","Omakase",["omakase"]],
  ["d17","Bus Busta",["bus"]],
- ["d18","teamLab",["teamlab"]]
 ];
 const bookFor=(dayId,title)=>{const b=BOOK.filter(x=>x[0]===dayId&&title.startsWith(x[1])).flatMap(x=>x[2]);return b;};
 const linkHtml=k=>`<a class="booklink" href="${L[k][1]}" target="_blank" rel="noopener noreferrer">${L[k][0]} ↗</a>`;
@@ -873,7 +936,7 @@ DAYS.forEach((d,i)=>{
      <div class="num"><b>${dt.getDate()}</b><span>${MON[dt.getMonth()]}</span></div>
      <h3>${esc(d.title)}</h3>
      <div class="kanji" aria-hidden="true">${c.k}</div>
-     <div class="meta"><span><b>${DOW[dt.getDay()]}</b> · Día ${i}</span><span class="pace p${d.pace}"><i><s></s><s></s><s></s></i>${paceTxt}</span><span>Noche: ${esc(d.sleep)}</span>${isToday?'<span class="today-badge">HOY</span>':""}</div>
+     <div class="meta"><span><b>${DOW[dt.getDay()]}</b> · Día ${i}</span><span class="pace p${d.pace}"><i><s></s><s></s><s></s></i>${paceTxt}</span><span>Noche: ${esc(d.sleep)}</span>${d.wake?`<span class="chip wake">Despertador ${d.wake}</span>`:""}${d.bag?`<span class="chip bag">${esc(d.bag)}</span>`:""}${isToday?'<span class="today-badge">HOY</span>':""}</div>
      <span class="chev"></span>
    </div>
    <div class="body">
