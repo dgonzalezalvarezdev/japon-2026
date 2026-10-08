@@ -51,5 +51,5 @@ y añade debajo:
 
 - El repo tiene que ser público para usar Pages gratis. Si no quieres que se indexe, añade `<meta name="robots" content="noindex">` en el `<head>`.
 - Lo que cada uno marca en la pestaña Reservas se guarda en su propio navegador (localStorage), no se comparte entre vosotros.
-- Enlaces directos a una pestaña: `#itinerario`, `#viabilidad`, `#transporte`, `#comida`, `#pop`, `#reservas`.
+- Enlaces directos a una pestaña: `#itinerario`, `#billetes`, `#viabilidad`, `#transporte`, `#comida`, `#pop`, `#reservas`.
 - Para actualizar: edita `index.html`, `git commit` y `git push`. Pages se redespliega solo.
