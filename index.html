@@ -238,7 +238,8 @@ tr.total td{font-weight:900;border-bottom:0}
 .ticket .train small{font-weight:500;color:var(--muted);margin-left:6px}
 .tpill{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
 .tpill.done{background:var(--ok-soft);color:var(--ok)} .tpill.todo{background:var(--bad-soft);color:var(--bad)} .tpill.site{background:var(--accent-soft);color:var(--accent)}
-.ticket .route2{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end}
+.ticket .route2{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px;align-items:end}
+.ticket .stn2 .n{overflow-wrap:anywhere;display:block}
 .ticket .stn2{min-width:0}
 .ticket .stn2.r{text-align:right}
 .ticket .stn2 .k{font-family:var(--f-display);font-size:20px;line-height:1;display:block}
@@ -257,6 +258,35 @@ tr.total td{font-weight:900;border-bottom:0}
   .ticket{grid-template-columns:60px 1fr}.ticket .stub b{font-size:24px}
   .ticket .stn2 .k{font-size:16px}.ticket .stn2 .h{font-size:17px}
 }
+/* hoteles */
+.bagflow{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:0}
+.bagflow li{display:grid;grid-template-columns:76px 14px 1fr;gap:0 10px}
+.bagflow .d{font-family:var(--f-mono);font-size:12px;font-weight:600;padding-top:8px;text-align:right}
+.bagflow .r{position:relative}
+.bagflow .r::before{content:"";position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--line)}
+.bagflow li:first-child .r::before{top:12px}.bagflow li:last-child .r::before{bottom:calc(100% - 12px)}
+.bagflow .r::after{content:"";position:absolute;left:1px;top:9px;width:12px;height:12px;border-radius:3px;background:var(--cc)}
+.bagflow .t{padding-block:6px 10px;font-size:14px;min-width:0}
+.bagflow .t b{display:block;font-size:14px}
+.bagflow .t span{color:var(--muted)}
+.bagflow li.pack .r::after{background:var(--card);border:2px solid var(--warn);width:8px;height:8px}
+.hotels{display:grid;gap:14px}
+.hotel{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.hotel .hd{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;padding:14px 16px;border-bottom:5px solid var(--cc)}
+.hotel .hd .k{grid-row:span 2;font-family:var(--f-display);font-size:28px;color:var(--cc);line-height:1}
+.hotel .hd h3{margin:0;font-size:17px;font-weight:900;line-height:1.25}
+.hotel .hd .dt{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.hotel .meals{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 0}
+.meal{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--line);color:var(--muted)}
+.meal.on{background:var(--ok-soft);color:var(--ok)}
+.hotel dl{margin:0;padding:10px 16px 16px;display:grid;grid-template-columns:120px 1fr;gap:8px 14px;font-size:14px}
+.hotel dt{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.hotel dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.hotel dd ul{margin:0;padding-left:18px}
+.hotel dd li+li{margin-top:3px}
+.pend{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn);margin-left:4px;white-space:nowrap}
+.okc{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--ok-soft);color:var(--ok);margin-left:4px;white-space:nowrap}
+@media (max-width:560px){.hotel dl{grid-template-columns:1fr;gap:2px}.hotel dd{margin-bottom:8px}.bagflow li{grid-template-columns:56px 14px 1fr}}
 .foot{margin-top:30px;color:var(--muted);font-size:13px;display:grid;gap:4px}
 
 @media (max-width:560px){
@@ -290,6 +320,7 @@ tr.total td{font-weight:900;border-bottom:0}
   <div class="tabs" role="tablist" id="tabs">
     <button role="tab" id="tab-dias" aria-controls="p-dias" aria-selected="true">Itinerario</button>
     <button role="tab" id="tab-bil" aria-controls="p-bil" aria-selected="false">Billetes</button>
+    <button role="tab" id="tab-hot" aria-controls="p-hot" aria-selected="false">Hoteles</button>
     <button role="tab" id="tab-viab" aria-controls="p-viab" aria-selected="false">Viabilidad</button>
     <button role="tab" id="tab-trans" aria-controls="p-trans" aria-selected="false">Transporte</button>
     <button role="tab" id="tab-comida" aria-controls="p-comida" aria-selected="false">Comida</button>
@@ -320,6 +351,18 @@ tr.total td{font-weight:900;border-bottom:0}
     <div class="tickets" id="t-todo"></div>
     <h3 class="tgroup">Se compran allí (no hace falta reservar)</h3>
     <div class="tickets" id="t-site"></div>
+  </section>
+
+  <!-- ============ HOTELES ============ -->
+  <section class="panel" id="p-hot" role="tabpanel" aria-labelledby="tab-hot" hidden>
+    <div class="sec">
+      <h2><small>6 alojamientos · 19 noches</small>Dónde dormimos, qué incluye y por dónde van las maletas</h2>
+      <p>Todas las reservas están a nombre de David González Álvarez. Lo marcado como «pendiente» es una pregunta que les hemos mandado y aún no han contestado.</p>
+    </div>
+    <h3 class="tgroup">Ruta de las maletas</h3>
+    <ol class="bagflow" id="bagflow"></ol>
+    <h3 class="tgroup">Hoteles</h3>
+    <div class="hotels" id="hotels"></div>
   </section>
 
   <!-- ============ VIABILIDAD ============ -->
@@ -378,9 +421,9 @@ tr.total td{font-weight:900;border-bottom:0}
         <li><b>Cómo se hace:</b> en recepción decid «takkyubin, please». Os dan un formulario (los de recepción ayudan) con: nombre y dirección del hotel de destino, vuestro nombre <b>tal como está en la reserva</b> y la <b>fecha de check‑in</b>. Se paga allí, normalmente en efectivo: <b>¥2.000–3.000 por maleta</b> según tamaño.</li>
         <li><b>Si el hotel no tiene recepción:</b> cualquier konbini (7‑Eleven, Lawson, FamilyMart) lo hace igual en la caja.</li>
         <li><b>Antes de enviar:</b> escribid a cada hotel de destino para avisar de que llegan maletas antes que vosotros.</li>
-        <li><b>Envío 1, dom 1 nov (Washington → RESI STAY Nishiki, Kyoto):</b> sale el domingo y llega el lunes. Vosotros llegáis el martes 3. <b>Lunes 2 y martes 3: solo mochila</b> (1 noche en Hakone).</li>
-        <li><b>Envío 2, vie 6 nov (RESI STAY → APA Namba Shinsaibashi, Osaka):</b> llega el sábado y vosotros el domingo 8. <b>Sábado 7 y domingo 8: solo mochila</b> (1 noche en Hiroshima).</li>
-        <li><b>11 nov, Osaka → Tokio:</b> con las maletas en el Shinkansen (si alguna suma más de 160 cm, asiento con espacio para equipaje).</li>
+        <li><b>Envío 1, dom 1 nov (Washington → recepción de RESI STAY junto a Kyoto Station):</b> llega el lunes. Vosotros llegáis el martes 3. <b>Lunes 2 y martes 3: solo mochila</b> (1 noche en Hakone).</li>
+        <li><b>Envío 2, vie 6 nov ~17:00 (konbini junto a RESI STAY → APA Namba Shinsaibashi, Osaka):</b> llega el 7 o el 8. <b>Sábado 7 y domingo 8: solo mochila</b> (1 noche en Hiroshima).</li>
+        <li><b>Envío 3, mié 11 nov (APA Namba → APA Kabukicho Tower, Tokio):</b> al hacer el check‑out. Llega el 12. <b>Miércoles 11: solo mochila.</b></li>
         <li><b>Mochila para 1 noche:</b> 2 mudas de ropa interior y calcetines, 1 camiseta y 1 sudadera de recambio, chubasquero, neceser, cargadores y batería externa, medicinas, pasaporte, Suica y billetes. En Hakone el hotel da yukata para dormir.</li>
       </ul></div>
     </div>
@@ -486,10 +529,14 @@ const M=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent
 
 /* [hora, título, detalle, tags, búsqueda de mapa] */
 const DAYS=[
-{id:"d0",date:"2026-10-27",city:"fly",pace:1,title:"Salida desde España",sleep:"En el avión",
- summary:"Vuelo nocturno. Dormid todo lo que podáis en el segundo tramo: aterrizáis a las 17:55 hora japonesa y esa noche ya estáis en Shinjuku.",
- items:[["—","Vuelo hacia Narita","Rellenad Visit Japan Web antes de salir y llevad el QR de inmigración y aduanas en el móvil.",[],null]],
- food:["Cenad en el aeropuerto: el primer tramo pasa la noche en vuelo."],warn:[]},
+{id:"d0",date:"2026-10-27",city:"fly",pace:1,title:"León → Madrid → Doha",sleep:"En el avión",
+ summary:"Tren por la mañana, Cercanías gratis al aeropuerto y vuelo a las 15:20.",
+ items:[
+  ["08:14","Renfe Intercity León → Madrid‑Chamartín","Llegada 10:31.",[],"Estación de León"],
+  ["10:40","Cercanías C‑1 Chamartín → Aeropuerto T4","~12–15 min. Gratis con el código del Combinado Cercanías del billete (vale hasta las 14:31). En las máquinas de Cercanías, «Combinado Cercanías».",[],"Aeropuerto Madrid T4"],
+  ["11:00","Aeropuerto","Facturar y control. Batería externa en el equipaje de mano.",[],null],
+  ["15:20","Qatar Airways Madrid → Doha","Llegada 23:55. Escala de 1 h 55 y a las 01:50 sale el vuelo a Narita.",[],null]],
+ food:["Comed en el aeropuerto antes de embarcar."],warn:["Visit Japan Web hecho y QR en el móvil antes de salir."]},
 
 {id:"d1",date:"2026-10-28",city:"tokyo",pace:1,title:"Aterrizaje y primera noche en Shinjuku",sleep:"Shinjuku Washington Hotel",
  summary:"Tarde de llegada. Lo único importante es salir rápido del aeropuerto y cenar algo bueno cerca del hotel.",
@@ -561,7 +608,7 @@ const DAYS=[
   ["13:45","Ueno → Yotsuya","JR Yamanote hasta Akihabara (3 min) y JR Chuo Line rápida (naranja) hasta Yotsuya (8 min). ~20 min, ¥220.",[],null],
   ["14:15","Escaleras de Your Name (Suga‑jinja)","Las escaleras del final de la película. 10 min andando desde Yotsuya. Barrio residencial: en silencio.",["pop","hidden"],"Suga Shrine stairs Your Name"],
   ["15:00","Yotsuya → hotel","JR Chuo Line rápida a Shinjuku (5 min) y 10 min andando.",[],null],
-  ["15:30","Preparar mochilas y enviar maletas a Kyoto","En la recepción del Washington (takkyubin, ver Transporte). Mañana y pasado solo vais con mochila.",[],null],
+  ["15:30","Preparar mochilas y enviar maletas a Kyoto","Takkyubin en la recepción del Washington. Destino: RESI STAY Reception Counter, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216; en la etiqueta «RESI STAY Nishiki», David González Álvarez y check‑in 3 nov. Prepago. Mañana y pasado solo vais con mochila.",[],null],
   ["17:30","Mirador del Tocho","Gratis, 45 pisos, a 5 min andando del hotel. Abierto hasta las 22:00.",[],"Tokyo Metropolitan Government Building Observatory"],
   ["19:30","Tempura en Tsunahachi","Salida Este de Shinjuku, 15 min andando del hotel. Tempura desde 1923, menús de ¥2.000–3.000.",["food"],"Tsunahachi Shinjuku"]],
  food:["Tsunahachi (tempura)","Kaisen‑don en Ameyoko (¥1.200–1.800)"],warn:[],
@@ -591,10 +638,12 @@ const DAYS=[
   ["10:30","Chokoku‑no‑mori → Hakone‑Yumoto → Odawara","Hakone Tozan Railway hasta Hakone‑Yumoto (~35 min) y cambio en el mismo andén al tren a Odawara (~15 min). Todo con el Free Pass. Estad en Odawara antes de las 11:45 para comprar ekiben.",[],"Odawara Station"],
   ["12:07","Shinkansen Hikari 641 Odawara → Kyoto","✓ Comprado. Vagón 15, asientos 5D 5E 6D 6E (la E da al Fuji). Cada uno con su QR; coged el papel «Seat Information» en el torno. Llegada 14:12.",["food"],"Odawara Station"],
   ["14:15","Recoger el Kansai‑Hiroshima Pass","En Kyoto Station, máquina verde con símbolo de pasaporte (e5489). Reserva 46773 + PIN + tarjeta de David + 4 pasaportes. Detalle en la pestaña Billetes.",[],"Kyoto Station JR ticket office"],
-  ["14:45","JR Kyoto → Inari","JR Nara Line (andenes 8–10), tren local, 2 paradas, 5 min, ¥150 con Suica (el pase aún no vale hasta el 7).",[],"Inari Station"],
-  ["15:00","Fushimi Inari Taisha","Nada más llegar, en las oficinas del santuario junto al edificio principal, comprad el mini torii para escribir vuestro nombre: cierran hacia las 16:30. Después subid hasta Yotsutsuji (~45 min) para el atardecer (~16:50) y bajad con los faroles encendidos.",["trad"],"Fushimi Inari Taisha"],
-  ["17:45","Fushimi‑Inari → Gion‑Shijo → hotel","Estación Keihan Fushimi‑Inari (5 min andando desde la entrada), Keihan Line hasta Gion‑Shijo (~10 min, ¥220). Cruzad el puente de Shijo y 15 min andando hasta el hotel. Las maletas enviadas desde Tokio os esperan allí.",[],"RESI STAY Nishiki"],
-  ["19:30","Gyoza en Gion Chao Chao","Junto al río, 15 min andando del hotel. Gyoza crujientes, local pequeño con cola. Luego paseo por Pontocho.",["food","night"],"Gion Chao Chao"]],
+  ["15:00","Check‑in en la recepción de RESI STAY","Junto a Kyoto Station: ON Building 5F, 544‑2 Higashishiokoji‑cho (5 min andando). Recogéis las llaves, dejáis las mochilas allí con las maletas que llegaron de Tokio y pagáis la tasa de Kyoto en efectivo.",[],"RESI STAY Reception Counter Kyoto"],
+  ["15:15","JR Kyoto → Inari","JR Nara Line (andenes 8–10), tren local, 2 paradas, 5 min, ¥150 con Suica (el pase aún no vale hasta el 7).",[],"Inari Station"],
+  ["15:30","Fushimi Inari Taisha","Nada más llegar, en las oficinas del santuario junto al edificio principal, comprad el mini torii para escribir vuestro nombre: cierran hacia las 16:30. Después subid hasta Yotsutsuji (~45 min) para el atardecer (~16:50) y bajad con los faroles encendidos.",["trad"],"Fushimi Inari Taisha"],
+  ["17:45","JR Inari → Kyoto","5 min, ¥150.",[],null],
+  ["18:00","Maletas y bus gratis a la casa","Recogéis todo en la recepción y bus lanzadera gratis hasta RESI STAY Nishiki (último a las 20:00).",[],"RESI STAY Nishiki"],
+  ["19:30","Gyoza en Gion Chao Chao","Junto al río, 15 min andando de la casa. Gyoza crujientes, local pequeño con cola. Luego paseo por Pontocho.",["food","night"],"Gion Chao Chao"]],
  food:["Ekiben en Odawara","Gion Chao Chao o izakaya de Kiyamachi"],warn:["Festivo en Japón: Kyoto Station estará llena. Id directos a la máquina del pase al bajar del tren."]},
 
 {id:"d8",date:"2026-11-04",city:"kyoto",pace:2,wake:"06:15",title:"Arashiyama profundo y Pabellón Dorado",sleep:"RESI STAY Nishiki",
@@ -644,7 +693,8 @@ const DAYS=[
   ["12:45","Curry udon en Hinode Udon","5 min andando. Local de barrio famoso, ~¥1.000. Hay cola corta.",["food"],"Hinode Udon"],
   ["13:45","Camino del Filósofo y Honen‑in","2 km de canal hacia el norte. Honen‑in es gratis, con musgo y sin gente.",["trad","hidden"],"Honen-in"],
   ["15:00","Ginkaku‑ji","Al final norte del camino. El Pabellón de Plata y su jardín de arena. ¥500.",["trad"],"Ginkaku-ji"],
-  ["16:00","Ginkaku‑ji → hotel","Bus 5 o 17 desde la parada Ginkakuji‑michi hasta Shijo‑Karasuma (~35 min, ¥230) o taxi (~¥2.000 entre todos). Siesta y envío de maletas a Osaka en recepción (o en el konbini si no hay recepción).",[],null],
+  ["16:00","Ginkaku‑ji → casa","Bus 5 o 17 desde la parada Ginkakuji‑michi hasta Shijo‑Karasuma (~35 min, ¥230) o taxi (~¥2.000 entre todos). Siesta y mochilas para Hiroshima.",[],null],
+  ["17:00","Maletas al konbini → APA Namba","Takkyubin desde el konbini más cercano a la casa (lo están mirando en RESI STAY). Destino: APA Hotel Namba Shinsaibashi, 2‑7‑12 Nishi‑Shinsaibashi, Chuo‑ku, Osaka; nombre de la reserva y check‑in 8 nov. Se paga allí.",[],null],
   ["18:00","Gion: Hanamikoji y Shirakawa","15 min andando del hotel. Franja de las maiko. Prohibido fotografiar en las calles privadas de Gion (multa de ¥10.000).",["trad","night"],"Gion Shirakawa"],
   ["19:30","Cena en Gion o Pontocho y bares de Kiyamachi","Viernes: Kiyamachi es la zona de copas de Kyoto.",["food","night"],"Kiyamachi Kyoto"]],
  food:["Hinode Udon","Gion Duck Noodles (ramen de pato) o izakaya de Pontocho"],warn:["Si os fallan las piernas: bus 5 o taxi de Chion‑in a Nanzen‑ji y saltad Eikan‑do.","Preparad esta noche la mochila para Hiroshima: las maletas se van a Osaka."]},
@@ -711,13 +761,14 @@ const DAYS=[
   ["19:30","Kushikatsu","Daruma o Yaekatsu. No mojéis dos veces en la salsa común. Vuelta: Dobutsuen‑mae → Shinsaibashi, Midosuji (8 min).",["food"],"Yaekatsu Shinsekai"]],
  food:["Kushikatsu en Shinsekai","551 Horai (butaman) para desayunar mañana"],warn:[]},
 
-{id:"d15",date:"2026-11-11",city:"tokyo",pace:1,wake:"08:15",title:"Vuelta a Tokio, sede de Haikyuu y udon carbonara",sleep:"APA Hotel Shinjuku Kabukicho Tower",
- summary:"Día de transición suave, con maletas hasta el mediodía. Por la noche, el udon carbonara viral.",
+{id:"d15",date:"2026-11-11",city:"tokyo",pace:1,wake:"08:15",bag:"Solo mochila: las maletas llegan el 12",title:"Vuelta a Tokio, sede de Haikyuu y udon carbonara",sleep:"APA Hotel Shinjuku Kabukicho Tower",
+ summary:"Día de transición suave y ligero: las maletas viajan solas a Tokio. Por la noche, el udon carbonara viral.",
  items:[
   ["09:00","Desayuno de 551 Horai","Bollos de cerdo al vapor, ~¥250 unidad, en Namba.",["food"],"551 Horai Namba"],
-  ["09:45","Shinsaibashi → Shin‑Osaka con maletas","Metro Midosuji Line, ~15 min, ¥290. Después de las 9:30 ya no va lleno.",[],"Shin-Osaka Station"],
+  ["09:30","Check‑out y maletas a Tokio","En la recepción del APA Namba: takkyubin de las 4 maletas al APA Hotel Shinjuku Kabukicho Tower (llegan el 12). Esta noche, solo mochila.",[],null],
+  ["09:45","Shinsaibashi → Shin‑Osaka","Metro Midosuji Line, ~15 min, ¥290.",[],"Shin-Osaka Station"],
   ["10:30","Nozomi 10 Shin‑Osaka → Tokio","✓ Comprado. Vagón 14, asientos 15D 15E 16D 16E (la E da al Fuji). Llegada 12:57. Cada uno con su QR.",[],"Shin-Osaka Station"],
-  ["13:00","Tokyo → Shinjuku","JR Chuo Line rápida (naranja), andén 1–2 de Tokyo Station, ~15 min, ¥210. Salida Este y 10 min andando hasta el hotel, en el norte de Kabukicho.",[],"APA Hotel Shinjuku Kabukicho Tower"],
+  ["13:00","Tokyo → Shinjuku","JR Chuo Line rápida (naranja), andén 1–2 de Tokyo Station, ~15 min, ¥210. Salida Este y 10 min andando hasta el hotel, en el norte de Kabukicho. Dejad las mochilas en recepción: el check‑in es más tarde.",[],"APA Hotel Shinjuku Kabukicho Tower"],
   ["14:15","Andando: hotel → Shinjuku Gyoen","20 min hasta la puerta Shinjuku (o Marunouchi Line a Shinjuku‑Gyoemmae, 2 paradas). Crisantemos y arces. Última entrada 15:30. ¥500.",["trad"],"Shinjuku Gyoen"],
   ["15:45","Tokyo Metropolitan Gymnasium","Saliendo por la puerta Sendagaya del parque, 5 min andando. La sede del campeonato de primavera de Haikyuu.",["sport","pop","hidden"],"Tokyo Metropolitan Gymnasium"],
   ["16:30","Sendagaya → Yoyogi: Udon Shin","JR Sobu Line (amarilla), 1 parada a Yoyogi (2 min), y 3 min andando. Udon carbonara (con tempura de beicon). Hay que coger número en la máquina de la puerta y esperar: id pronto, ver horario y cola el mismo día.",["food"],"Udon Shin Yoyogi"],
@@ -782,7 +833,7 @@ const DAYS=[
   ["21:00","Karaoke","Big Echo o Karaoke‑kan, ~¥500–1.000/h pp con bebida libre según plan.",["night"],"Big Echo Shinjuku"]],
  food:["Soup curry en Shimokita","Sukiyaki libre"],warn:[],alt:"Si os quedó pendiente: Kamakura + Enoshima o Daikoku a primera hora del domingo (6:00–8:30), la franja más tranquila de la semana."},
 
-{id:"d20",date:"2026-11-16",city:"fly",pace:1,wake:"09:30",title:"Último día y vuelo a las 21:55",sleep:"En el avión",
+{id:"d20",date:"2026-11-16",city:"fly",pace:1,wake:"09:30",title:"Último día y vuelo a las 21:55",sleep:"En el avión (llegada a León el 17)",
  summary:"Mañana libre con las maletas en consigna del hotel. Salid hacia Narita sobre las 17:00.",
  items:[
   ["11:00","Check‑out y consigna","El hotel guarda las maletas.",[],null],
@@ -790,7 +841,7 @@ const DAYS=[
   ["16:30","Hotel → JR Shinjuku","Recoged maletas. 10 min andando hasta la salida Este (o taxi, ~¥800).",[],null],
   ["17:00","N'EX Shinjuku → Narita","Andenes del N'EX en JR Shinjuku, ~90 min. Comprad el billete en la máquina JR (¥3.250). Comprobad la terminal de vuestra aerolínea.",[],null],
   ["18:45","Aeropuerto: tax‑free primero","Desde el 1 de noviembre el tax‑free funciona por devolución: pagáis el IVA en tienda y lo recuperáis validando en el kiosco de aduanas del aeropuerto antes de facturar. No abráis ni uséis lo comprado.",[],"Narita Airport"],
-  ["21:55","Vuelo de vuelta","",[],null]],
+  ["21:55","Qatar Airways Narita → Doha → Madrid","Doha 04:05, escala de 3 h 55, y llegada a Madrid el 17 a las 13:50. C‑1 de la T4 a Chamartín y tren a León a las 16:37.",[],null]],
  food:["Último onigiri de kombini"],warn:["Id con tiempo: el nuevo trámite de devolución añade una cola más."]}
 ];
 
@@ -847,7 +898,9 @@ const CHECK=[
  ["odawara","Shinkansen Odawara → Kyoto (3 nov)","Hikari 641 · vagón 15 · 5D 5E 6D 6E. QR enviado a cada uno.","2026-10-03T03:00",["smartex"],true],
  ["pass","Kansai‑Hiroshima Area Pass (7–11 nov)","Reserva 46773 con Nozomi 5 (7 nov) y Sakura 756 (8 nov) ya reservados.","2026-10-08T11:00",["pass"],true],
  ["daikoku","Tour JDM a Daikoku (30 oct, 17:30)","Tokyo Turismo, guía en español. Salida desde Aomi (Odaiba) a las 17:30. Cancelación gratis hasta el 29 oct 17:30.","2026-10-15T12:00",["daikoku"],true],
- ["kyotoluggage","Emails a los hoteles","RESI STAY Nishiki y APA Namba: que aceptan maletas por takkyubin antes del check‑in (y APA Kabukicho si enviáis las de Osaka). Hakone Yutowa: hora de la cena y baño privado si alguien tiene tatuajes.","2026-10-05T12:00",["resi"]],
+ ["kyotoluggage","Mensajes a los 6 hoteles","Hechos. Pendientes de respuesta: Washington (takkyubin), Yutowa (cena, desayuno y baño), RESI STAY (qué konbini), APA Namba y APA Kabukicho. Todo en la pestaña Hoteles.","2026-10-20T12:00",[],true],
+ ["prereg","Pre‑registro de RESI STAY","Rellenar online los datos de los 4 (enlace en el email de confirmación).","2026-10-26T12:00",[],false,"Antes de salir"],
+ ["cash","Efectivo para tasas","Tasa de Kyoto (en el check‑in) y de Hiroshima (¥200 pp).","2026-10-27T08:00",[],false,"Antes de salir"],
  ["kobe","Comida de Kobe beef (9 nov)","Steakland Kobe‑kan, 4 personas, ~12:45.","2026-10-05T12:00",["kobeEpark","kobe"]],
  ["mappa","Entradas MAPPA EXPO (14 nov, ~13:30)","Con día y hora. Segunda parte del 28 oct al 7 dic.","2026-10-08T12:00",["mappa"]],
  ["shibuyasky","Shibuya Sky al atardecer (14 nov, ~16:15)","Las entradas salen 14 días antes a las 00:00 de Japón: para el 14 nov, la medianoche del viernes 30, al acabar el tour. Las de atardecer vuelan.","2026-10-30T23:59",["shibuyasky"],false,"30 oct · 24:00 en Japón"],
@@ -857,7 +910,7 @@ const CHECK=[
  ["suica","Suica en el móvil y datos","eSIM japonesa o roaming.","2026-10-25T12:00",["suica"]],
  ["hakone","Hakone Free Pass + Romancecar (2 nov)","En Shinjuku, Odakyu Sightseeing Service Center. 4 Free Pass (inicio 2 nov) y 4 asientos del Romancecar de las 9:00.","2026-10-30T08:30",["freepass","romance"],false,"30 oct · en Shinjuku"],
  ["passpickup","Recoger el pase en Kyoto Station","Al bajar del Hikari 641: tarjeta de David, reserva 46773, PIN y los 4 pasaportes. Límite: 7 nov.","2026-11-03T14:15",[],false,"3 nov · 14:15 en Kyoto"],
- ["luggage","Decidir: maletas Osaka → Tokio","Enviarlas el 11 por la mañana (llegan el 12, una noche más con mochila) o llevarlas en el Nozomi.","2026-10-25T12:00",[],false,"Antes de salir"],
+ ["luggage","Maletas Osaka → Tokio: se envían","Decidido: el 11 al check‑out en el APA Namba. Noche del 11 solo con mochila.","2026-10-20T12:00",[],true],
  ["forecast","Previsión del Fuji (10 nov)","Si el 12 está mejor que el 13: reservad primero los buses del 12 y luego cancelad los del 13 (¥100 pp).","2026-11-10T09:00",["fujicam","tenki"],false,"10 nov · noche en Japón"],
 ];
 /* enlaces de reserva dentro de los días: [día, inicio del título, claves] */
@@ -1019,6 +1072,14 @@ renderChecks();
 
 /* ---------- billetes ---------- */
 const TICKETS=[
+ {g:"done",date:"2026-10-27",city:"fly",train:"Renfe Intercity 04088",kind:"Tren a Madrid",fk:"レオン",f:"León",dep:"08:14",tk:"マドリード",t:"Madrid‑Chamartín",arr:"10:31",car:"2",seats:["Asiento de David: 094"],ref:["Cercanías gratis","Combinado hasta las 14:31"],
+  how:["En Chamartín: Cercanías C‑1 a la T4 del aeropuerto (~12–15 min). En «Detalles del billete» de la app está el código del Combinado Cercanías."]},
+ {g:"done",date:"2026-10-27",city:"fly",train:"Qatar Airways (ida)",kind:"Vuelo con escala en Doha",fk:"マドリード",f:"Madrid T4",dep:"15:20",tk:"成田",t:"Narita (28 oct)",arr:"17:55",car:"",seats:["MAD 15:20 → DOH 23:55","DOH 01:50 → NRT 17:55"],ref:["Escala","1 h 55 en Doha"],
+  how:["Estad en el aeropuerto sobre las 12:20.","Batería externa en el equipaje de mano y a mano durante el vuelo.","Online check‑in: abre 48 h antes."]},
+ {g:"done",date:"2026-11-16",city:"fly",train:"Qatar Airways (vuelta)",kind:"Vuelo con escala en Doha",fk:"成田",f:"Narita",dep:"21:55",tk:"マドリード",t:"Madrid (17 nov)",arr:"13:50",car:"",seats:["NRT 21:55 → DOH 04:05","DOH 08:00 → MAD 13:50"],ref:["Escala","3 h 55 en Doha"],
+  how:["Tax‑free: validad en el kiosco de aduanas de Narita antes de facturar."]},
+ {g:"done",date:"2026-11-17",city:"fly",train:"Renfe a León",kind:"Tren de vuelta",fk:"マドリード",f:"Madrid‑Chamartín",dep:"16:37",tk:"レオン",t:"León",arr:"",car:"",seats:["~1 h de margen"],ref:["Cercanías gratis","Combinado desde las 12:37"],
+  how:["T4 → Chamartín en la C‑1 con el código del Combinado. Comprobad que el billete sale de Chamartín."]},
  {g:"done",date:"2026-11-03",city:"kyoto",train:"Hikari 641",kind:"Shinkansen",fk:"小田原",f:"Odawara",dep:"12:07",tk:"京都",t:"Kyoto",arr:"14:12",car:"15",seats:["5D","5E","6D","6E"],ref:["SmartEX","QR de cada uno"],
   how:["Cada uno lleva su QR en el móvil (o impreso).","Tornos con el símbolo QR: coged el papel «Seat Information» y guardadlo hasta Kyoto.","La E es la ventanilla del Fuji. La fila 6 se puede girar para ir cara a cara."]},
  {g:"done",date:"2026-11-07",city:"hiroshima",train:"Nozomi 5",kind:"Shinkansen · pase",fk:"新大阪",f:"Shin‑Osaka",dep:"09:02",tk:"広島",t:"Hiroshima",arr:"10:27",car:"5",seats:["5D","5E","6D","6E"],ref:["Reserva","46773"],
@@ -1069,6 +1130,78 @@ const TICKETS=[
   ['done','todo','site'].forEach(g=>{if(!$('#t-'+g).children.length)$('#t-'+g).innerHTML='<p style="margin:0;color:var(--muted)">Nada pendiente: todo lo que se podía sacar desde casa ya está sacado.</p>';});
 })();
 
+/* ---------- hoteles ---------- */
+const OK='<span class="okc">confirmado</span>', PEND='<span class="pend">pendiente</span>';
+const HOTELS=[
+ {city:"tokyo",k:"新宿",name:"Shinjuku Washington Hotel",in:"2026-10-28",out:"2026-11-02",addr:"3‑2‑9 Nishi‑Shinjuku, Shinjuku‑ku, Tokio",maps:"Shinjuku Washington Hotel",
+  meals:[0,0],room:"2 habitaciones dobles económicas (planta reformada), 2 personas cada una. «Doble» suele ser una cama de matrimonio por habitación.",
+  checkin:"Oficial desde las 14:00. Llegáis el 28 sobre las 21:00: recepción 24 h y avisados "+OK+". Check‑out 11:00.",
+  bags:["Llegáis con las maletas.","1 nov: takkyubin desde recepción a la recepción de RESI STAY en Kyoto "+PEND+"."],
+  notes:["Pedidas habitaciones comunicadas (no garantizado).","Si llegáis antes del check‑in: consignas en la 3.ª planta del edificio principal."],
+  cancel:"Gratis hasta el 27 oct."},
+ {city:"hakone",k:"強羅",name:"Hakone Yutowa",in:"2026-11-02",out:"2026-11-03",addr:"1300‑27 Gora, Hakone, Kanagawa",maps:"Hakone Yutowa",
+  meals:[1,1],room:"Superior Twin Room Type A, para 4: camas + tatami y sofá cama. Onsen compartido del hotel.",
+  checkin:"Aprobado 17:00–18:00; avisado de que llegáis 16:00–16:30 "+PEND+". Salida prevista 8:45.",
+  bags:["Solo mochila (las maletas van de Tokio a Kyoto).","Guardan equipaje antes del check‑in si hiciera falta "+OK+"."],
+  notes:["Media pensión: cena y desayuno incluidos. Preguntada la hora de la cena y del desayuno "+PEND+".","Preguntado por baño privado por los tatuajes "+PEND+".","Si os toca el edificio «condominio», para ir al restaurante y al onsen se sale al exterior: chaqueta a mano."],
+  cancel:"Gratis hasta el 26 oct; después, 50 %."},
+ {city:"kyoto",k:"京都",name:"RESI STAY Nishiki",in:"2026-11-03",out:"2026-11-07",addr:"521 Kikuyacho, Nakagyo‑ku, Kioto (alojamiento)",maps:"RESI STAY Nishiki",
+  meals:[0,0],room:"Suite Anexo: casa japonesa entera de 34 m². 2 camas individuales, 2 futones y sofá cama en el salón. Baño con bañera y cocina.",
+  checkin:"<b>No es en la casa:</b> recepción RESI STAY junto a Kyoto Station, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku (8:00–20:00). Aprobado el 3 nov a las 15:00 "+OK+". Bus gratis de la recepción a la casa de 14:15 a 20:00 (no recoge el día de salida).",
+  bags:["Maletas desde Tokio, prepago, a: <b>RESI STAY Reception Counter</b>, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216. En la etiqueta: «RESI STAY Nishiki», David González Álvarez, check‑in 3 nov "+OK+".","3 nov: las dejáis en la recepción mientras vais a Inari y las recogéis a las 18:00 para el bus "+OK+".","6 nov ~17:00: konbini cerca de la casa → APA Namba Shinsaibashi. Preguntado qué konbini "+PEND+"."],
+  notes:["Rellenar el pre‑registro online de los 4 antes de llegar (enlace en el email de confirmación).","Tasa turística de Kyoto en efectivo al hacer el check‑in."],
+  cancel:"—"},
+ {city:"hiroshima",k:"広島",name:"Trust Hotel",in:"2026-11-07",out:"2026-11-08",addr:"1‑14‑10 Hikarimachi, Higashi‑ku, Hiroshima",maps:"Trust Hotel Hiroshima",
+  meals:[1,0],room:"1 habitación estándar con 2 camas dobles, para 4.",
+  checkin:"De 15:00 a 2:00. Aprobado 22:00–23:00, pero vale cualquier hora. Check‑out 10:00. A 10 min de la salida Norte (Shinkansen) de la estación.",
+  bags:["Solo mochila (las maletas van de Kyoto a Osaka).","Guardan equipaje desde las 7:00 del día 7 y, el día 8, hasta las 23:00 "+OK+". El 8, mejor taquillas de la estación (plan B: el hotel)."],
+  notes:["Desayuno incluido.","Tasa de Hiroshima: ¥200 por persona y noche, en efectivo."],
+  cancel:"—"},
+ {city:"osaka",k:"大阪",name:"APA Hotel Namba Shinsaibashi",in:"2026-11-08",out:"2026-11-11",addr:"2‑7‑12 Nishi‑Shinsaibashi, Chuo‑ku, Osaka",maps:"APA Hotel Namba Shinsaibashi",
+  meals:[1,0],room:"Habitaciones comunicadas para 4.",
+  checkin:"Aprobado 15:00–16:00; avisado de que llegáis ~17:30 "+PEND+".",
+  bags:["Maletas desde Kyoto (envío el 6, llegan el 7 o el 8) "+PEND+".","11 nov al check‑out: takkyubin en recepción → APA Kabukicho Tower "+PEND+"."],
+  notes:["Desayuno incluido."],
+  cancel:"Gratis hasta el 7 nov."},
+ {city:"tokyo",k:"歌舞伎町",name:"APA Hotel Shinjuku Kabukicho Tower",in:"2026-11-11",out:"2026-11-16",addr:"1‑20‑2 Kabukicho, Shinjuku‑ku, Tokio · +81‑3‑5155‑3811",maps:"APA Hotel Shinjuku Kabukicho Tower",
+  meals:[0,0],room:"2 habitaciones dobles, 2 personas cada una. Las APA son muy pequeñas (~11 m²).",
+  checkin:"Aprobado 16:00–17:00. Llegáis ~13:30: dejar mochilas en recepción hasta el check‑in "+PEND+".",
+  bags:["Maletas desde Osaka a nombre de la reserva (ni contra reembolso ni refrigeradas): las reciben "+OK+". Llegan el 12.","Noche del 11: solo mochila.","16 nov: consigna tras el check‑out hasta las 16:30 "+PEND+"."],
+  notes:["Sin comidas: desayuno en konbini o cafetería."],
+  cancel:"Gratis hasta el 10 nov."}
+];
+const BAGFLOW=[
+ ["1 nov","tokyo","Washington → Kyoto","Takkyubin en recepción, a la recepción de RESI STAY junto a Kyoto Station. Llega el 2."],
+ ["2–3 nov","hakone","Solo mochila","Hakone, 1 noche.",1],
+ ["3 nov","kyoto","Recoger en Kyoto","15:00 check‑in en la recepción, las dejáis allí, Inari, y a las 18:00 bus a la casa con ellas."],
+ ["6 nov","kyoto","Kyoto → Osaka","~17:00 desde un konbini cerca de la casa al APA Namba. Llega el 7 o el 8."],
+ ["7–8 nov","hiroshima","Solo mochila","Hiroshima y Miyajima, 1 noche.",1],
+ ["8 nov","osaka","Os esperan en Osaka","APA Namba Shinsaibashi."],
+ ["11 nov","osaka","Osaka → Tokio","Al hacer el check‑out, en recepción, al APA Kabukicho. Llega el 12."],
+ ["11 nov","tokyo","Solo mochila","Primera noche en Kabukicho.",1],
+ ["12 nov","tokyo","Os esperan en Tokio","APA Kabukicho Tower."],
+ ["16 nov","fly","Consigna y aeropuerto","Las deja el hotel hasta las 16:30 y N'EX a Narita."]
+];
+(function(){
+  const fd=d=>{const x=parse(d);return `${DOW[x.getDay()]} ${x.getDate()} ${MON[x.getMonth()]}`;};
+  BAGFLOW.forEach(([d,c,h,t,pack])=>{const li=el("li",{class:pack?"pack":"",style:`--cc:var(${CITIES[c].c})`});li.innerHTML=`<span class="d">${d}</span><span class="r"></span><div class="t"><b>${esc(h)}</b><span>${esc(t)}</span></div>`;$("#bagflow").appendChild(li);});
+  HOTELS.forEach(h=>{
+    const n=Math.round((parse(h.out)-parse(h.in))/864e5);
+    const c=el("article",{class:"hotel",style:`--cc:var(${CITIES[h.city].c})`});
+    c.innerHTML=`<div class="hd"><span class="k">${h.k}</span><h3>${esc(h.name)}</h3><span class="dt">${fd(h.in)} → ${fd(h.out)} · ${n} noche${n>1?"s":""}</span></div>
+     <div class="meals"><span class="meal ${h.meals[0]?"on":""}">${h.meals[0]?"✓ Desayuno":"Sin desayuno"}</span><span class="meal ${h.meals[1]?"on":""}">${h.meals[1]?"✓ Cena":"Sin cena"}</span></div>
+     <dl>
+      <dt>Dirección</dt><dd>${esc(h.addr)} <a class="maplink" href="${M(h.maps)}" target="_blank" rel="noopener noreferrer">Mapa ↗</a></dd>
+      <dt>Habitación</dt><dd>${esc(h.room)}</dd>
+      <dt>Check‑in</dt><dd>${h.checkin}</dd>
+      <dt>Maletas</dt><dd><ul>${h.bags.map(b=>`<li>${b}</li>`).join("")}</ul></dd>
+      <dt>A tener en cuenta</dt><dd><ul>${h.notes.map(b=>`<li>${b}</li>`).join("")}</ul></dd>
+      <dt>Cancelación</dt><dd>${esc(h.cancel)}</dd>
+     </dl>`;
+    $("#hotels").appendChild(c);
+  });
+})();
+
 /* ---------- tabs ---------- */
 function selectTab(id){
   document.querySelectorAll("#tabs button").forEach(b=>{
@@ -1078,7 +1211,7 @@ function selectTab(id){
   store.set("jp26-tab",id);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>selectTab(b.id)));
-const hashMap={itinerario:"tab-dias",billetes:"tab-bil",viabilidad:"tab-viab",transporte:"tab-trans",comida:"tab-comida",pop:"tab-pop",reservas:"tab-res"};
+const hashMap={itinerario:"tab-dias",billetes:"tab-bil",hoteles:"tab-hot",viabilidad:"tab-viab",transporte:"tab-trans",comida:"tab-comida",pop:"tab-pop",reservas:"tab-res"};
 selectTab(hashMap[location.hash.slice(1)]||store.get("jp26-tab","tab-dias"));
 
 /* durante el viaje, saltar al día de hoy */
