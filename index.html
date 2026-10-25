@@ -287,6 +287,37 @@ tr.total td{font-weight:900;border-bottom:0}
 .pend{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--warn-soft);color:var(--warn);margin-left:4px;white-space:nowrap}
 .okc{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--ok-soft);color:var(--ok);margin-left:4px;white-space:nowrap}
 @media (max-width:560px){.hotel dl{grid-template-columns:1fr;gap:2px}.hotel dd{margin-bottom:8px}.bagflow li{grid-template-columns:56px 14px 1fr}}
+/* visit japan web */
+.vjw-who{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-bottom:8px}
+.vjw-who label,.vjw-who div{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-weight:700;font-size:14px;min-width:0}
+.vjw-who .st{margin-left:auto;font-size:11px;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.vjw-who .st.y{background:var(--ok-soft);color:var(--ok)} .vjw-who .st.n{background:var(--warn-soft);color:var(--warn)}
+.vjw-who input{width:18px;height:18px;accent-color:var(--ok);margin:0;flex:none}
+.vjw-who .av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:12px;flex:none}
+.vjw-key{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+.vjw-key .kv{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:4px;min-width:0}
+.vjw-key .kv span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.vjw-key .kv div{display:flex;align-items:center;justify-content:space-between;gap:8px;min-width:0}
+.vjw-key code{font-family:var(--f-mono);font-size:14px;font-weight:600;overflow-wrap:anywhere;min-width:0}
+.vjw-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:st}
+.vjw-steps>li{counter-increment:st;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px 64px;position:relative;min-width:0}
+.vjw-steps>li::before{content:counter(st);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;font-family:var(--f-display);font-size:18px;display:grid;place-items:center}
+.vjw-steps h3{margin:0 0 2px;font-size:17px;font-weight:900}
+.vjw-steps .scr{display:inline-block;font-family:var(--f-mono);font-size:11.5px;color:var(--muted);background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:1px 7px;margin:2px 0 8px;overflow-wrap:anywhere}
+.vjw-steps p{margin:0 0 8px}
+.ans{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px;margin:6px 0 4px}
+.ans>*{padding:7px 10px;border-top:1px solid var(--line);min-width:0;overflow-wrap:anywhere}
+.ans>*:nth-child(-n+2){border-top:0}
+.ans .q{color:var(--muted);font-family:var(--f-mono);font-size:12.5px;background:var(--bg)}
+.ans .a{font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ans .a.no{color:var(--ok)}
+.ans .a .copy{margin-left:auto}
+.ans .a small{font-weight:400;color:var(--muted);flex-basis:100%;font-size:12.5px}
+.vjw-tip{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+.vjw-tip b{color:var(--ink)}
+.vjw-warn{border-left:5px solid var(--warn)}
+.vjw-warn h3{color:var(--warn)}
+@media (max-width:560px){.vjw-steps>li{padding:56px 14px 12px}.vjw-steps>li::before{top:12px;left:14px}.ans{grid-template-columns:1fr}.ans>*:nth-child(2){border-top:1px solid var(--line)}.ans .q{border-top:1px solid var(--line)}.ans>*:first-child{border-top:0}}
 .foot{margin-top:30px;color:var(--muted);font-size:13px;display:grid;gap:4px}
 
 @media (max-width:560px){
@@ -326,6 +357,7 @@ tr.total td{font-weight:900;border-bottom:0}
     <button role="tab" id="tab-comida" aria-controls="p-comida" aria-selected="false">Comida</button>
     <button role="tab" id="tab-pop" aria-controls="p-pop" aria-selected="false">Pokémon · JDM · Anime</button>
     <button role="tab" id="tab-res" aria-controls="p-res" aria-selected="false">Reservas</button>
+    <button role="tab" id="tab-vjw" aria-controls="p-vjw" aria-selected="false">Visit Japan Web</button>
   </div>
 
   <!-- ============ ITINERARIO ============ -->
@@ -420,9 +452,9 @@ tr.total td{font-weight:900;border-bottom:0}
         <li><b>Qué es:</b> mensajería de equipaje entre hoteles (Yamato, el gato negro, o Sagawa). La dejáis en un hotel y aparece en el siguiente. Es lo normal en Japón y muy fiable.</li>
         <li><b>Cómo se hace:</b> en recepción decid «takkyubin, please». Os dan un formulario (los de recepción ayudan) con: nombre y dirección del hotel de destino, vuestro nombre <b>tal como está en la reserva</b> y la <b>fecha de check‑in</b>. Se paga allí, normalmente en efectivo: <b>¥2.000–3.000 por maleta</b> según tamaño.</li>
         <li><b>Si el hotel no tiene recepción:</b> cualquier konbini (7‑Eleven, Lawson, FamilyMart) lo hace igual en la caja.</li>
-        <li><b>Antes de enviar:</b> escribid a cada hotel de destino para avisar de que llegan maletas antes que vosotros.</li>
+        <li><b>Tamaño:</b> en el Washington, máximo <b>160 cm</b> sumando largo, ancho y alto (con ruedas y asa) y <b>25 kg</b>, y pago en efectivo. Medid las maletas antes de salir.</li>
         <li><b>Envío 1, dom 1 nov (Washington → recepción de RESI STAY junto a Kyoto Station):</b> llega el lunes. Vosotros llegáis el martes 3. <b>Lunes 2 y martes 3: solo mochila</b> (1 noche en Hakone).</li>
-        <li><b>Envío 2, vie 6 nov ~17:00 (konbini junto a RESI STAY → APA Namba Shinsaibashi, Osaka):</b> llega el 7 o el 8. <b>Sábado 7 y domingo 8: solo mochila</b> (1 noche en Hiroshima).</li>
+        <li><b>Envío 2, vie 6 nov ~17:00 (oficina de Yamato a 2 min de RESI STAY → APA Namba Shinsaibashi, Osaka):</b> llega el 7 o el 8. <b>Sábado 7 y domingo 8: solo mochila</b> (1 noche en Hiroshima).</li>
         <li><b>Envío 3, mié 11 nov (APA Namba → APA Kabukicho Tower, Tokio):</b> al hacer el check‑out. Llega el 12. <b>Miércoles 11: solo mochila.</b></li>
         <li><b>Mochila para 1 noche:</b> 2 mudas de ropa interior y calcetines, 1 camiseta y 1 sudadera de recambio, chubasquero, neceser, cargadores y batería externa, medicinas, pasaporte, Suica y billetes. En Hakone el hotel da yukata para dormir.</li>
       </ul></div>
@@ -494,6 +526,129 @@ tr.total td{font-weight:900;border-bottom:0}
       <div class="progress" aria-hidden="true"><i id="prog" style="width:0"></i></div>
     </div>
     <div class="chk" id="chk"></div>
+  </section>
+
+  <!-- ============ VISIT JAPAN WEB ============ -->
+  <section class="panel" id="p-vjw" role="tabpanel" aria-labelledby="tab-vjw" hidden>
+    <div class="sec">
+      <h2><small>Inmigración + aduanas · 15 min por persona</small>Visit Japan Web, paso a paso</h2>
+      <p>Cada uno sale con un QR que se enseña en Narita en inmigración y en las máquinas de aduanas. Debajo están las pantallas en el orden en que salen, con lo que hay que poner exactamente. Hacedlo desde el móvil que vayáis a llevar.</p>
+    </div>
+
+    <h3 class="tgroup">Quién lo tiene</h3>
+    <div class="vjw-who" id="vjwwho">
+      <div><span class="av">DG</span>David<span class="st y">QR listo</span></div>
+      <div><span class="av">JG</span>Jorge<span class="st y">QR listo</span></div>
+      <label><input type="checkbox" data-k="raul"><span class="av">R</span>Raúl<span class="st n">Pendiente</span></label>
+      <label><input type="checkbox" data-k="tonan"><span class="av">T</span>Tonan<span class="st n">Pendiente</span></label>
+    </div>
+    <p class="vjw-tip">Raúl y Tonan, cada uno en <b>su propia cuenta</b> y desde su móvil. Marcad la casilla cuando tengáis el QR.</p>
+
+    <h3 class="tgroup">Datos que vais a necesitar</h3>
+    <div class="vjw-key">
+      <div class="kv"><span>Vuelo que aterriza</span><div><code>QR 806 · DOHA → NRT</code><button type="button" class="copy" data-u="806">Copiar</button></div></div>
+      <div class="kv"><span>Llegada</span><div><code>2026/10/28 · 17:55 · T2</code></div></div>
+      <div class="kv"><span>Código postal</span><div><code>1600023</code><button type="button" class="copy" data-u="1600023">Copiar</button></div></div>
+      <div class="kv"><span>Dirección</span><div><code>NISHISHINJUKU 3CHOME-2-9</code><button type="button" class="copy" data-u="NISHISHINJUKU 3CHOME-2-9">Copiar</button></div></div>
+      <div class="kv"><span>Hotel</span><div><code>SHINJUKU WASHINGTON HOTEL</code><button type="button" class="copy" data-u="SHINJUKU WASHINGTON HOTEL">Copiar</button></div></div>
+      <div class="kv"><span>Teléfono del hotel</span><div><code>81333433111</code><button type="button" class="copy" data-u="81333433111">Copiar</button></div></div>
+    </div>
+
+    <h3 class="tgroup">Paso a paso</h3>
+    <ol class="vjw-steps">
+      <li>
+        <h3>Crear la cuenta</h3>
+        <span class="scr">vjw.digital.go.jp → Create new account</span>
+        <p>Email y contraseña, y luego el código que llega al correo.</p>
+        <p class="vjw-tip"><b>Quitad el traductor de Google</b> y dejad la web en inglés. Traducida, algunos desplegables se rompen y los campos se rellenan raro. Aquí tenéis cada pantalla con su texto original.</p>
+      </li>
+      <li>
+        <h3>Tus datos (pasaporte)</h3>
+        <span class="scr">Register your details</span>
+        <p>Mejor escanear el pasaporte con la cámara. Si no, a mano, tal cual sale en el pasaporte.</p>
+        <div class="ans">
+          <div class="q">Do you have a Japanese passport?</div><div class="a no">No</div>
+          <div class="q">Do you have a re-entry permit / special re-entry permit?</div><div class="a no">No</div>
+          <div class="q">Use the Tax-free QR code?</div><div class="a">Yes<small>Sirve para las compras tax-free sin enseñar el pasaporte.</small></div>
+          <div class="q">Occupation</div><div class="a">Company employee<small>O la que toque: Student, Self-employed…</small></div>
+          <div class="q">Home address · Country</div><div class="a">SPAIN</div>
+          <div class="q">Home address · City</div><div class="a">Vuestra ciudad<small>En mayúsculas y sin tilde, ej. LEON.</small></div>
+        </div>
+      </li>
+      <li>
+        <h3>Visado</h3>
+        <span class="scr">Check VISA details · Do you have a VISA to enter Japan?</span>
+        <div class="ans"><div class="q">Do you have a VISA?</div><div class="a no">No<small>Con pasaporte español se entra sin visado hasta 90 días.</small></div></div>
+      </li>
+      <li>
+        <h3>Registrar el viaje</h3>
+        <span class="scr">Register new planned entry/return</span>
+        <div class="ans">
+          <div class="q">Copy registered details?</div><div class="a">Proceed to registration without copying details</div>
+          <div class="q">Trip name</div><div class="a">Japon 2026<small>Cualquier nombre.</small></div>
+          <div class="q">Planned arrival date in Japan</div><div class="a">2026/10/28</div>
+          <div class="q">Airline company name</div><div class="a">QR: QATAR AIRWAYS(QTR)<small>Escribe «Qatar» y elige de la lista.</small></div>
+          <div class="q">Flight number (numbers only)</div><div class="a">806<button type="button" class="copy" data-u="806">Copiar</button><small>Es el Doha → Narita. El JL4850 es el mismo vuelo con código de JAL: ignoradlo.</small></div>
+          <div class="q">Point of embarkation</div><div class="a">DOHA</div>
+        </div>
+        <p class="vjw-tip">No hace falta tocar «If you are connecting multiple flights»: basta con el último tramo.</p>
+      </li>
+      <li>
+        <h3>Dirección en Japón</h3>
+        <span class="scr">Address in Japan (Accommodation)</span>
+        <div class="ans">
+          <div class="q">Postal code</div><div class="a">1600023<button type="button" class="copy" data-u="1600023">Copiar</button><small>Luego pulsa «Enter automatically using postal code».</small></div>
+          <div class="q">Prefecture</div><div class="a">TOKYO TO<small>Se rellena solo.</small></div>
+          <div class="q">City</div><div class="a">SHINJUKU KU<small>Se rellena solo.</small></div>
+          <div class="q">Address</div><div class="a">NISHISHINJUKU 3CHOME-2-9<button type="button" class="copy" data-u="NISHISHINJUKU 3CHOME-2-9">Copiar</button></div>
+          <div class="q">Hotel name, place of stay</div><div class="a">SHINJUKU WASHINGTON HOTEL<button type="button" class="copy" data-u="SHINJUKU WASHINGTON HOTEL">Copiar</button></div>
+          <div class="q">Contact phone number</div><div class="a">81333433111<button type="button" class="copy" data-u="81333433111">Copiar</button><small>El 03 de Tokio se escribe 81 3, sin el 0.</small></div>
+        </div>
+        <p class="vjw-tip">Solo se pone el primer hotel. Los demás no se declaran.</p>
+      </li>
+      <li>
+        <h3>Familiares</h3>
+        <span class="scr">Select family members traveling with you</span>
+        <p>No marquéis a nadie: cada uno lo hace en su cuenta. Confirm entered details → Register.</p>
+      </li>
+      <li>
+        <h3>Inmigración</h3>
+        <span class="scr">Japon 2026 → Immigration clearance and Customs declaration</span>
+        <p>En la ficha del viaje. <b>Link VISA</b> y <b>Quarantine</b> no hay que tocarlos.</p>
+        <div class="ans">
+          <div class="q">Purpose of visit</div><div class="a">Tourism</div>
+          <div class="q">Duration of stay in days</div><div class="a">20</div>
+          <div class="q">Deported / denied entry to Japan?</div><div class="a no">No</div>
+          <div class="q">Found guilty in a criminal case?</div><div class="a no">No</div>
+          <div class="q">Narcotics, firearms, swords, explosives…?</div><div class="a no">No</div>
+        </div>
+      </li>
+      <li>
+        <h3>Aduanas</h3>
+        <span class="scr">Declaration of Accompanied Personal Effects and Unaccompanied Articles</span>
+        <div class="ans">
+          <div class="q">Input for accompanying family members at the same time?</div><div class="a no">No<small>Como no hay familiares añadidos, puede que ni salga.</small></div>
+          <div class="q">(1) Prohibited items</div><div class="a no">No</div>
+          <div class="q">(2)–(4) Restricted items, duty-free allowance…</div><div class="a no">No<small>Las tres preguntas intermedias, todas No (ver límites abajo).</small></div><div class="q">(5) Commercial goods or samples</div><div class="a no">No</div>
+          <div class="q">(6) Items someone asked you to bring</div><div class="a no">No</div>
+          <div class="q">Cash over 1,000,000 yen / precious metals over 1 kg</div><div class="a no">No<small>Lo del oro son lingotes. Las joyas que llevéis puestas no cuentan.</small></div>
+          <div class="q">Unaccompanied articles</div><div class="a no">No<small>Los envíos de maletas entre hoteles dentro de Japón no cuentan.</small></div>
+        </div>
+      </li>
+      <li>
+        <h3>Sacar el QR</h3>
+        <span class="scr">Display QR code</span>
+        <p>Cuando la ficha salga como <b>Registered</b>, se activa el botón. <b>Haced captura</b> por si en Narita no hay cobertura y mandádsela a alguien del grupo por si os quedáis sin batería.</p>
+        <p class="vjw-tip">En Narita: QR + pasaporte en inmigración (huellas y foto) y luego otra vez el QR en las puertas electrónicas de aduanas.</p>
+      </li>
+    </ol>
+
+    <h3 class="tgroup">Qué no meter en la maleta</h3>
+    <div class="grid2">
+      <div class="card vjw-warn"><h3>Embutido, jamón y queso</h3><p>La carne de fuera está prohibida aunque sea envasada, y las multas son serias. Tampoco fruta ni plantas.</p></div>
+      <div class="card vjw-warn"><h3>Antigripales con pseudoefedrina</h3><p>Frenadol Descongestivo, Bisolgrip, Couldina, Aspirina Plus C… están prohibidos en Japón. Ibuprofeno, paracetamol, Fortasec y antihistamínicos normales sí se pueden llevar.</p></div>
+      <div class="card vjw-warn"><h3>Límites libres de impuestos</h3><p>3 botellas de alcohol, 200 cigarrillos y 200.000 ¥ en regalos o compras por persona.</p></div>
+    </div>
   </section>
 
   <footer class="foot">
@@ -608,7 +763,7 @@ const DAYS=[
   ["13:45","Ueno → Yotsuya","JR Yamanote hasta Akihabara (3 min) y JR Chuo Line rápida (naranja) hasta Yotsuya (8 min). ~20 min, ¥220.",[],null],
   ["14:15","Escaleras de Your Name (Suga‑jinja)","Las escaleras del final de la película. 10 min andando desde Yotsuya. Barrio residencial: en silencio.",["pop","hidden"],"Suga Shrine stairs Your Name"],
   ["15:00","Yotsuya → hotel","JR Chuo Line rápida a Shinjuku (5 min) y 10 min andando.",[],null],
-  ["15:30","Preparar mochilas y enviar maletas a Kyoto","Takkyubin en la recepción del Washington. Destino: RESI STAY Reception Counter, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216; en la etiqueta «RESI STAY Nishiki», David González Álvarez y check‑in 3 nov. Prepago. Mañana y pasado solo vais con mochila.",[],null],
+  ["15:30","Preparar mochilas y enviar maletas a Kyoto","Envío por Sagawa en la recepción de la 3.ª planta del edificio principal (pago en efectivo, máx. 160 cm y 25 kg por maleta). Destino: RESI STAY Reception Counter, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216; en la etiqueta «RESI STAY Nishiki», David González Álvarez y check‑in 3 nov. Prepago. Mañana y pasado solo vais con mochila.",[],null],
   ["17:30","Mirador del Tocho","Gratis, 45 pisos, a 5 min andando del hotel. Abierto hasta las 22:00.",[],"Tokyo Metropolitan Government Building Observatory"],
   ["19:30","Tempura en Tsunahachi","Salida Este de Shinjuku, 15 min andando del hotel. Tempura desde 1923, menús de ¥2.000–3.000.",["food"],"Tsunahachi Shinjuku"]],
  food:["Tsunahachi (tempura)","Kaisen‑don en Ameyoko (¥1.200–1.800)"],warn:[],
@@ -626,7 +781,7 @@ const DAYS=[
   ["14:15","Teleférico Togendai → Owakudani","Estación pegada al muelle. ~25 min. En Owakudani: fumarolas y kuro‑tamago (¥500 los 5).",[],"Owakudani"],
   ["15:30","Teleférico Owakudani → Sounzan y funicular Sounzan → Gora","~10 + 10 min, con el Free Pass. El teleférico cierra antes en noviembre: no salgáis de Owakudani más tarde de las 16:15.",[],"Gora Station"],
   ["16:00","Check‑in en Hakone Yutowa","3 min andando desde Gora. Check‑in hasta las 18:00. Onsen antes de cenar.",["trad"],"Hakone Yutowa"],
-  ["18:30","Cena en el hotel (media pensión)","Media pensión = cena y desayuno incluidos. Confirmad la hora de la cena al hacer el check‑in.",["food"],"Hakone Yutowa"]],
+  ["18:30","Cena en el hotel (reservada)","Media pensión: cena y desayuno incluidos. Antes de cenar, onsen: el común con parches cubre‑tatuajes o el privado si pone «Vacant».",["food"],"Hakone Yutowa"]],
  food:["Cena y desayuno en el hotel (media pensión)","Kuro‑tamago en Owakudani"],
  warn:["Con viento fuerte o gas volcánico cierran el teleférico: el bus de Togendai a Gora sustituye el tramo (Free Pass).","Tatuajes visibles: acceso restringido al baño común. Preguntad por baño privado."]},
 
@@ -694,7 +849,7 @@ const DAYS=[
   ["13:45","Camino del Filósofo y Honen‑in","2 km de canal hacia el norte. Honen‑in es gratis, con musgo y sin gente.",["trad","hidden"],"Honen-in"],
   ["15:00","Ginkaku‑ji","Al final norte del camino. El Pabellón de Plata y su jardín de arena. ¥500.",["trad"],"Ginkaku-ji"],
   ["16:00","Ginkaku‑ji → casa","Bus 5 o 17 desde la parada Ginkakuji‑michi hasta Shijo‑Karasuma (~35 min, ¥230) o taxi (~¥2.000 entre todos). Siesta y mochilas para Hiroshima.",[],null],
-  ["17:00","Maletas al konbini → APA Namba","Takkyubin desde el konbini más cercano a la casa (lo están mirando en RESI STAY). Destino: APA Hotel Namba Shinsaibashi, 2‑7‑12 Nishi‑Shinsaibashi, Chuo‑ku, Osaka; nombre de la reserva y check‑in 8 nov. Se paga allí.",[],null],
+  ["17:00","Maletas a la oficina de Yamato → APA Namba","Yamato Transport Yanaginobanba Shijo (468 Setoya‑cho), a 2 min de la casa, abierta de 8:00 a 20:00. Destino: APA Hotel Namba Shinsaibashi, 2‑7‑12 Nishi‑Shinsaibashi, Chuo‑ku, Osaka; nombre de la reserva y check‑in 8 nov. ~¥1.000–3.000 por maleta. Preguntad allí qué día llega. El 7‑Eleven de al lado solo admite envíos hasta las 15:00.",[],"Yamato Transport Yanaginobanba Shijo"],
   ["18:00","Gion: Hanamikoji y Shirakawa","15 min andando del hotel. Franja de las maiko. Prohibido fotografiar en las calles privadas de Gion (multa de ¥10.000).",["trad","night"],"Gion Shirakawa"],
   ["19:30","Cena en Gion o Pontocho y bares de Kiyamachi","Viernes: Kiyamachi es la zona de copas de Kyoto.",["food","night"],"Kiyamachi Kyoto"]],
  food:["Hinode Udon","Gion Duck Noodles (ramen de pato) o izakaya de Pontocho"],warn:["Si os fallan las piernas: bus 5 o taxi de Chion‑in a Nanzen‑ji y saltad Eikan‑do.","Preparad esta noche la mochila para Hiroshima: las maletas se van a Osaka."]},
@@ -898,7 +1053,9 @@ const CHECK=[
  ["odawara","Shinkansen Odawara → Kyoto (3 nov)","Hikari 641 · vagón 15 · 5D 5E 6D 6E. QR enviado a cada uno.","2026-10-03T03:00",["smartex"],true],
  ["pass","Kansai‑Hiroshima Area Pass (7–11 nov)","Reserva 46773 con Nozomi 5 (7 nov) y Sakura 756 (8 nov) ya reservados.","2026-10-08T11:00",["pass"],true],
  ["daikoku","Tour JDM a Daikoku (30 oct, 17:30)","Tokyo Turismo, guía en español. Salida desde Aomi (Odaiba) a las 17:30. Cancelación gratis hasta el 29 oct 17:30.","2026-10-15T12:00",["daikoku"],true],
- ["kyotoluggage","Mensajes a los 6 hoteles","Hechos. Pendientes de respuesta: Washington (takkyubin), Yutowa (cena, desayuno y baño), RESI STAY (qué konbini), APA Namba y APA Kabukicho. Todo en la pestaña Hoteles.","2026-10-20T12:00",[],true],
+ ["kyotoluggage","Mensajes a los 6 hoteles","Todos han contestado: resumen en la pestaña Hoteles.","2026-10-20T12:00",[],true],
+ ["measure","Medir y pesar las maletas","El Washington solo envía maletas de hasta 160 cm (largo + ancho + alto, con ruedas y asa) y 25 kg. Si alguna pasa, hay que enviarla desde una oficina de Yamato.","2026-10-24T12:00",[],false,"Antes de salir"],
+ ["tattoo","Parches cubre‑tatuajes","Para el onsen común de Hakone. Amazon o, allí, Don Quijote y farmacias.","2026-10-24T12:00",[],false,"Antes de salir"],
  ["prereg","Pre‑registro de RESI STAY","Rellenar online los datos de los 4 (enlace en el email de confirmación).","2026-10-26T12:00",[],false,"Antes de salir"],
  ["cash","Efectivo para tasas","Tasa de Kyoto (en el check‑in) y de Hiroshima (¥200 pp).","2026-10-27T08:00",[],false,"Antes de salir"],
  ["kobe","Comida de Kobe beef (9 nov)","Steakland Kobe‑kan, 4 personas, ~12:45.","2026-10-05T12:00",["kobeEpark","kobe"]],
@@ -906,7 +1063,7 @@ const CHECK=[
  ["shibuyasky","Shibuya Sky al atardecer (14 nov, ~16:15)","Las entradas salen 14 días antes a las 00:00 de Japón: para el 14 nov, la medianoche del viernes 30, al acabar el tour. Las de atardecer vuelan.","2026-10-30T23:59",["shibuyasky"],false,"30 oct · 24:00 en Japón"],
  ["osakatokyo","Shinkansen Shin‑Osaka → Tokyo (11 nov)","Nozomi 10 · vagón 14 · 15D 15E 16D 16E.","2026-10-15T11:00",["smartex"],true],
  ["fuji","Bus Shinjuku ↔ Kawaguchiko (13 nov)","Ida 1303 a las 07:35 y vuelta 1120 a las 16:50. Mobile Ticket.","2026-10-15T13:00",["bus"],true],
- ["vjw","Visit Japan Web","Registro de los 4 con pasaporte para tener el QR.","2026-10-20T12:00",["vjw"]],
+ ["vjw","Visit Japan Web","David y Jorge ya tienen el QR. Faltan Raúl y Tonan: guía paso a paso en la pestaña Visit Japan Web.","2026-10-26T12:00",["vjw"],false,"Antes de salir"],
  ["suica","Suica en el móvil y datos","eSIM japonesa o roaming.","2026-10-25T12:00",["suica"]],
  ["hakone","Hakone Free Pass + Romancecar (2 nov)","En Shinjuku, Odakyu Sightseeing Service Center. 4 Free Pass (inicio 2 nov) y 4 asientos del Romancecar de las 9:00.","2026-10-30T08:30",["freepass","romance"],false,"30 oct · en Shinjuku"],
  ["passpickup","Recoger el pase en Kyoto Station","Al bajar del Hikari 641: tarjeta de David, reserva 46773, PIN y los 4 pasaportes. Límite: 7 nov.","2026-11-03T14:15",[],false,"3 nov · 14:15 en Kyoto"],
@@ -1135,20 +1292,20 @@ const OK='<span class="okc">confirmado</span>', PEND='<span class="pend">pendien
 const HOTELS=[
  {city:"tokyo",k:"新宿",name:"Shinjuku Washington Hotel",in:"2026-10-28",out:"2026-11-02",addr:"3‑2‑9 Nishi‑Shinjuku, Shinjuku‑ku, Tokio",maps:"Shinjuku Washington Hotel",
   meals:[0,0],room:"2 habitaciones dobles económicas (planta reformada), 2 personas cada una. «Doble» suele ser una cama de matrimonio por habitación.",
-  checkin:"Oficial desde las 14:00. Llegáis el 28 sobre las 21:00: recepción 24 h y avisados "+OK+". Check‑out 11:00.",
-  bags:["Llegáis con las maletas.","1 nov: takkyubin desde recepción a la recepción de RESI STAY en Kyoto "+PEND+"."],
+  checkin:"Oficial desde las 14:00. Llegáis el 28 sobre las 21:00: recepción 24 h y tienen anotada la hora "+OK+". Check‑out 11:00.",
+  bags:["Llegáis con las maletas.","1 nov: envío por <b>Sagawa Express</b> en la recepción de la 3.ª planta del edificio principal, a la recepción de RESI STAY en Kyoto "+OK+". Pago <b>solo en efectivo</b>.","Límite: <b>160 cm</b> (largo + ancho + alto) y <b>25 kg</b> por maleta. Preguntad allí el precio y el día de entrega."],
   notes:["Pedidas habitaciones comunicadas (no garantizado).","Si llegáis antes del check‑in: consignas en la 3.ª planta del edificio principal."],
   cancel:"Gratis hasta el 27 oct."},
  {city:"hakone",k:"強羅",name:"Hakone Yutowa",in:"2026-11-02",out:"2026-11-03",addr:"1300‑27 Gora, Hakone, Kanagawa",maps:"Hakone Yutowa",
   meals:[1,1],room:"Superior Twin Room Type A, para 4: camas + tatami y sofá cama. Onsen compartido del hotel.",
-  checkin:"Aprobado 17:00–18:00; avisado de que llegáis 16:00–16:30 "+PEND+". Salida prevista 8:45.",
+  checkin:"Llegáis 16:00–16:30 (avisados). Salida prevista 8:45.",
   bags:["Solo mochila (las maletas van de Tokio a Kyoto).","Guardan equipaje antes del check‑in si hiciera falta "+OK+"."],
-  notes:["Media pensión: cena y desayuno incluidos. Preguntada la hora de la cena y del desayuno "+PEND+".","Preguntado por baño privado por los tatuajes "+PEND+".","Si os toca el edificio «condominio», para ir al restaurante y al onsen se sale al exterior: chaqueta a mano."],
+  notes:["<b>Cena reservada a las 18:30</b> "+OK+". Desayuno de 7:00 a 9:00.","Tatuajes: onsen común tapándolos con parches cubre‑tatuajes, u onsen privado sin tapar. Los privados no se reservan: si en la puerta pone «Vacant», se entra (unos 30 min por grupo) "+OK+".","Si os toca el edificio «condominio», para ir al restaurante y al onsen se sale al exterior: chaqueta a mano."],
   cancel:"Gratis hasta el 26 oct; después, 50 %."},
  {city:"kyoto",k:"京都",name:"RESI STAY Nishiki",in:"2026-11-03",out:"2026-11-07",addr:"521 Kikuyacho, Nakagyo‑ku, Kioto (alojamiento)",maps:"RESI STAY Nishiki",
   meals:[0,0],room:"Suite Anexo: casa japonesa entera de 34 m². 2 camas individuales, 2 futones y sofá cama en el salón. Baño con bañera y cocina.",
   checkin:"<b>No es en la casa:</b> recepción RESI STAY junto a Kyoto Station, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku (8:00–20:00). Aprobado el 3 nov a las 15:00 "+OK+". Bus gratis de la recepción a la casa de 14:15 a 20:00 (no recoge el día de salida).",
-  bags:["Maletas desde Tokio, prepago, a: <b>RESI STAY Reception Counter</b>, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216. En la etiqueta: «RESI STAY Nishiki», David González Álvarez, check‑in 3 nov "+OK+".","3 nov: las dejáis en la recepción mientras vais a Inari y las recogéis a las 18:00 para el bus "+OK+".","6 nov ~17:00: konbini cerca de la casa → APA Namba Shinsaibashi. Preguntado qué konbini "+PEND+"."],
+  bags:["Maletas desde Tokio, prepago, a: <b>RESI STAY Reception Counter</b>, ON Building 5F, 544‑2 Higashishiokoji‑cho, Shimogyo‑ku, Kyoto 600‑8216. En la etiqueta: «RESI STAY Nishiki», David González Álvarez, check‑in 3 nov "+OK+".","3 nov: las dejáis en la recepción mientras vais a Inari y las recogéis a las 18:00 para el bus "+OK+".","6 nov ~17:00: oficina de Yamato Yanaginobanba Shijo (468 Setoya‑cho, a 2 min, abierta de 8:00 a 20:00) → APA Namba Shinsaibashi "+OK+". El 7‑Eleven Higashinotoin Nishiki (a 4 min) solo acepta envíos hasta las 15:00. ~¥1.000–3.000 por maleta."],
   notes:["Rellenar el pre‑registro online de los 4 antes de llegar (enlace en el email de confirmación).","Tasa turística de Kyoto en efectivo al hacer el check‑in."],
   cancel:"—"},
  {city:"hiroshima",k:"広島",name:"Trust Hotel",in:"2026-11-07",out:"2026-11-08",addr:"1‑14‑10 Hikarimachi, Higashi‑ku, Hiroshima",maps:"Trust Hotel Hiroshima",
@@ -1159,22 +1316,22 @@ const HOTELS=[
   cancel:"—"},
  {city:"osaka",k:"大阪",name:"APA Hotel Namba Shinsaibashi",in:"2026-11-08",out:"2026-11-11",addr:"2‑7‑12 Nishi‑Shinsaibashi, Chuo‑ku, Osaka",maps:"APA Hotel Namba Shinsaibashi",
   meals:[1,0],room:"Habitaciones comunicadas para 4.",
-  checkin:"Aprobado 15:00–16:00; avisado de que llegáis ~17:30 "+PEND+".",
-  bags:["Maletas desde Kyoto (envío el 6, llegan el 7 o el 8) "+PEND+".","11 nov al check‑out: takkyubin en recepción → APA Kabukicho Tower "+PEND+"."],
+  checkin:"Llegáis ~17:30 (avisados).",
+  bags:["Maletas desde Kyoto (envío el 6, llegan el 7 o el 8): las reciben "+OK+". En el destinatario, el nombre de quien hizo la reserva: David González Álvarez (y check‑in 8 nov).","11 nov al check‑out: envío a APA Kabukicho Tower. Lo gestionan en recepción: preguntadlo al llegar el 8. Si no, hay konbinis al lado."],
   notes:["Desayuno incluido."],
   cancel:"Gratis hasta el 7 nov."},
  {city:"tokyo",k:"歌舞伎町",name:"APA Hotel Shinjuku Kabukicho Tower",in:"2026-11-11",out:"2026-11-16",addr:"1‑20‑2 Kabukicho, Shinjuku‑ku, Tokio · +81‑3‑5155‑3811",maps:"APA Hotel Shinjuku Kabukicho Tower",
   meals:[0,0],room:"2 habitaciones dobles, 2 personas cada una. Las APA son muy pequeñas (~11 m²).",
-  checkin:"Aprobado 16:00–17:00. Llegáis ~13:30: dejar mochilas en recepción hasta el check‑in "+PEND+".",
-  bags:["Maletas desde Osaka a nombre de la reserva (ni contra reembolso ni refrigeradas): las reciben "+OK+". Llegan el 12.","Noche del 11: solo mochila.","16 nov: consigna tras el check‑out hasta las 16:30 "+PEND+"."],
+  checkin:"Llegáis ~13:30: guardan las mochilas gratis en recepción hasta el check‑in "+OK+".",
+  bags:["Maletas desde Osaka: las reciben "+OK+". En la etiqueta, el nombre de la reserva y la <b>fecha de check‑in: 11 nov</b> (aunque lleguen el 12). Ni contra reembolso ni refrigeradas.","Noche del 11: solo mochila.","16 nov: guardan las maletas gratis hasta que os vayáis el mismo día "+OK+" (no de un día para otro)."],
   notes:["Sin comidas: desayuno en konbini o cafetería."],
   cancel:"Gratis hasta el 10 nov."}
 ];
 const BAGFLOW=[
- ["1 nov","tokyo","Washington → Kyoto","Takkyubin en recepción, a la recepción de RESI STAY junto a Kyoto Station. Llega el 2."],
+ ["1 nov","tokyo","Washington → Kyoto","Sagawa Express en la recepción de la 3.ª planta, a la recepción de RESI STAY junto a Kyoto Station. En efectivo. Máx. 160 cm y 25 kg por maleta."],
  ["2–3 nov","hakone","Solo mochila","Hakone, 1 noche.",1],
  ["3 nov","kyoto","Recoger en Kyoto","15:00 check‑in en la recepción, las dejáis allí, Inari, y a las 18:00 bus a la casa con ellas."],
- ["6 nov","kyoto","Kyoto → Osaka","~17:00 desde un konbini cerca de la casa al APA Namba. Llega el 7 o el 8."],
+ ["6 nov","kyoto","Kyoto → Osaka","~17:00 desde la oficina de Yamato a 2 min de la casa (abierta hasta las 20:00) al APA Namba. Llega el 7 o el 8."],
  ["7–8 nov","hiroshima","Solo mochila","Hiroshima y Miyajima, 1 noche.",1],
  ["8 nov","osaka","Os esperan en Osaka","APA Namba Shinsaibashi."],
  ["11 nov","osaka","Osaka → Tokio","Al hacer el check‑out, en recepción, al APA Kabukicho. Llega el 12."],
@@ -1202,6 +1359,18 @@ const BAGFLOW=[
   });
 })();
 
+/* ---------- visit japan web ---------- */
+(function(){
+  const done=store.get("jp26-vjw",{});
+  document.querySelectorAll("#p-vjw .copy").forEach(b=>b.addEventListener("click",()=>copyUrl(b)));
+  document.querySelectorAll("#vjwwho input").forEach(i=>{
+    const st=i.parentNode.querySelector(".st");
+    const paint=()=>{st.className="st "+(i.checked?"y":"n");st.textContent=i.checked?"QR listo":"Pendiente";};
+    i.checked=!!done[i.dataset.k];paint();
+    i.addEventListener("change",()=>{done[i.dataset.k]=i.checked;store.set("jp26-vjw",done);paint();});
+  });
+})();
+
 /* ---------- tabs ---------- */
 function selectTab(id){
   document.querySelectorAll("#tabs button").forEach(b=>{
@@ -1211,7 +1380,7 @@ function selectTab(id){
   store.set("jp26-tab",id);
 }
 document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>selectTab(b.id)));
-const hashMap={itinerario:"tab-dias",billetes:"tab-bil",hoteles:"tab-hot",viabilidad:"tab-viab",transporte:"tab-trans",comida:"tab-comida",pop:"tab-pop",reservas:"tab-res"};
+const hashMap={itinerario:"tab-dias",billetes:"tab-bil",hoteles:"tab-hot",viabilidad:"tab-viab",transporte:"tab-trans",comida:"tab-comida",pop:"tab-pop",reservas:"tab-res",vjw:"tab-vjw","visit-japan-web":"tab-vjw"};
 selectTab(hashMap[location.hash.slice(1)]||store.get("jp26-tab","tab-dias"));
 
 /* durante el viaje, saltar al día de hoy */
